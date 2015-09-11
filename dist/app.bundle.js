@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\nvar _interopRequireDefault = __webpack_require__(1)['default'];\n\n__webpack_require__(2);\n\nvar _angular = __webpack_require__(11);\n\nvar _angular2 = _interopRequireDefault(_angular);\n\nvar _angularUiRouter = __webpack_require__(13);\n\nvar _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);\n\nvar _appConfig = __webpack_require__(14);\n\nvar _appConfig2 = _interopRequireDefault(_appConfig);\n\nvar _featuresHome = __webpack_require__(15);\n\nvar _featuresHome2 = _interopRequireDefault(_featuresHome);\n\nvar _featuresStylists = __webpack_require__(31);\n\nvar _featuresStylists2 = _interopRequireDefault(_featuresStylists);\n\n// import events from './features/events';\n\nvar _featuresArtists = __webpack_require__(36);\n\nvar _featuresArtists2 = _interopRequireDefault(_featuresArtists);\n\nvar _featuresSalon = __webpack_require__(41);\n\nvar _featuresSalon2 = _interopRequireDefault(_featuresSalon);\n\n_angular2['default'].module('app', [_angularUiRouter2['default'], _featuresHome2['default'], _featuresStylists2['default'], _featuresArtists2['default'], _featuresSalon2['default']]).config(_appConfig2['default']);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./src/app.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./src/app.js?");
+	eval("'use strict';\n\nvar _interopRequireDefault = __webpack_require__(1)['default'];\n\n__webpack_require__(2);\n\nvar _angular = __webpack_require__(11);\n\nvar _angular2 = _interopRequireDefault(_angular);\n\nvar _angularUiRouter = __webpack_require__(13);\n\nvar _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);\n\nvar _appConfig = __webpack_require__(14);\n\nvar _appConfig2 = _interopRequireDefault(_appConfig);\n\nvar _featuresHome = __webpack_require__(15);\n\nvar _featuresHome2 = _interopRequireDefault(_featuresHome);\n\nvar _featuresStylists = __webpack_require__(31);\n\nvar _featuresStylists2 = _interopRequireDefault(_featuresStylists);\n\nvar _featuresEvents = __webpack_require__(35);\n\nvar _featuresEvents2 = _interopRequireDefault(_featuresEvents);\n\nvar _featuresArtists = __webpack_require__(36);\n\nvar _featuresArtists2 = _interopRequireDefault(_featuresArtists);\n\nvar _featuresSalon = __webpack_require__(41);\n\nvar _featuresSalon2 = _interopRequireDefault(_featuresSalon);\n\n_angular2['default'].module('app', [_angularUiRouter2['default'], _featuresHome2['default'], _featuresStylists2['default'], _featuresArtists2['default'], _featuresSalon2['default'], _featuresEvents2['default']]).config(_appConfig2['default']);\n\n/*****************\n ** WEBPACK FOOTER\n ** ./src/app.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ },
 /* 1 */
@@ -251,7 +251,12 @@
 	eval("'use strict';\n\nvar _classCallCheck = __webpack_require__(28)['default'];\n\nObject.defineProperty(exports, '__esModule', {\n    value: true\n});\n\nvar StylistsController = function StylistsController() {\n    _classCallCheck(this, StylistsController);\n\n    this.test = 'Hello from StylistsController';\n}\n\n//StylistsController.$inject = ['randomNames'];\n;\n\nexports['default'] = StylistsController;\nmodule.exports = exports['default'];\n\n/*****************\n ** WEBPACK FOOTER\n ** ./src/features/stylists/stylists.controller.js\n ** module id = 34\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./src/features/stylists/stylists.controller.js?");
 
 /***/ },
-/* 35 */,
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("'use strict';\n\n__webpack_require__(11);\n\nmodule.exports = angular.module('app.events', []).controller('EventsController', function ($scope) {\n    $scope.test = 'Hello from EventsController';\n\n    $scope.changeName = function () {\n        $scope.name = 'angular-tips';\n    };\n}).name;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./src/features/events/index.js\n ** module id = 35\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./src/features/events/index.js?");
+
+/***/ },
 /* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
