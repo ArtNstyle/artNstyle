@@ -11,5 +11,6 @@ import artists from './features/artists';
 import salon from './features/salon';
 
 
+
 angular.module('app', [uirouter, home, stylists, artists, salon])
   .config(routing);
