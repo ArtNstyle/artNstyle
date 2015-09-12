@@ -8,5 +8,5 @@ import home from './features/home';
 import stylists from './features/stylists';
 import events from './features/events';
 
-angular.module('app', [uirouter, home, stylists])
+angular.module('app', [uirouter, home, stylists, events])
   .config(routing);
