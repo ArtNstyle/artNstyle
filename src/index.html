@@ -1,109 +1,67 @@
 <!doctype html>
 <html ng-app="app" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>artNstyle</title>
-  <base href="/">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>artNstyle</title>
+    <base href="/">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
 </head>
 <body>
-  <div>
-    <!--<md-fab-toolbar md-open="true" count="0"-->
-                    <!--md-direction="left">-->
-      <!--<md-fab-trigger class="align-with-text">-->
-        <!--<md-button aria-label="menu" class="md-fab md-primary">-->
-          <!--<i class="material-icons">menu</i>-->
-          <!--&lt;!&ndash;<md-icon md-svg-src="img/icons/menu.svg"></md-icon>&ndash;&gt;-->
-        <!--</md-button>-->
-      <!--</md-fab-trigger>-->
-      <!--<md-toolbar>-->
-        <!--<md-fab-actions class="md-toolbar-tools">-->
-
-          <!--<span>-->
-          <!--<a href="/" >Home</a>-->
-          <!--<a href="/stylists" >Stylists</a>-->
-          <!--<a href="/events" >Events</a>-->
-          <!--</span>-->
-
-          <!--&lt;!&ndash;<md-button aria-label="comment" class="md-icon-button">&ndash;&gt;-->
-            <!--&lt;!&ndash;<i class="material-icons">comment</i>&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;<md-icon md-svg-src="img/icons/ic_comment_24px.svg"></md-icon>&ndash;&gt;&ndash;&gt;-->
-          <!--&lt;!&ndash;</md-button>&ndash;&gt;-->
-          <!--&lt;!&ndash;<md-button aria-label="label" class="md-icon-button">&ndash;&gt;-->
-            <!--&lt;!&ndash;<i class="material-icons">label</i>&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;<md-icon md-svg-src="img/icons/ic_label_24px.svg"></md-icon>&ndash;&gt;&ndash;&gt;-->
-          <!--&lt;!&ndash;</md-button>&ndash;&gt;-->
-          <!--&lt;!&ndash;<md-button aria-label="photo" class="md-icon-button">&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;<md-icon md-svg-src="img/icons/ic_photo_24px.svg"></md-icon>&ndash;&gt;&ndash;&gt;-->
-            <!--&lt;!&ndash;<i class="material-icons">photo</i>&ndash;&gt;-->
-          <!--&lt;!&ndash;</md-button>&ndash;&gt;-->
-
-        <!--</md-fab-actions>-->
-      <!--</md-toolbar>-->
-    <!--</md-fab-toolbar>-->
-
+<div class="content">
     <md-toolbar>
-      <div class="md-toolbar-tools">
-        <span hide-gt-sm>
+        <div class="md-toolbar-tools as-toolbar-tools" style="max-heigth: 110px; heigth: 110px;">
 
-          <md-menu md-offset="0 -7">
-            <md-button class="md-icon-button" aria-label="Settings" ng-click="$mdOpenMenu($event)">
-              <!--<md-icon md-svg-icon="img/icons/menu.svg"></md-icon>-->
-              <i class="material-icons">menu</i>
-            </md-button>
-            <md-menu-content width="2">
-              <md-menu-item>
-                <md-button go-click="/"> <span md-menu-align-target>Home</span></md-button>
-              </md-menu-item>
-              <md-menu-item>
-                <md-button go-click="/stylists"> <span md-menu-align-target>Stylists</span></md-button>
-              </md-menu-item>
-              <md-menu-item>
-                <md-button go-click="/salon"> <span md-menu-align-target>Salon</span></md-button>
-              </md-menu-item>
-              <md-menu-item>
-                <md-button go-click="/artists"> <span md-menu-align-target>Artists</span></md-button>
-              </md-menu-item>
-              <md-menu-item>
-                <md-button go-click="/events"> <span md-menu-align-target>Events</span></md-button>
-              </md-menu-item>
-              <md-menu-item>
-              <md-button go-click="/contact"> <span md-menu-align-target>Contact</span></md-button>
-              </md-menu-item>
-            </md-menu-content>
-          </md-menu>
+            <span hide-sm flex=""></span>
+            <span hide-sm>
+              <a href="/">Home </a>
+              <a href="/stylists">Stylists </a>
+              <a href="/salon">Salon </a>
+            </span>
 
-        </span>
-        <span flex=""></span>
-        <span hide-sm>
-        <a href="/" >Home </a>
-        <a href="/stylists" >Stylists </a>
-        <a href="/salon" >Salon </a>
-        <a href="/artists" >Artists </a>
-        <a href="/events" >Events </a>
-        <a href="/contacts" >Contact</a>
-        </span>
+            <span class="logo"></span>
 
-      </div>
+            <span hide-sm>
+              <a href="/artists">Artists </a>
+              <a href="/events">Events </a>
+              <a href="/contacts">Contact</a>
+            </span>
+            <span flex=""></span>
+
+            <span hide-gt-sm>
+              <md-menu md-offset="0 -7">
+                  <md-button class="md-icon-button" aria-label="Settings" ng-click="$mdOpenMenu($event)">
+                      <!--<md-icon md-svg-icon="img/icons/menu.svg"></md-icon>-->
+                      <i class="material-icons">menu</i>
+                  </md-button>
+                  <md-menu-content width="2">
+                      <md-menu-item>
+                          <md-button go-click="/"><span md-menu-align-target>Home</span></md-button>
+                      </md-menu-item>
+                      <md-menu-item>
+                          <md-button go-click="/stylists"><span md-menu-align-target>Stylists</span></md-button>
+                      </md-menu-item>
+                      <md-menu-item>
+                          <md-button go-click="/salon"><span md-menu-align-target>Salon</span></md-button>
+                      </md-menu-item>
+                      <md-menu-item>
+                          <md-button go-click="/artists"><span md-menu-align-target>Artists</span></md-button>
+                      </md-menu-item>
+                      <md-menu-item>
+                          <md-button go-click="/events"><span md-menu-align-target>Events</span></md-button>
+                      </md-menu-item>
+                      <md-menu-item>
+                          <md-button go-click="/contact"><span md-menu-align-target>Contact</span></md-button>
+                      </md-menu-item>
+                  </md-menu-content>
+              </md-menu>
+            </span>
+
+        </div>
     </md-toolbar>
 
-
-    <!--<md-toolbar md-scroll-shrink ng-if="true">-->
-      <!--<div class="md-toolbar-tools">-->
-          <!--<span>artNstyle</span>-->
-          <!--<span flex></span>-->
-          <!--<span>-->
-            <!--<a href="/" >Home</a>-->
-            <!--<a href="/stylists" >Stylists</a>-->
-            <!--<a href="/events" >Events</a>-->
-          <!--</span>-->
-
-      <!--</div>-->
-    <!--</md-toolbar>-->
-
     <ui-view></ui-view>
-  </div>
+</div>
 </body>
 </html>

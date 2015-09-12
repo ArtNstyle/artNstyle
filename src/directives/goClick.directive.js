@@ -1,5 +1,6 @@
 import angular from 'angular';
 
+// from http://stackoverflow.com/questions/15847726/is-there-a-simple-way-to-use-button-to-navigate-page-as-a-link-does-in-angularjs
 function goClick ( $location ) {
     return {
         restrict: 'A',
