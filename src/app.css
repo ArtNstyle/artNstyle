@@ -1,0 +1,14 @@
+md-toolbar, md-toolbar:not(.md-menu-toolbar) {
+    background-color: white;
+    color: rgb(63,81,181);
+}
+
+md-toolbar i {
+    color: rgb(63,81,181);
+}
+
+
+a {
+    margin: 0px 2px;
+}
+
