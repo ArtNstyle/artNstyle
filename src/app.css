@@ -32,7 +32,7 @@ a {
     margin: 5px;
     width: 100px;
     height: 100px;
-    background: transparent url(./images/logo.jpg) 0 0 no-repeat;
+    background: transparent url(./images/logo.png) 0 0 no-repeat;
     background-size: contain;
     display: inline-block;
 }
