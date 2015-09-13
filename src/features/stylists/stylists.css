@@ -1,3 +1,62 @@
-h1 {
-    color: red;
+h2 {
+
+}
+
+h2 hr {
+    max-width: 300px;
+    color: #6889FB;
+}
+
+.intro {
+
+
+}
+
+.container {
+    margin: 0px auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+.stylist {
+    float:left;
+    position: relative;
+    width: 21%;
+    margin:2%;
+}
+
+
+@media screen and (max-width: 599px) {
+.stylist {
+    float:left;
+    position: relative;
+    width: 46%;
+    margin:2%;
+}
+}
+
+.square {
+    width: 100%;
+    padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:contain; /* you change this from "cover" to "contain" if you don't want the images to be cropped */
+}
+
+.name {
+    background-color: #EFEFEF;
+    padding: 4%;
+    font-weight: 600;
+}
+
+.title {
+    font-style: italic;
+    border-bottom: 1px solid #6889FB;
+    margin: 2% 30%;
+
+}
+
+.bio {
+    width: 100%;
+    text-align: left;
 }
