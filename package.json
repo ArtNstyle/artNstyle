@@ -1,48 +1,48 @@
 {
-  "name": "eames-webpack-fundamentals",
+  "name": "artsnstyle",
   "version": "0.0.1",
-  "description": "webpack fundamentals",
-  "main": "app.js",
+  "description": "",
+  "main": "server.js",
   "dependencies": {
-    "angular": "^1.4.5",
-    "angular-ui-router": "^0.2.15",
-    "babel-core": "^5.8.24",
     "babel-loader": "^5.3.2",
     "body-parser": "^1.13.3",
-    "compress": "^0.99.0",
+    "angular": "^1.4.5",
     "compression": "^1.5.2",
     "cors": "^2.7.1",
-    "css-loader": "^0.18.0",
+    "compress": "^0.99.0",
     "express": "^4.13.3",
     "express-session": "^1.11.3",
-    "html-loader": "^0.3.0",
+    "angular-ui-router": "^0.2.15",
+    "babel-core": "^5.8.24",
     "jshint": "^2.8.0",
-    "jshint-loader": "^0.8.3",
     "method-override": "^2.3.5",
     "mongoose": "^4.1.6",
     "morgan": "^1.6.1",
+    "jshint-loader": "^0.8.3",
+    "html-loader": "^0.3.0",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.3.2",
-    "path": "^0.12.7",
     "sass-loader": "^2.0.1",
-    "style-loader": "^0.12.3",
     "webpack": "^1.12.1",
     "webpack-dev-middleware": "^1.2.0",
+    "style-loader": "^0.12.3",
+    "css-loader": "^0.18.0",
+    "path": "^0.12.7",
     "webpack-dev-server": "^1.10.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --inline"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ladrillo/webpack-fundamentals.git"
+    "url": "git+https://github.com/ArtNstyle/artNstyle.git"
   },
-  "author": "Gabriel",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ladrillo/webpack-fundamentals/issues"
+    "url": "https://github.com/ArtNstyle/artNstyle/issues"
   },
-  "homepage": "https://github.com/Ladrillo/webpack-fundamentals#readme"
+  "homepage": "https://github.com/ArtNstyle/artNstyle#readme"
 }
