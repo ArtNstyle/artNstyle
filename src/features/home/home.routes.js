@@ -20,4 +20,16 @@ export default function routes($stateProvider) {
     controller: 'EventsController',
     controllerAs: 'events'
   })
+    .state('artists', {
+    url: '/artists',
+    template: require('../artists/artists.html'),
+    controller: 'ArtistsController',
+    controllerAs: 'artists'
+  })
+    .state('salon', {
+    url: '/salon',
+    template: require('../salon/salon.html'),
+    controller: 'SalonController',
+    controllerAs: 'salon'
+  })
 }
