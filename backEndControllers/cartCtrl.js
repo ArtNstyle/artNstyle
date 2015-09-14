@@ -19,12 +19,12 @@ module.exports = {
     });
   },
 
-  // remove: function(req, res) {
-  //   artist.findByIdAndRemove(req.query.id, function(err, result) {
-  //     if (err) return res.status(500).send(err);
-  //     res.send(result);
-  //   });
-  // },
+  remove: function(req, res) {
+    cart.findByIdAndRemove(req.query.id, function(err, result) {
+      if (err) return res.status(500).send(err);
+      res.send(result);
+    });
+  },
 
   update: function(req, res) {
     cart.findByIdAndUpdate(

@@ -1,4 +1,4 @@
-angular.module('myApp', [])
+  angular.module('myApp', [])
 .directive('fileread', function () {
   return {
     restrict: 'A',

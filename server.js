@@ -22,38 +22,39 @@
 
 
 	//controllers
-	var artistCtrl = require('./backEndControllers/artistCtrl');
-	var eventCtrl = require('./backEndControllers/eventCtrl');
-	var stylistCtrl = require('./backEndControllers/stylistCtrl');
-	var cartCtrl = require('./backEndControllers/cartCtrl');
+	// var artistCtrl = require('./backEndControllers/artistCtrl');
+	
+	
+	
 
 	// app.get('/api/userName', bookCtrl.getId);
-	app.post('/api/artists', artistCtrl.create);
-	app.post('/api/events', eventCtrl.create);
-	app.post('/api/stylists', stylistCtrl.create);
-	app.post('/api/cart', cartCtrl.create);
+	
+	
+	
+	
 	//app.post('/api/stylists', stylistCtrl.create);
 	//app.post('/api/carts', cartCtrl.create);
-	app.get('/api/artists/all', artistCtrl.readAll);
-	app.get('/api/events/all', eventCtrl.readAll);
-	app.get('/api/stylists/all', stylistCtrl.readAll);
-	app.get('/api/artists', artistCtrl.read);
-	app.get('/api/events', eventCtrl.read);
-	app.get('/api/stylists', stylistCtrl.read);
-	app.get('/api/cart', cartCtrl.read);
+	
+	
+	
+	
+	
+	
+	
 	//app.get('/api/carts/all', cartCtrl.readAll);
 
 	//app.get('/api/stylists/all', t.readAll);
 
 
 	// app.get('/api/readBooks/all', readCtrl.getAll);
-	app.put('/api/artists', artistCtrl.update);
-	app.put('/api/events', eventCtrl.update);
-	app.put('/api/stylists', stylistCtrl.update);
-	app.put('/api/cart', cartCtrl.update);
-	app.delete('/api/artists', artistCtrl.remove);
-	app.delete('/api/events', eventCtrl.remove);
-	app.delete('/api/stylists', stylistCtrl.remove);
+	
+	
+	
+	
+	
+	
+	
+	
 	//app.delete('/api/stylits/:id', stylistCtrl.remove);
 
 	//port
