@@ -8,9 +8,9 @@ export default class StylistsController {
         this.stylists =[];
 
         for(var i = 0; i < 5; i++) {
-            this.stylists[i] = {};
+            this.stylists[i] = {visibilities: {}};
             this.stylists[i].name = "Jane Doe";
-            this.stylists[i].title = "Stylist";
+            this.stylists[i].title = "Stylist" + i;
             this.stylists[i].bio = "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes";
             if(i%2 === 0) {
                 this.stylists[i].link = "https://www.google.com/";
