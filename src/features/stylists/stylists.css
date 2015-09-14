@@ -19,20 +19,7 @@ h2 hr {
 }
 
 .stylist {
-    float:left;
-    position: relative;
-    width: 21%;
-    margin:2%;
-}
-
-
-@media screen and (max-width: 599px) {
-.stylist {
-    float:left;
-    position: relative;
-    width: 46%;
-    margin:2%;
-}
+    padding: 4%;
 }
 
 .square {

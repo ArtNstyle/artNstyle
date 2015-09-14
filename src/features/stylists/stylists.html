@@ -5,17 +5,11 @@
 
     <p class="intro">Booths available.<br>Please call Kessie at <a href="tel:19187421550 ">918-742-1550</a></p>
 
-    <div>
-        <stylist></stylist>
-        <stylist></stylist>
-        <stylist></stylist>
-        <stylist></stylist>
-        <stylist></stylist>
-        <stylist></stylist>
-        <stylist></stylist>
-        <stylist></stylist>
+    <div layout="row" layout-wrap>
+        <div flex="25" flex-sm="50" ng-repeat="stylist in stylists.stylists" >
+                <stylist info="stylist"></stylist>
+        </div>
     </div>
 </div>
-
 
 
