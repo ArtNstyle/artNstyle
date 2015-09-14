@@ -1,6 +1,6 @@
 .content {
     height: 100%;
-    background-color: white;
+    background-color: transparent;
     font-family: 'Noticia Text', serif;
 }
 
@@ -8,7 +8,14 @@ md-toolbar, md-toolbar:not(.md-menu-toolbar) {
     color: #6889FB;
     font-weight: bold;
     font-size: 16px;
-    background-color: white;
+    background-color: transparent;
+        margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
 }
 
 .md-button {
