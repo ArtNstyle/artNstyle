@@ -1,4 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css';
+import './css/bootstrap.css';
+import './css/style.css';
+import './css/popup.css';
+import './css/animate.css';
 
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
