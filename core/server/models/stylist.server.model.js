@@ -5,6 +5,7 @@ stylistSchema = new mongoose.Schema ({
   yearsOfExperience: {type: Number},
   speciality: {type: String},
   bio: {type: String},
+  linkToScheduler: {type: String},
   image: {type: String}
 })
 
