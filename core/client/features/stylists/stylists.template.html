@@ -1,4 +1,4 @@
-{{stylists.test}}
+<!--{{stylists.test}}-->
 <div class="container">
     <h2>MEMBERS OF OUR TEAM
         <hr>
@@ -8,7 +8,7 @@
 
     <div layout="row" layout-wrap>
         <div flex="25" flex-sm="50" ng-repeat="stylist in stylists.stylists" >
-            <stylist info="stylist"></stylist>
+            <stylist info="stylist" save-stylist-fn="stylist.saveStylist"></stylist>
         </div>
     </div>
 </div>
