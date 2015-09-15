@@ -7,11 +7,13 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 
+import baseWeb from './services/baseWeb.service';
+
 import goClick from './directives/goClick.directive';
 import editable from './directives/editable.directive';
 import stylist from './features/stylists/stylist.directive';
 
-var app = angular.module('app', [uiRouter, ngMaterial, goClick, stylist, editable]);
+var app = angular.module('app', [uiRouter, ngMaterial, goClick, stylist, editable, baseWeb]);
 
 
 
