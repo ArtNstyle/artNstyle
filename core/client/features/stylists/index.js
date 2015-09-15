@@ -1,4 +1,5 @@
 import '../stylists/stylists.scss';
+
 import angular from 'angular';
 
 import stylistsController from '../stylists/stylists.controller.es6';

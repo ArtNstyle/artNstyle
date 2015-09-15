@@ -14,6 +14,26 @@ module.exports = function (app) {
                     },
                 }
             })
+            .state('stylists', {
+                url: '/stylists',
+                views: {
+                    main: {
+                        template: require('./features/stylists/stylists.template.html'),
+                        controller: 'stylistsController',
+                        controllerAs: 'stylists'
+                    },
+                }
+            })
+            .state('salon', {
+                url: '/salon',
+                views: {
+                    main: {
+                        template: require('./features/salon/salon.template.html'),
+                        controller: 'salonController',
+                        controllerAs: 'salon'
+                    },
+                }
+            })
             .state('tanning', {
                 url: '/tanning',
                 views: {
@@ -24,15 +44,15 @@ module.exports = function (app) {
                     },
                 }
             })
-            .state('stylists', {
-                url: '/stylists',
+            .state('events', {
+                url: '/events',
                 views: {
                     main: {
-                        template: require('./features/stylists/stylists.template.html'),
-                        controller: 'stylistsController',
-                        controllerAs: 'stylists'
+                        template: require('./features/events/events.template.html'),
+                        controller: 'eventsController',
+                        controllerAs: 'events'
                     },
                 }
-            });
+            })
     });
 };
