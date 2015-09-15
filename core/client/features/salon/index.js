@@ -1,11 +1,8 @@
 import '../salon/salon.scss';
 
-import angular from 'angular';
-
 import salonController from '../salon/salon.controller.es6';
 
-var app = angular.module('app')
+export default angular.module('app.salon', [])
     .controller('salonController', salonController)
     .name;
 
-module.exports = app;

@@ -7,7 +7,8 @@ function editable($rootScope) {
         scope: {
             visiblity: "=",
             item: "=",
-            ctrl: "="
+            ctrl: "=",
+            saveFn: "&"
         },
         link: function( $scope, lElem, lAttr ){
             //console.log("editable scope", $scope);
@@ -17,8 +18,9 @@ function editable($rootScope) {
                 if($rootScope.previous && ($rootScope.previous!== $scope.item)) {
                     if($rootScope.previous.visibilities) {
                         $rootScope.previous.visibilities = {};
-                        console.log("saving item", $rootScope.previous);
+                        console.log("editable saving item", $rootScope.previous);
                         $rootScope.previous = undefined;
+                        $scope.saveFn($rootScope.previous);
                         //$scope.ctrl.saveItem(previous);
                         return;
                     }
