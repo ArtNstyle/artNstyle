@@ -4,15 +4,16 @@ module.exports = function (app) {
             .otherwise('/');
 
         $stateProvider
-            //.state('home', {
-            //    url: '/',
-            //    views: {
-            //        main: {
-            //            template: require('./features/home/home.template.html'),
-            //            controller: 'homeController'
-            //        },
-            //    }
-            //})
+            .state('home', {
+                url: '/',
+                views: {
+                    main: {
+                        template: require('./features/home/home.template.html'),
+                        controller: 'homeController',
+                        controllerAs: 'home'
+                    },
+                }
+            })
             .state('tanning', {
                 url: '/tanning',
                 views: {

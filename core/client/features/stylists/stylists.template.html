@@ -1,4 +1,14 @@
-<p>stylists test: {{ test }}</p>
-<p ng-repeat="name in stylists.names">{{ name }}</p>
+{{stylists.test}}
+<div class="container">
+    <h2>MEMBERS OF OUR TEAM
+        <hr>
+    </h2>
 
-Hello from stylists
+    <p class="intro">Booths available.<br>Please call Kessie at <a href="tel:19187421550 ">918-742-1550</a></p>
+
+    <div layout="row" layout-wrap>
+        <div flex="25" flex-sm="50" ng-repeat="stylist in stylists.stylists" >
+            <stylist info="stylist"></stylist>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,10 @@
-module.exports = function (app) {
-    require('./home.controller')(app);
-    require('../../services/people.service.js')(app);
-};
+import angular from 'angular';
+
+import homeController from '../home/home.controller.es6';
+
+var app = angular.module('app')
+    .controller('homeController', homeController)
+    .name;
+
+module.exports = app;
 
