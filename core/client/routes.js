@@ -54,5 +54,15 @@ module.exports = function (app) {
                     },
                 }
             })
+            .state('cart', {
+                url: '/cart',
+                views: {
+                    main: {
+                        template: require('./features/cart/cart.template.html'),
+                        controller: 'cartController',
+                        controllerAs: 'cart'
+                    },
+                }
+            })
     });
 };
