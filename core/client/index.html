@@ -7,29 +7,26 @@
     <base href="/">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-
 </head>
 <body>
-<div class="content">
+  <div class="content">
     <md-toolbar>
-        <div class="md-toolbar-tools as-toolbar-tools" style="max-heigth: 110px; heigth: 110px;">
-
+        <div class="md-toolbar-tools as-toolbar-tools" style="max-heigth: 110px;  heigth: 110px;">
             <span hide-sm flex=""></span>
             <span hide-sm>
               <a href="/#/stylists">Stylists </a>
               <a href="/#/salon">Salon </a>
               <a href="/#/tanning">Tanning </a>
             </span>
-
-            <a href="/#/"><span class="logo"></span></a>
-
+              <div class="aNs_logo"><a href="/#/">
+               <img href="/#/" src="http://45.55.16.198:3039/api/pocketScrum/fullpic?id=55f7490a60321e5a7165b961" alt="about artNstyle"/></a>
+              </div>
             <span hide-sm>
               <a href="/#/artists">Artists </a>
               <a href="/#/events">Events </a>
               <a href="/#/contacts">Contact</a>
             </span>
             <span flex=""></span>
-
             <span hide-gt-sm>
               <md-menu md-offset="0 -7">
                   <md-button class="md-icon-button" aria-label="Settings" ng-click="$mdOpenMenu($event)">
@@ -58,13 +55,10 @@
                   </md-menu-content>
               </md-menu>
             </span>
-
         </div>
     </md-toolbar>
-
     <div ui-view="main"></div>
-
     <script src="/build/bundle.js"></script>
-</div>
+  </div>
 </body>
 </html>
