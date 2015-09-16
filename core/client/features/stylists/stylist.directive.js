@@ -5,14 +5,14 @@ function stylist() {
         restrict: 'E',
         scope: {
             info: '=',
-            saveStylistFn: "&"
+            ctrl: "="
         },
         template:
         '<div class="stylist">' +
         '<div class="square" ng-style="{\'background-image\':\'url({{info.image}})\'}" ></div>' +
         '<div class="name">' +
         '<span ng-if="! info.visibilities.nameVisibility" ' +
-            'editable visiblity="info.visibilities.nameVisibility" item="info" ctrl="TBD" savefn="">{{info.name}}</span>' +
+            'editable visiblity="info.visibilities.nameVisibility" item="info" ctrl="ctrl">{{info.name}}</span>' +
         '<input ng-if="info.visibilities.nameVisibility" type="text" ng-model="info.name"/>' +
         '</div>' +
         '<div class="speciality">{{info.speciality}}</div>' +

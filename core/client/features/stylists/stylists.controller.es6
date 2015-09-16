@@ -13,8 +13,8 @@ export default class stylistsController {
         });
     }
 
-    saveStylist(stylist) {
-        console.log("saveStylist", stylist)
+    saveItem(stylist) {
+        //console.log("saveStylist", stylist)
         return this.stylistsService.saveItem(stylist);
     }
 }

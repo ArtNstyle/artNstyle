@@ -1,5 +1,6 @@
 class BaseWeb {
-    constructor($http, $location) {
+    constructor($log, $http, $location) {
+        this.$log = $log;
         this.$http = $http;
 
         this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
@@ -10,17 +11,24 @@ class BaseWeb {
     getItems() {
         return this.$http.get(this.url + this.myUri + this.allUri).then((response) => {
             return response.data;
-        })
+        }, (err) => {
+            this.$log.warn("error at getItems", err);
+        });
     }
 
     saveItem(item) {
-        console.log("saveItem", item)
+        //console.log("BaseWeb: saveItem", item);
+        return this.$http.put(this.url + this.myUri + "?id=" + item._id, item).then((response) => {
+            return response.data;
+        }, (err) => {
+            this.$log.warn("error at saveItem", err);
+        });
     }
 }
 
 class stylistsService extends BaseWeb {
-    constructor($http, $location) {
-        super($http, $location);
+    constructor($log, $http, $location) {
+        super($log, $http, $location);
         this.myUri = this.stylistsUri;
     }
 
