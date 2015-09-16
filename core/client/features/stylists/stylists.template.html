@@ -1,6 +1,5 @@
-<!--{{stylists.test}}-->
-<div class="container">
-    <h2>MEMBERS OF OUR TEAM
+<div class="stylists">
+    <h2 class="title">MEMBERS OF OUR TEAM
         <hr>
     </h2>
 
@@ -10,5 +9,7 @@
         <div flex="25" flex-sm="50" ng-repeat="stylist in stylists.stylists" >
             <stylist info="stylist" ctrl="stylists"></stylist>
         </div>
+        <add-item flex="25" flex-sm="50" ctrl="stylists" label="Stylist Name"></add-item>
     </div>
+
 </div>

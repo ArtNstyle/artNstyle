@@ -16,9 +16,21 @@ export default class stylistsController {
     }
 
     saveItem(stylist) {
-        //console.log("saveStylist", stylist)
         return this.stylistsService.saveItem(stylist);
     }
+
+    deleteItem(stylist) {
+        return this.stylistsService.deleteItem(stylist).then((response)=> {
+            this.getItems();
+        });
+    }
+
+    addItem(stylist) {
+        return this.stylistsService.addItem(stylist).then((response)=> {
+            this.getItems();
+        });
+    }
+
 }
 
 //StylistsController.$inject = ['randomNames'];

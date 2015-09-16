@@ -16,6 +16,15 @@ class BaseWeb {
         });
     }
 
+    addItem(item) {
+        console.log("BaseWeb: addItem", item);
+        return this.$http.post(this.url + this.myUri, item).then((response) => {
+            return response.data;
+        }, (err) => {
+            this.$log.warn("error at addItem", err);
+        });
+    }
+
     saveItem(item) {
         //console.log("BaseWeb: saveItem", item);
         return this.$http.put(this.url + this.myUri + "?id=" + item._id, item).then((response) => {
@@ -24,6 +33,16 @@ class BaseWeb {
             this.$log.warn("error at saveItem", err);
         });
     }
+
+    deleteItem(item) {
+        console.log("BaseWeb: deleteItem", item);
+        return this.$http.delete(this.url + this.myUri + "?id=" + item._id, item).then((response) => {
+            return response.data;
+        }, (err) => {
+            this.$log.warn("error at deleteItem", err);
+        });
+    }
+
 }
 
 class stylistsService extends BaseWeb {
