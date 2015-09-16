@@ -5,8 +5,6 @@ export default class stylistsController {
 
         this.getItems();
         console.log("stylistsService", stylistsService.names);
-
-        this.editing = false;
     }
 
     getItems() {

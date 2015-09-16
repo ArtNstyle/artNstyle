@@ -4,6 +4,7 @@ function stylist() {
     return {
         restrict: 'E',
         scope: {
+            editing: '=',
             info: '=',
             ctrl: '='
         },

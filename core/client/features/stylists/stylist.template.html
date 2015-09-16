@@ -1,5 +1,5 @@
 <div class="stylist">
-    <md-button class="md-icon-button md-accent small-delete-button" ng-click="ctrl.deleteItem(info)">
+    <md-button ng-if="editing" class="md-icon-button md-accent small-delete-button" ng-click="ctrl.deleteItem(info)">
         <i class="material-icons">delete</i>
     </md-button>
     <div class="square" ng-style="{'background-image':'url({{info.image}})'}" ></div>

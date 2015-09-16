@@ -1,7 +1,18 @@
+$lighter-opacity:0.75;
+
 .stylists {
+
   margin: 0px auto;
   max-width: 900px;
   text-align: center;
+
+  p {
+    opacity: $lighter-opacity;
+  }
+
+  .edit-button {
+    float: right;
+  }
 
   .title {
 
