@@ -15,9 +15,9 @@ function stylist() {
             'editable visiblity="info.visibilities.nameVisibility" item="info" ctrl="TBD" savefn="">{{info.name}}</span>' +
         '<input ng-if="info.visibilities.nameVisibility" type="text" ng-model="info.name"/>' +
         '</div>' +
-        '<div class="title">{{info.title}}</div>' +
+        '<div class="speciality">{{info.speciality}}</div>' +
         '<p class="bio">{{info.bio}}</p>' +
-        '<a ng-show="info.link" ng-href="{{info.link}}">click to shedule appointment</a>' +
+        '<a ng-show="info.linkToScheduler" ng-href="{{info.linkToScheduler}}">click to shedule appointment</a>' +
         '</div>',
         controller: function($scope) {
             //console.log("stylist scope", $scope.info);
