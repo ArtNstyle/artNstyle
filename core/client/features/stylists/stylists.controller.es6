@@ -3,11 +3,13 @@ export default class stylistsController {
         this.test = 'Hello from StylistsController';
         this.stylistsService = stylistsService;
 
-        this.getStylists();
+        this.getItems();
         console.log("stylistsService", stylistsService.names);
+
+        this.editing = false;
     }
 
-    getStylists() {
+    getItems() {
         this.stylistsService.getItems().then((data) => {
             this.stylists = data;
         });
