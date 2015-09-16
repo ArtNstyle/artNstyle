@@ -1,49 +1,71 @@
-h2 {
+$lighter-opacity:0.75;
 
-}
+.stylists {
 
-h2 hr {
-  max-width: 300px;
-  color: #6889FB;
-}
-
-.intro {
-
-
-}
-
-.container {
   margin: 0px auto;
   max-width: 900px;
   text-align: center;
+
+  p {
+    opacity: $lighter-opacity;
+  }
+
+  .edit-button {
+    float: right;
+  }
+
+  .title {
+
+  }
+
+  .title hr {
+    max-width: 300px;
+    color: #6889FB;
+  }
+
+  .intro {
+
+
+  }
 }
 
 .stylist {
+  position: relative;
   padding: 4%;
-}
 
-.square {
-  width: 100%;
-  padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
-  background-position:center center;
-  background-repeat:no-repeat;
-  background-size:contain; /* you change this from "cover" to "contain" if you don't want the images to be cropped */
-}
+  .square {
+    width: 100%;
+    padding-bottom: 100%; /* = width for a 1:1 aspect ratio */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; /* you change this from "cover" to "contain" if you don't want the images to be cropped */
+  }
 
-.name {
-  background-color: #EFEFEF;
-  padding: 4%;
-  font-weight: 600;
-}
+  .name {
+    background-color: #EFEFEF;
+    padding: 4%;
+    font-weight: 600;
+  }
 
-.speciality {
-  font-style: italic;
-  border-bottom: 1px solid #6889FB;
-  margin: 2% 30%;
+  .speciality {
+    font-style: italic;
+    border-bottom: 1px solid #6889FB;
+    margin: 2% 30%;
 
-}
+  }
 
-.bio {
-  width: 100%;
-  text-align: left;
+  .bio {
+    width: 100%;
+    text-align: left;
+  }
+
+  .small-delete-button {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+  }
+
+  md-input-container {
+    padding-bottom: 0px;
+  }
 }
