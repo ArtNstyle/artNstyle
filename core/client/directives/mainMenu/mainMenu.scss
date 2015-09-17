@@ -1,0 +1,43 @@
+$main-color: #5B7AFF;
+
+.mainMenu {
+  md-toolbar, md-toolbar:not(.md-menu-toolbar) {
+    color: $main-color;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: transparent;
+    padding: 2%;
+  }
+
+  .md-button {
+    font-family: 'Noticia Text', serif;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  md-toolbar i {
+    color: $main-color;
+    border: 2px solid #6889FB;
+    border-radius: 20%;
+  }
+
+  a {
+    margin: 0px 2px;
+  }
+
+  .aNs_logo img:hover {
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -o-transition: 0.8s;
+    transition: 0.8s;
+  }
+
+  .md-toolbar-tools {
+    max-height: initial;
+    height: initial;
+  }
+}

@@ -1,19 +1,19 @@
 .tanning {
     text-align: center;
+    background-color: #292118;
+    color: #DFD6CD;
 	img{
 		width: 100%;
 	}
+
+.button0605{
+	float: right;
+}
+hr {	width: 50%;
+}
 }
 
-.container0605{
-	// flex-direction: row;
-    background-color: #292118;
-    color: #DFD6CD;
-}
 
-hr {
-	width: 50%;
-}
 
 // @media (max-width: 960px) {
 //   .img-left0605{
@@ -23,19 +23,7 @@ hr {
 // 	flex-direction: column;
 //   }
 // }
-h1 {
-  color: red;
-}
 
-.img-left0605 {
-        // float: left;
-        margin-right: 25px;
-        max-height: 700px;
-    }
-
-.button0605{
-	float: right;
-}
 // 	-moz-box-shadow:inset 0px 0px 14px -3px #f2fadc;
 // 	-webkit-box-shadow:inset 0px 0px 14px -3px #f2fadc;
 // 	box-shadow:inset 0px 0px 14px -3px #f2fadc;
