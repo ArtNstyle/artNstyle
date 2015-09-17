@@ -1,7 +1,18 @@
 <div class="artists">
     <main-menu></main-menu>
 
-    <h1>Hello from artists</h1>
-    {{artists.test}}
-</div>
+    <h2 class="title">ARTISTS DISPLAYING
+        <md-button hide-sm class="md-fab md-mini edit-button" ng-click="artists.editing= artists.editing ? undefined : true">
+            <i class="material-icons" style="line-height: 1.5;">edit</i>
+        </md-button>
+        <hr>
+    </h2>
 
+    <div layout="row" layout-wrap>
+        <div flex="25" flex-sm="50" ng-repeat="artist in artists.artists" >
+            <stylist editing="artists.editing" info="artist" ctrl="artists"></stylist>
+        </div>
+        <add-item ng-if="artists.editing" flex="25" flex-sm="50" ctrl="artists" label="Artist Name"></add-item>
+    </div>
+
+</div>
