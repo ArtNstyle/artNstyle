@@ -1,5 +1,3 @@
-import angular from 'angular';
-
 function stylist() {
     return {
         restrict: 'E',

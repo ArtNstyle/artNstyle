@@ -9,10 +9,10 @@
     </h2>
 
     <div layout="row" layout-wrap>
-        <div flex="25" flex-sm="50" ng-repeat="artist in artists.artists" >
-            <stylist editing="artists.editing" info="artist" ctrl="artists"></stylist>
+        <div flex="50" flex-sm="100" ng-repeat="artist in artists.artists" >
+            <artist editing="artists.editing" info="artist" ctrl="artists"></artist>
         </div>
-        <add-item ng-if="artists.editing" flex="25" flex-sm="50" ctrl="artists" label="Artist Name"></add-item>
+        <add-item ng-if="artists.editing" flex="50" flex-sm="100" ctrl="artists" label="Artist Name"></add-item>
     </div>
 
 </div>
