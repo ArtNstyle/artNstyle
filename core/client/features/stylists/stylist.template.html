@@ -1,0 +1,22 @@
+<div class="stylist">
+    <md-button ng-if="editing" class="md-icon-button md-accent small-delete-button" ng-click="ctrl.deleteItem(info)">
+        <i class="material-icons">delete</i>
+    </md-button>
+    <div class="square" ng-style="{'background-image':'url({{info.image}})'}" ></div>
+    <div class="name" >
+        <editable-text editing="{{editing}}" item="info" field="name" placeholder="Name" ctrl="ctrl"></editable-text>
+    </div>
+    <div class="speciality" >
+        <editable-text editing="{{editing}}" item="info" field="speciality" placeholder="Speciality" ctrl="ctrl"></editable-text>
+    </div>
+    <div class="bio" >
+        <editable-text editing="{{editing}}" item="info" field="bio" placeholder="Bio" ctrl="ctrl" textarea="true"></editable-text>
+    </div>
+    <div class="link">
+        <a ng-if="! info.visibilities.visibility && info.linkToScheduler" ng-href="{{info.linkToScheduler}}">
+            click to shedule appointment</a>
+        <md-input-container md-no-float="" flex="" ng-if="info.visibilities.visibility">
+            <input type="text" ng-model="info.linkToScheduler" placeholder="url to scheduling"/>
+        </md-input-container>
+    </div>
+</div>

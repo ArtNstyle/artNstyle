@@ -1,49 +1,88 @@
-h2 {
+$lighter-opacity:0.75;
+$main-color: #5B7AFF;
+$font-familiy: 'Lato', sans-serif;
 
-}
-
-h2 hr {
-  max-width: 300px;
-  color: #6889FB;
-}
-
-.intro {
-
-
-}
-
-.container {
+.stylists {
+  font-family: $font-familiy;
   margin: 0px auto;
   max-width: 900px;
   text-align: center;
+
+  p {
+    opacity: $lighter-opacity;
+  }
+
+  .edit-button {
+    float: right;
+  }
+
+  .title {
+
+  }
+
+  .title hr {
+    max-width: 400px;
+    color: $main-color;
+  }
+
+  .intro {
+
+
+  }
 }
 
 .stylist {
+  position: relative;
   padding: 4%;
-}
+  margin: 2%;
 
-.square {
-  width: 100%;
-  padding-bottom : 100%; /* = width for a 1:1 aspect ratio */
-  background-position:center center;
-  background-repeat:no-repeat;
-  background-size:contain; /* you change this from "cover" to "contain" if you don't want the images to be cropped */
-}
 
-.name {
-  background-color: #EFEFEF;
-  padding: 4%;
-  font-weight: 600;
-}
+  .square {
+    width: 100%;
+    padding-bottom: 100%; /* = width for a 1:1 aspect ratio */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; /* you change this from "cover" to "contain" if you don't want the images to be cropped */
+    border-radius: 50%;
+    margin-bottom: 4%;
+  }
 
-.speciality {
-  font-style: italic;
-  border-bottom: 1px solid #6889FB;
-  margin: 2% 30%;
+  .square:hover {
+    opacity: 0.8;
+  }
 
-}
+  .name {
+    background-color: #EFEFEF;
+    padding: 4%;
+    font-weight: 600;
+  }
 
-.bio {
-  width: 100%;
-  text-align: left;
+  .speciality {
+    font-style: italic;
+    margin: 4%;
+  }
+
+  .speciality editable-text {
+    border-bottom: 1px solid $main-color;
+  }
+
+  .bio {
+    width: 100%;
+    text-align: left;
+    opacity: $lighter-opacity;
+  }
+
+  .link {
+    margin: 4% 0px;
+  }
+
+  .small-delete-button {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+  }
+
+  md-input-container {
+    padding-bottom: 0px;
+  }
 }

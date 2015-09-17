@@ -12,56 +12,6 @@
 
 <body>
     <div class="content">
-        <md-toolbar>
-            <div class="md-toolbar-tools as-toolbar-tools" style="max-heigth: 110px; heigth: 110px;">
-
-                <span hide-sm flex=""></span>
-                <span hide-sm>
-              <a href="/#/stylists">Stylists </a>
-              <a href="/#/salon">Salon </a>
-              <a href="/#/tanning">Tanning </a>
-            </span>
-
-                <a href="/#/"><span class="logo"></span></a>
-
-                <span hide-sm>
-              <a href="/#/artists">Artists </a>
-              <a href="/#/events">Events </a>
-              <a href="/#/contacts">Contact</a>
-            </span>
-                <span flex=""></span>
-
-                <span hide-gt-sm>
-              <md-menu md-offset="0 -7">
-                  <md-button class="md-icon-button" aria-label="Settings" ng-click="$mdOpenMenu($event)">
-                      <!--<md-icon md-svg-icon="img/icons/menu.svg"></md-icon>-->
-                      <i class="material-icons">menu</i>
-                  </md-button>
-                  <md-menu-content width="2">
-                      <md-menu-item>
-                          <md-button go-click="/stylists"><span md-menu-align-target>Stylists</span></md-button>
-                </md-menu-item>
-                <md-menu-item>
-                    <md-button go-click="/salon"><span md-menu-align-target>Salon</span></md-button>
-                </md-menu-item>
-                <md-menu-item>
-                    <md-button go-click="/tanning"><span md-menu-align-target>Tanning</span></md-button>
-                </md-menu-item>
-                <md-menu-item>
-                    <md-button go-click="/artists"><span md-menu-align-target>Artists</span></md-button>
-                </md-menu-item>
-                <md-menu-item>
-                    <md-button go-click="/events"><span md-menu-align-target>Events</span></md-button>
-                </md-menu-item>
-                <md-menu-item>
-                    <md-button go-click="/contact"><span md-menu-align-target>Contact</span></md-button>
-                </md-menu-item>
-                </md-menu-content>
-                </md-menu>
-                </span>
-
-            </div>
-        </md-toolbar>
 
         <div ui-view="main"></div>
 
