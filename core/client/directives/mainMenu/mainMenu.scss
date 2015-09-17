@@ -1,16 +1,12 @@
+$main-color: #5B7AFF;
+
 .mainMenu {
   md-toolbar, md-toolbar:not(.md-menu-toolbar) {
-    color: #6889FB;
+    color: $main-color;
     font-weight: bold;
     font-size: 16px;
     background-color: transparent;
-    /*margin: 0;*/
-    /*padding: 0;*/
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*left:0;*/
-    /*right:0;*/
-    /*bottom:0;*/
+    padding: 2%;
   }
 
   .md-button {
@@ -20,7 +16,7 @@
   }
 
   md-toolbar i {
-    color: #6889FB;
+    color: $main-color;
     border: 2px solid #6889FB;
     border-radius: 20%;
   }
