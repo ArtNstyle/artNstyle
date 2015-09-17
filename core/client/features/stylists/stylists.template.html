@@ -1,6 +1,10 @@
-<!--{{stylists.test}}-->
-<div class="container">
-    <h2>MEMBERS OF OUR TEAM
+<div class="stylists">
+    <main-menu></main-menu>
+
+    <h2 class="title">MEMBERS OF OUR TEAM
+        <md-button class="md-fab md-mini edit-button" ng-click="stylists.editing=!stylists.editing">
+            <i class="material-icons" style="line-height: 1.5;">edit</i>
+        </md-button>
         <hr>
     </h2>
 
@@ -8,7 +12,9 @@
 
     <div layout="row" layout-wrap>
         <div flex="25" flex-sm="50" ng-repeat="stylist in stylists.stylists" >
-            <stylist info="stylist" save-stylist-fn="stylist.saveStylist"></stylist>
+            <stylist editing="stylists.editing" info="stylist" ctrl="stylists"></stylist>
         </div>
+        <add-item ng-if="stylists.editing" flex="25" flex-sm="50" ctrl="stylists" label="Stylist Name"></add-item>
     </div>
+
 </div>

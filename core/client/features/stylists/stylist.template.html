@@ -1,0 +1,34 @@
+<div class="stylist">
+    <md-button ng-if="editing" class="md-icon-button md-accent small-delete-button" ng-click="ctrl.deleteItem(info)">
+        <i class="material-icons">delete</i>
+    </md-button>
+    <div class="square" ng-style="{'background-image':'url({{info.image}})'}" ></div>
+    <div class="name">
+        <span ng-if="! info.visibilities.visibility"
+            editable visiblity="info.visibilities.visibility" item="info" ctrl="ctrl">{{info.name}}</span>
+        <md-input-container md-no-float="" flex="" ng-if="info.visibilities.visibility">
+            <input type="text" ng-model="info.name" placeholder="Stylist Name"/>
+        </md-input-container>
+        </div>
+    <div class="speciality">
+        <span ng-if="! info.visibilities.visibility"
+            editable visiblity="info.visibilities.visibility" item="info" ctrl="ctrl">{{info.speciality}}</span>
+        <md-input-container md-no-float="" flex="" ng-if="info.visibilities.visibility">
+            <input type="text" ng-model="info.speciality" placeholder="Speciality"/>
+        </md-input-container>
+        </div>
+    <p class="bio">
+        <span ng-if="! info.visibilities.visibility"
+            editable visiblity="info.visibilities.visibility" item="info" ctrl="ctrl">{{info.bio}}</span>
+        <md-input-container md-no-float="" flex="" ng-if="info.visibilities.visibility">
+            <textarea ng-model="info.bio" placeholder="Bio"></textarea>
+        </md-input-container>
+    </p>
+    <div>
+        <a ng-if="! info.visibilities.visibility && info.linkToScheduler" ng-href="{{info.linkToScheduler}}">
+            click to shedule appointment</a>
+        <md-input-container md-no-float="" flex="" ng-if="info.visibilities.visibility">
+            <input type="text" ng-model="info.linkToScheduler" placeholder="url to scheduling"/>
+        </md-input-container>
+    </div>
+</div>
