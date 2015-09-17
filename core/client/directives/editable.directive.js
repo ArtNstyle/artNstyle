@@ -7,21 +7,19 @@ function editable($rootScope) {
         scope: {
             visiblity: "=",
             item: "=",
-            ctrl: "=",
-            saveFn: "&"
+            ctrl: "="
         },
         link: function( $scope, lElem, lAttr ){
             //console.log("editable scope", $scope);
             lElem.on("click", function(e){
-                console.log("editable scope clicked", $scope.item.title, $scope);
+                //console.log("editable scope clicked", $scope.item.title, $scope);
                 //console.log("Element clicked.");
                 if($rootScope.previous && ($rootScope.previous!== $scope.item)) {
                     if($rootScope.previous.visibilities) {
                         $rootScope.previous.visibilities = {};
-                        console.log("editable saving item", $rootScope.previous);
+                        //console.log("editable saving item", $rootScope.previous);
+                        $scope.ctrl.saveItem($rootScope.previous);
                         $rootScope.previous = undefined;
-                        $scope.saveFn($rootScope.previous);
-                        //$scope.ctrl.saveItem(previous);
                         return;
                     }
                 } else if (! $rootScope.previous) {
