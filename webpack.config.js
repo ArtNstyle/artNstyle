@@ -48,12 +48,7 @@ module.exports = {
                 loader: "url?limit=10000&mimetype=image/svg+xml"
             },
             {
-                test: /\.es6$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader'
-            },
-            {
-                test: /\.js$/,
+                test: /\.(es6|js)$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             },
