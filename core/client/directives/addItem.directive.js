@@ -1,5 +1,3 @@
-import angular from 'angular';
-
 function addItem() {
     return {
         restrict: 'E',
