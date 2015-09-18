@@ -24,7 +24,7 @@ function editableText() {
         link: function( $scope, lElem, lAttr ){
 
             $scope.$watch(()=>{ return $scope.editing}, () => {
-                console.log("$scope.editing", $scope.editing);
+                //console.log("$scope.editing", $scope.editing);
             });
             //console.log("init editableText", $scope);
         }
