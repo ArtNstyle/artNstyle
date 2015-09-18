@@ -1,6 +1,9 @@
+
 //console.log('app loaded');
 // import 'bootstrap/fonts/glyphicons-halflings-regular.eot';
 // import 'bootstrap/dist/css/bootstrap.css';
+
+import 'bootstrap/dist/css/bootstrap.css';
 
 import 'angular-material/angular-material.css';
 import './app.scss';
