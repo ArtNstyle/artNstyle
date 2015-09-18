@@ -1,11 +1,17 @@
 //console.log('app loaded');
+// import 'bootstrap/fonts/glyphicons-halflings-regular.eot';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 import 'angular-material/angular-material.css';
 import './app.scss';
 
+
+// import bootstrap from 'bootstrap/dist/css/bootstrap.css';   
+// import jquery from 'jquery';
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
+
 
 import goClick from './directives/goClick.directive';
 
