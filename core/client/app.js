@@ -1,5 +1,4 @@
-//console.log('app loaded');
-
+import 'bootstrap/dist/css/bootstrap.css';
 import 'angular-material/angular-material.css';
 import './app.scss';
 
