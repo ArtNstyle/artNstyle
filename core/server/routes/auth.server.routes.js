@@ -25,4 +25,12 @@ module.exports = function (app) {
                 }
             });
         });
+
+    app.route('/notallowed')
+        .get(function (req, res, next) {
+            if (!req.user) {
+                res.redirect('/auth/google');
+            }
+            next();
+        });
 };

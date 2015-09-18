@@ -10,5 +10,6 @@ module.exports = function (app) {
     passport.deserializeUser(function (user, done) {
         done(null, user);
     });
+
     require('./strategies/google.js')();
 };
