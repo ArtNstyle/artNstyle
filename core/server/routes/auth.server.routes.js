@@ -21,7 +21,7 @@ module.exports = function (app) {
             res.render('loggeduser', {
                 user: {
                     name: req.user.displayName,
-                    image: req.user._json.image.url
+                    image: req.user.image
                 }
             });
         });
