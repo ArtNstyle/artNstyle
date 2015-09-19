@@ -64,5 +64,15 @@ module.exports = function (app) {
                     },
                 }
             })
+            .state('stripe', {
+                url: '/stripe',
+                views: {
+                    main: {
+                        template: require('./features/stripe/stripe.template.html')
+                        controller: 'stripeController',
+                        controllerAs: 'stripe'
+                    },
+                }
+            })
     });
 };

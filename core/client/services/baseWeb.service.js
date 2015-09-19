@@ -5,6 +5,7 @@ class BaseWeb {
 
         this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
         this.stylistsUri = "/stylists";
+        this.tanningUri = "/tanning";
         this.allUri = "/all";
     }
 
@@ -52,6 +53,8 @@ class stylistsService extends BaseWeb {
     }
 
 }
+
+
 
 export default angular.module('services.base-web', [])
     .service('stylistsService', stylistsService)
