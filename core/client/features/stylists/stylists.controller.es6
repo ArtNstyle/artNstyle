@@ -38,7 +38,9 @@ export default class stylistsController {
                 this.currentPic = response.data;
                 console.log("stylistsController: addPic", this.currentPic);
                 stylist.image = "http://localhost:5000/api/pics/thumbnail?id=" + this.currentPic.picId;
-                this.saveItem(stylist);
+                this.saveItem(stylist).then((response)=> {
+                    this.getItems();
+                });
             }, (error) => {
                 if (error.status > 0) {
                     console.log("addPic error", error);
