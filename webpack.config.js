@@ -32,12 +32,23 @@ module.exports = {
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
             },
             {
-                test: /\.es6$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader'
+                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "file"
             },
             {
-                test: /\.js$/,
+                test: /\.(woff|woff2)$/,
+                loader: "url?prefix=font/&limit=5000"
+            },
+            {
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url?limit=10000&mimetype=application/octet-stream"
+            },
+            {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url?limit=10000&mimetype=image/svg+xml"
+            },
+            {
+                test: /\.(es6|js)$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             },
