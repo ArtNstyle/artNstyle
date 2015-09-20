@@ -55,6 +55,7 @@ module.exports = {
         });
     },
 
+    // reads based on all/ PicData Id
     read: function(req, res) {
         PicData.find(req.query)
             .exec(function(err, result) {
@@ -63,6 +64,7 @@ module.exports = {
             });
     },
 
+    // reads based on picId
     readFullPic: function (req, res, next) {
         Pic.findById(req.query.id, function (err, doc) {
             if (err) return next(err);
@@ -70,21 +72,29 @@ module.exports = {
                 res.contentType(doc.img.contentType);
                 res.send(doc.img.data);
             } else {
-                console.log("readFullPic: NO IMAGE", req.query.id, doc);
+                console.log("readFullPic: NO FULLPIC", req.query.id, doc);
                 return next(err);
             }
         });
     },
 
+    // reads based on picId
     readThumbnail: function (req, res, next) {
         Pic.findById(req.query.id, function (err, doc) {
             //console.log("readThumbnail", doc);
             if (err) return next(err);
-            res.contentType(doc.thumbnail.contentType);
-            res.send(doc.thumbnail.data);
+            if(doc && doc.thumbnail) {
+                res.contentType(doc.thumbnail.contentType);
+                res.send(doc.thumbnail.data);
+            } else {
+                console.log("readThumbnail: NO THUMBNAIL", req.query.id, doc);
+                return next(err);
+            }
+
         });
     },
 
+    // updates based on PicData ID
     update: function (req, res) {
         console.log("update", req.query.id, req.body);
         var id = req.query.id;
@@ -100,19 +110,19 @@ module.exports = {
         });
     },
 
+    // deletes based on picId
     delete: function (req, res) {
-        var picDataId = req.query.id;
+        console.log("delete query", req.query)
+        var picIdQuery = req.query;
+        var picId = req.query.picId;
 
-        PicData.findById(picDataId, function (err, doc) {
-            if (err) return res.status(500).send(err);
-            var picId = doc.picId;
-            Pic.findByIdAndRemove(picId, function (perr, result) {
-                if (perr) return res.status(500).send(perr);
-                PicData.findByIdAndRemove(picDataId, function (derr, result) {
-                    if (derr) return res.status(500).send(derr);
-                    else res.send(result);
-                });
+        Pic.findByIdAndRemove(picId, function (perr, result) {
+            if (perr) return res.status(500).send(perr);
+            PicData.findOneAndRemove(picIdQuery, function (derr, result) {
+                if (derr) return res.status(500).send(derr);
+                else res.send(result);
             });
         });
+
     }
 };

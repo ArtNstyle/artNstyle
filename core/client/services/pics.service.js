@@ -8,10 +8,12 @@ class picsService {
         this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
         this.picturesUri = "/pics";
         this.idSelector = "?id=";
+        this.picIdSelector = "?picId=";
 
         //this.url = "MY_SERVER.url";
         this.baseUrl = this.url + this.picturesUri;
         this.baseUrlWId = this.baseUrl + this.idSelector;
+        this.baseUrlWPicId = this.baseUrl + this.picIdSelector;
         this.$http = $http;
         this.Upload = Upload;
     }
@@ -41,7 +43,11 @@ class picsService {
     }
 
     removePic(pic) {
-        return this.$http.delete(this.baseUrlWId + pic._id);
+        return this.$http.delete(this.baseUrlWPicId + pic._id);
+    }
+
+    removePicWithId(picId) {
+        return this.$http.delete(this.baseUrlWPicId + picId);
     }
 
     savePic(pic) {
