@@ -1,3 +1,5 @@
+import '../directives/editableItem.scss';
+
 function editableItem() {
     return {
         restrict: 'E',
@@ -7,9 +9,9 @@ function editableItem() {
             addItemFn: "&"
         },
         transclude: true,
-        replcae: true,
+        replace: true,
         template:
-        '<div class="stylist">' +
+        '<div class="editable-item">' +
             '<md-button ng-if="editing" class="md-icon-button md-accent small-delete-button" ng-click="deleteItemFn()">' +
                 '<i class="material-icons">delete</i>' +
             '</md-button>' +

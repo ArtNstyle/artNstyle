@@ -36,7 +36,7 @@ export default class stylistsController {
         return this.picsService.addPic(pic)
             .then((response) => {
                 this.currentPic = response.data;
-                console.log("stylistsController: addPic", this.currentPic);
+                //console.log("stylistsController: addPic", this.currentPic);
                 stylist.image = "http://localhost:5000/api/pics/thumbnail?id=" + this.currentPic.picId;
                 this.saveItem(stylist).then((response)=> {
                     this.getItems();
