@@ -2,6 +2,8 @@ var usersCtrl = require('../controllers/auth.server.controller.js');
 var passport = require('passport');
 
 module.exports = function (app) {
+
+    // GOOGLE AUTHENTICATION ROUTES
     app.route('/auth/google/callback')
         .get(passport.authenticate('google', {
             successRedirect: '/loggeduser',
@@ -16,6 +18,19 @@ module.exports = function (app) {
             ]
         }));
 
+
+    // TWITTER AUTHENTICATION ROUTES
+    app.route('/auth/twitter/callback')
+        .get(passport.authenticate('twitter', {
+            successRedirect: '/loggeduser',
+            failure: '/error/'
+        }));
+
+    app.route('/auth/twitter')
+        .get(passport.authenticate('twitter'));
+
+
+    // SUCCESS REDIRECT
     app.route('/loggeduser')
         .get(function (req, res) {
             res.render('loggeduser', {
@@ -26,6 +41,8 @@ module.exports = function (app) {
             });
         });
 
+
+    // PROTECTING ROUTES
     app.route('/notallowed')
         .get(function (req, res, next) {
             if (!req.user) {

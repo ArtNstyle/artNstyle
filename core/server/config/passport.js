@@ -12,4 +12,5 @@ module.exports = function (app) {
     });
 
     require('./strategies/google.js')();
+    require('./strategies/twitter.js')();
 };
