@@ -1,11 +1,12 @@
 $lighter-opacity:0.75;
 $main-color: #5B7AFF;
 $font-familiy: 'Lato', sans-serif;
+$max-content-width: 900px;
 
 .stylists {
   font-family: $font-familiy;
   margin: 0px auto;
-  max-width: 900px;
+  max-width: $max-content-width;
   text-align: center;
 
   p {
@@ -74,12 +75,6 @@ $font-familiy: 'Lato', sans-serif;
 
   .link {
     margin: 4% 0px;
-  }
-
-  .small-delete-button {
-    position: absolute;
-    top: 2%;
-    left: 2%;
   }
 
   md-input-container {

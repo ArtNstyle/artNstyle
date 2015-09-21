@@ -1,7 +1,49 @@
-.artists {
-  background-color: olive;
+$lighter-opacity:0.75;
+$main-color: #5B7AFF;
+$font-familiy: 'Lato', sans-serif;
+$max-content-width: 900px;
 
-  h1 {
-    color: blue;
+.artists {
+  font-family: $font-familiy;
+  margin: 0px auto;
+  max-width: $max-content-width;
+  text-align: center;
+
+  .edit-button {
+    float: right;
+  }
+
+  .title {
+
+  }
+
+  .title hr {
+    max-width: 400px;
+    color: $main-color;
+  }
+}
+
+
+.artist {
+  position: relative;
+  padding: 4%;
+  margin: 2%;
+
+  .square {
+    width: 100%;
+    padding-bottom: 100%; /* = width for a 1:1 aspect ratio */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; /* you change this from "cover" to "contain" if you don't want the images to be cropped */
+    //border-radius: 10%;
+    margin-bottom: 4%;
+  }
+
+  .square:hover {
+    opacity: 0.8;
+  }
+
+  md-input-container {
+    padding-bottom: 0px;
   }
 }

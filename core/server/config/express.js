@@ -1,6 +1,5 @@
 // EXPRESS CONFIGURATION FILE
 var config = require('./config'),
-    webpackConfig = require('../../../webpack.config'),
     express = require('express'),
     cors = require('cors'),
     morgan = require('morgan'),
@@ -9,12 +8,30 @@ var config = require('./config'),
     methodOverride = require('method-override'),
     session = require('express-session'),
     webpack = require('webpack'),
-    webpackMiddleware = require('webpack-dev-middleware');
+    webpackConfig = require('../../../webpack.config'),
+    webpackMiddleware = require('webpack-dev-middleware'),
+    ejs = require('ejs');
 
 
 module.exports = function () {
     // generates the app object
     var app = express();
+
+
+    // here we set our templating engine
+    // route is relative to server.js
+    app.set('views', './core/server/views');
+    app.set('view engine', 'ejs');
+
+
+    // this middleware will run no matter the environment
+    app.use(cors());
+    app.use(bodyParser.urlencoded(
+        {
+            extended: true
+        }));
+    app.use(bodyParser.json());
+    app.use(methodOverride());
 
 
     // Environment-dependant middleware
@@ -31,16 +48,6 @@ module.exports = function () {
     }
 
 
-    // this middleware will run no matter the environment
-    app.use(cors());
-    app.use(bodyParser.urlencoded(
-        {
-            extended: true
-        }));
-    app.use(bodyParser.json());
-    app.use(methodOverride());
-
-
     // cookie support
     app.use(session({
         saveUninitialized: true,
@@ -49,25 +56,23 @@ module.exports = function () {
     }));
 
 
-    // here we set our templating engine
-    // route is relative to server.js
-    app.set('views', './core/server/views');
-    app.set('view engine', 'ejs');
+    // google passport oauth
+    require('./passport.js')(app);
 
 
     // HERE WE INCLUDE THE ROUTES
-    // we run the router objects giving them the express app
     require('../routes/users.server.routes.js')(app);
     require('../routes/artists.server.routes.js')(app);
     require('../routes/cart.server.routes.js')(app);
     require('../routes/event.server.routes.js')(app);
     require('../routes/stylists.server.routes.js')(app);
-
-
+    require('../routes/pic.server.routes.js')(app);
+    require('../routes/auth.server.routes.js')(app);
 
     // THIS WILL BE ANGULAR APP
     // needs to come after setting the rendering engine
     app.use(express.static('./core/client'));
+
 
     return app;
 };
