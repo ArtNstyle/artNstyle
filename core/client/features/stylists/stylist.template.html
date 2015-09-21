@@ -1,7 +1,4 @@
-<div class="stylist">
-    <md-button ng-if="editing" class="md-icon-button md-accent small-delete-button" ng-click="ctrl.deleteItem(info)">
-        <i class="material-icons">delete</i>
-    </md-button>
+<editable-item class="stylist" editing="{{editing}}" delete-item-fn="ctrl.deleteItem(info)" add-item-fn="ctrl.addPic(info, file)">
     <div class="square" ng-style="{'background-image':'url({{info.image}})'}" ></div>
     <div class="name" >
         <editable-text editing="{{editing}}" item="info" field="name" placeholder="Name" ctrl="ctrl"></editable-text>
@@ -19,4 +16,5 @@
             <input type="text" ng-model="info.linkToScheduler" placeholder="url to scheduling"/>
         </md-input-container>
     </div>
-</div>
+</editable-item>
+

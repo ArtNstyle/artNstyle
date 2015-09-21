@@ -9,7 +9,7 @@
     </h2>
 
     <div layout="row" layout-wrap>
-        <div flex="50" flex-sm="100" ng-repeat="artist in artists.artists" >
+        <div flex="50" flex-sm="100" ng-repeat="artist in artists.items" >
             <artist editing="artists.editing" info="artist" ctrl="artists"></artist>
         </div>
         <add-item ng-if="artists.editing" flex="50" flex-sm="100" ctrl="artists" label="Artist Name"></add-item>
