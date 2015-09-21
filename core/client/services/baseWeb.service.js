@@ -6,6 +6,7 @@ class BaseWebService {
         this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
         this.stylistsUri = "/stylists";
         this.artistsUri = "/artists";
+        this.eventsUri = "/events";
         this.allUri = "/all";
     }
 
@@ -62,8 +63,17 @@ class artistsService extends BaseWebService {
 
 }
 
+class eventsService extends BaseWebService {
+    constructor($log, $http, $location) {
+        super($log, $http, $location);
+        this.myUri = this.eventsUri;
+    }
+
+}
+
 
 export default angular.module('services.base-web', [])
     .service('stylistsService', stylistsService)
     .service('artistsService', artistsService)
+    .service('eventsService', eventsService)
     .name;

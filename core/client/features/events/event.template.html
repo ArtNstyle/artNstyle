@@ -1,0 +1,33 @@
+<editable-item class="event" editing="{{editing}}" delete-item-fn="ctrl.deleteItem(info)" add-item-fn="ctrl.addPic(info, file)">
+    <div layout="row">
+        <div flex="20" class="square" ng-style="{'background-image':'url({{info.image}})'}" ></div>
+
+        <div layout="column" flex="80">
+            <div class="name" >
+                <editable-text editing="{{editing}}" item="info" field="name" placeholder="Name" ctrl="ctrl"></editable-text>
+            </div>
+
+            <div layout="row">
+                <div class="date">
+                    <editable-text editing="{{editing}}" item="info" field="date" placeholder="Date" ctrl="ctrl"></editable-text>
+                </div>
+                <div class="time">
+                    <editable-text editing="{{editing}}" item="info" field="time" placeholder="Time" ctrl="ctrl"></editable-text>
+                </div>
+            </div>
+
+            <div class="description" >
+                <editable-text editing="{{editing}}" item="info" field="description" placeholder="Description" ctrl="ctrl" textarea="true"></editable-text>
+            </div>
+
+            <div class="link">
+                <a ng-if="! info.visibilities.visibility && info.linkToEventSite" ng-href="{{info.linkToEventSite}}">
+                    go to event website</a>
+                <md-input-container md-no-float="" flex="" ng-if="info.visibilities.visibility">
+                    <input type="text" ng-model="info.linkToEventSite" placeholder="url to event website"/>
+                </md-input-container>
+            </div>
+
+        </div>
+    </div>
+</editable-item>
