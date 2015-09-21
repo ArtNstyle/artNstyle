@@ -30,6 +30,19 @@ module.exports = function (app) {
         .get(passport.authenticate('twitter'));
 
 
+    // FACEBOOK AUTHENTICATION ROUTES
+    app.route('/auth/facebook')
+        .get(passport.authenticate('facebook', {
+            scope: ['email']
+        }));
+
+    app.route('/auth/facebook/callback')
+        .get(passport.authenticate('facebook', {
+            successRedirect: '/loggeduser',
+            failureRedirect: '/error/'
+        }));
+
+
     // SUCCESS REDIRECT
     app.route('/loggeduser')
         .get(function (req, res) {
