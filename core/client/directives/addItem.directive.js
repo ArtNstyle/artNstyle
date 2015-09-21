@@ -11,7 +11,6 @@ function addItem() {
 
             $scope.addItem = function() {
                 if($scope.newItem.name) {
-                    $scope.newItem.image = "http://45.55.16.198:3039/api/pocketScrum/fullpic?id=55f4b2de516b4266230081c2";
                     $scope.ctrl.addItem($scope.newItem);
                 }
                 $scope.newItem = "";

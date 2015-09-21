@@ -2,14 +2,15 @@
     <main-menu></main-menu>
 
     <h2 class="title">ARTISTS DISPLAYING
-        <md-button hide-sm class="md-fab md-mini edit-button" ng-click="artists.editing= artists.editing ? undefined : true">
+        <md-button hide-sm class="md-fab md-mini edit-button" ng-click="artists.editing= artists.editing ? undefined : true"
+                   save-editable ctrl="artists">
             <i class="material-icons" style="line-height: 1.5;">edit</i>
         </md-button>
         <hr>
     </h2>
 
     <div layout="row" layout-wrap>
-        <div flex="50" flex-sm="100" ng-repeat="artist in artists.artists" >
+        <div flex="50" flex-sm="100" ng-repeat="artist in artists.items | orderBy: 'orderInList'" >
             <artist editing="artists.editing" info="artist" ctrl="artists"></artist>
         </div>
         <add-item ng-if="artists.editing" flex="50" flex-sm="100" ctrl="artists" label="Artist Name"></add-item>

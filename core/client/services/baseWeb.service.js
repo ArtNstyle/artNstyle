@@ -1,4 +1,4 @@
-class BaseWeb {
+class BaseWebService {
     constructor($log, $http, $location) {
         this.$log = $log;
         this.$http = $http;
@@ -6,6 +6,7 @@ class BaseWeb {
         this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
         this.stylistsUri = "/stylists";
         this.artistsUri = "/artists";
+        this.eventsUri = "/events";
         this.allUri = "/all";
     }
 
@@ -18,7 +19,7 @@ class BaseWeb {
     }
 
     addItem(item) {
-        console.log("BaseWeb: addItem", item);
+        //console.log("BaseWebService: addItem", item);
         return this.$http.post(this.url + this.myUri, item).then((response) => {
             return response.data;
         }, (err) => {
@@ -27,7 +28,7 @@ class BaseWeb {
     }
 
     saveItem(item) {
-        //console.log("BaseWeb: saveItem", item);
+        //console.log("BaseWebService: saveItem", item);
         return this.$http.put(this.url + this.myUri + "?id=" + item._id, item).then((response) => {
             return response.data;
         }, (err) => {
@@ -36,7 +37,7 @@ class BaseWeb {
     }
 
     deleteItem(item) {
-        console.log("BaseWeb: deleteItem", item);
+        //console.log("BaseWebService: deleteItem", item);
         return this.$http.delete(this.url + this.myUri + "?id=" + item._id, item).then((response) => {
             return response.data;
         }, (err) => {
@@ -46,7 +47,7 @@ class BaseWeb {
 
 }
 
-class stylistsService extends BaseWeb {
+class stylistsService extends BaseWebService {
     constructor($log, $http, $location) {
         super($log, $http, $location);
         this.myUri = this.stylistsUri;
@@ -54,10 +55,18 @@ class stylistsService extends BaseWeb {
 
 }
 
-class artistsService extends BaseWeb {
+class artistsService extends BaseWebService {
     constructor($log, $http, $location) {
         super($log, $http, $location);
         this.myUri = this.artistsUri;
+    }
+
+}
+
+class eventsService extends BaseWebService {
+    constructor($log, $http, $location) {
+        super($log, $http, $location);
+        this.myUri = this.eventsUri;
     }
 
 }
@@ -66,4 +75,5 @@ class artistsService extends BaseWeb {
 export default angular.module('services.base-web', [])
     .service('stylistsService', stylistsService)
     .service('artistsService', artistsService)
+    .service('eventsService', eventsService)
     .name;
