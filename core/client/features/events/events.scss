@@ -18,11 +18,11 @@ $max-content-width: 900px;
   }
 
   .title {
-
+    color: $main-color;
   }
 
   .title hr {
-    max-width: 400px;
+    max-width: 200px;
     color: $main-color;
   }
 
@@ -34,17 +34,18 @@ $max-content-width: 900px;
 
 .event {
   position: relative;
-  padding: 4%;
   margin: 2%;
 
+  .image-container {
+    padding: 2%;
+  }
 
   .square {
     width: 100%;
-    //padding-bottom: 100%; /* = width for a 1:1 aspect ratio */
+    padding-bottom: 100%; /* = width for a 1:1 aspect ratio */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain; /* you change this from "cover" to "contain" if you don't want the images to be cropped */
-    //border-radius: 50%;
     margin-bottom: 4%;
   }
 
@@ -52,30 +53,41 @@ $max-content-width: 900px;
     opacity: 0.8;
   }
 
+  .event-content {
+    border: 1px solid $main-color;
+    border-radius: 5px;
+  }
+
   .name {
-    background-color: #EFEFEF;
-    padding: 4%;
+    background-color: $main-color;
+    color: white;
+    padding: 1%;
     font-weight: 600;
+    font-size: 20px;
   }
 
   .timing {
-
+    background-color: $main-color;
+    color: white;
+    padding: 1%;
+    padding-bottom: 0px;
   }
 
   .date {
-
+    //padding: 0px 1%;
   }
 
   .time {
-
+    //padding: 0px 1%;
   }
 
   .description {
-
+    padding: 2%;
+    padding-bottom: 1%;
   }
 
   .link {
-
+    padding: 1%
   }
 
   md-input-container {

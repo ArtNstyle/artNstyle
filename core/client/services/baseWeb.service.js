@@ -19,7 +19,7 @@ class BaseWebService {
     }
 
     addItem(item) {
-        console.log("BaseWebService: addItem", item);
+        //console.log("BaseWebService: addItem", item);
         return this.$http.post(this.url + this.myUri, item).then((response) => {
             return response.data;
         }, (err) => {
@@ -37,7 +37,7 @@ class BaseWebService {
     }
 
     deleteItem(item) {
-        console.log("BaseWebService: deleteItem", item);
+        //console.log("BaseWebService: deleteItem", item);
         return this.$http.delete(this.url + this.myUri + "?id=" + item._id, item).then((response) => {
             return response.data;
         }, (err) => {

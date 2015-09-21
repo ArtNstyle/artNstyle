@@ -5,7 +5,9 @@ eventSchema = new mongoose.Schema({
   date: {type: String},
   time: {type: String},
   location: {type: String},
-  description: {type: String}
+  description: {type: String},
+  linkToEventSite: {type: String},
+  orderInList: {type: String}
 })
 
 module.exports = mongoose.model('event', eventSchema)

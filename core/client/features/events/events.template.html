@@ -10,7 +10,7 @@
     </h2>
 
     <div layout="column">
-        <div ng-repeat="event in events.items" >
+        <div ng-repeat="event in events.items | orderBy: 'orderInList'" >
             <event editing="events.editing" info="event" ctrl="events"></event>
         </div>
         <add-item ng-if="events.editing" ctrl="events" label="Event Name"></add-item>
