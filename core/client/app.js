@@ -1,16 +1,14 @@
 
 //console.log('app loaded');
-// import 'bootstrap/fonts/glyphicons-halflings-regular.eot';
-// import 'animate.css/animate.css';
 
+import jQuery from 'jquery';
+import bootstrap from 'bootstrap';   
 import 'bootstrap/dist/css/bootstrap.css';
 import 'angular-material/angular-material.css';
 import './app.scss';
 
-import jQuery from 'jquery';
-global.$ = jQuery;
-// import jQuery from 'jquery/dist/jquery.js';
-import bootstrap from 'bootstrap';   
+
+
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';

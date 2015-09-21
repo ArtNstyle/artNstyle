@@ -1,45 +1,12 @@
-
-.home {
-  // background-color:green;
-  // width: 100%;
-  // height: 100%;
-  // background-image: url(http://45.55.16.198:3039/api/pocketScrum/fullpic?id=55f4b9e8516b4266230081c4) ;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
+.home{
   
-
-// html,
-// body {
-//     height: 100%;
-// }
-
-.carousel,
-.item,
-.active {
-    height: 100%;
+main-menu{
+        position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    width: 100%;
+    
 }
 
-.carousel-inner {
-    height: 100%;
 }
-
-/* Background images are set within the HTML using inline CSS, not here */
-
-.fill {
-    width: 100px;
-    height: 100px;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-// footer {
-//     margin: 50px 0;
-}
-// }
-
-
