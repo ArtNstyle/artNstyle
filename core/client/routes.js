@@ -64,14 +64,15 @@ module.exports = function (app) {
                     },
                 }
             })
-            .state('stripe', {
-                url: '/stripe',
+            .state('cart',{
+                url: '/cart',
                 views: {
                     main: {
-                        template: require('./features/stripe/stripe.template.html')
-                        controller: 'stripeController',
-                        controllerAs: 'stripe'
+                        template: require('./features/cart/cart.template.html'),
+                        controller: 'cartController',
+                        controllerAs: 'cart'
                     },
+                    
                 }
             })
     });

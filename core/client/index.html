@@ -1,7 +1,10 @@
 <!doctype html>
 <html ng-app="app" lang="en">
-
 <head>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <i class="data-icon">shoppingcart</i> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <a ui-sref=""><i class="material-icons">shopping_cart</i></a>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>artNstyle</title>
@@ -14,6 +17,10 @@
     <div class="content">
 
         <div ui-view="main"></div>
+        <div class="container">
+            <p>hello</p>
+            <button class="btn btn-primary">Change</button>
+        </div>
 
         <script src="/build/bundle.js"></script>
     </div>

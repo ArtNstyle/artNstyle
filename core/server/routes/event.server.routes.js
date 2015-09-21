@@ -7,6 +7,6 @@ module.exports = function (app) {
         .put(eventCtrl.update)
         .delete(eventCtrl.remove);
 
-    app.route('/api/events/all')	
+    app.route('/api/events/all')
         .get(eventCtrl.readAll)
 }

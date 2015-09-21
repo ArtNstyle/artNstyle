@@ -1,4 +1,5 @@
 import '../tanning/tanning.scss';
+// import ngDialog from 'ng-dialog';
 
 import mainMenu from '../../directives/mainMenu/mainMenu.directive';
 import tanningController from '../tanning/tanning.controller.es6';
