@@ -6,7 +6,8 @@ stylistSchema = new mongoose.Schema ({
   speciality: {type: String},
   bio: {type: String},
   linkToScheduler: {type: String},
-  image: {type: String}
+  image: {type: String},
+  orderInList: {type: String}
 })
 
 module.exports = mongoose.model('stylist',stylistSchema)

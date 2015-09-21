@@ -14,8 +14,8 @@ function editableText() {
         template:
         '<span ng-if="! editing">{{item[field]}}</span>' +
         '<div ng-if="editing">' +
-            '<span ng-if="! item.visibilities.visibility"' +
-                'editable visiblity="item.visibilities.visibility" item="item" ctrl="ctrl">{{item[field]}}</span>' +
+            '<div ng-if="! item.visibilities.visibility"' +
+                'editable visiblity="item.visibilities.visibility" item="item" ctrl="ctrl">{{item[field]}}</div>' +
             '<md-input-container md-no-float="" flex="" ng-if="item.visibilities.visibility">' +
                 '<input ng-if="! textarea" type="text" ng-model="item[field]" placeholder="{{placeholder}}"/>' +
                 '<textarea ng-if="textarea" type="text" ng-model="item[field]" placeholder="{{placeholder}}"/>' +

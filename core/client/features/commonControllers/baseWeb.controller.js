@@ -35,17 +35,19 @@ export default class BaseWebController {
 
     deletePic(item) {
         function getDeletePicId(self, url) {
-            var urlParts = url.split("=");
-            console.log('getDeletePicId', urlParts);
-            if((urlParts[0] + '=') === self.thumbnailUrl) {
-                return urlParts[1];
+            if(url) {
+                var urlParts = url.split("=");
+                //console.log('getDeletePicId', urlParts);
+                if ((urlParts[0] + '=') === self.thumbnailUrl) {
+                    return urlParts[1];
+                }
             }
             return "";
         }
 
         var deletePicId = getDeletePicId(this, item.image);
         if(deletePicId) {
-            console.log("deletePic w picId", deletePicId);
+            //console.log("deletePic w picId", deletePicId);
             this.picsService.removePicWithId(deletePicId);
         }
     }
