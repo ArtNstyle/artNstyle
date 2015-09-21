@@ -15,8 +15,9 @@ import salon from './features/salon';
 import tanning from './features/tanning';
 import artists from './features/artists';
 import events from './features/events';
+import cart from './features/cart';
 
-var app = angular.module('app', [uiRouter, ngMaterial, goClick, home, stylists, salon, tanning, artists, events]);  //
+var app = angular.module('app', [uiRouter, ngMaterial, goClick, home, stylists, salon, tanning, artists, events, cart]);  //
 
 
 
