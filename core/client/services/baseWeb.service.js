@@ -5,14 +5,8 @@ class BaseWebService {
 
         this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
         this.stylistsUri = "/stylists";
-<<<<<<< HEAD
-
-        this.artistsUri = "/artists";
-
-=======
         this.artistsUri = "/artists";
         this.eventsUri = "/events";
->>>>>>> 2506e1d5124547d7280585ca61aeec577bbf763c
         this.allUri = "/all";
     }
 
@@ -61,12 +55,7 @@ class stylistsService extends BaseWebService {
 
 }
 
-<<<<<<< HEAD
-
-class artistsService extends BaseWeb {
-=======
 class artistsService extends BaseWebService {
->>>>>>> 2506e1d5124547d7280585ca61aeec577bbf763c
     constructor($log, $http, $location) {
         super($log, $http, $location);
         this.myUri = this.artistsUri;
@@ -74,11 +63,6 @@ class artistsService extends BaseWebService {
 
 }
 
-<<<<<<< HEAD
-export default angular.module('services.base-web', [])
-    .service('stylistsService', stylistsService)
-    .service('artistsService', artistsService)
-=======
 class eventsService extends BaseWebService {
     constructor($log, $http, $location) {
         super($log, $http, $location);
@@ -92,5 +76,4 @@ export default angular.module('services.base-web', [])
     .service('stylistsService', stylistsService)
     .service('artistsService', artistsService)
     .service('eventsService', eventsService)
->>>>>>> 2506e1d5124547d7280585ca61aeec577bbf763c
     .name;

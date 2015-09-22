@@ -5,12 +5,9 @@ import './app.scss';
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
-<<<<<<< HEAD
 // import ngDialog from 'ng-dialog';
-=======
 import ngFileUpload from 'ng-file-upload';
 
->>>>>>> 2506e1d5124547d7280585ca61aeec577bbf763c
 
 import goClick from './directives/goClick.directive';
 
