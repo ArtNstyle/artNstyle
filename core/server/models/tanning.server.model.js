@@ -8,6 +8,3 @@ tanningSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('tanning', tanningSchema);
-
-
-

@@ -67,6 +67,7 @@ module.exports = function () {
     require('../routes/event.server.routes.js')(app);
     require('../routes/stylists.server.routes.js')(app);
     require('../routes/auth.server.routes.js')(app);
+    require('../routes/tanning.server.routes.js')(app);
 
 
     // THIS WILL BE ANGULAR APP
