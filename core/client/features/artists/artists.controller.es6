@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export default class artistsController {
   constructor(artistsService) {
     this.test = 'Hello from artistsController';
@@ -5,6 +6,14 @@ export default class artistsController {
 
     this.getItems();
     //console.log("artistsService", artistsService.names);
+=======
+import BaseWebController from "../commonControllers/baseWeb.controller"
+
+export default class artistsController extends BaseWebController {
+  constructor($location, artistsService, picsService) {
+    super($location, artistsService, picsService);
+    this.test = 'Hello from artistsController';
+>>>>>>> 2506e1d5124547d7280585ca61aeec577bbf763c
   }
 
   getItems() {
@@ -31,5 +40,9 @@ export default class artistsController {
   }
 
 }
+<<<<<<< HEAD
 
 //StylistsController.$inject = ['randomNames'];
+=======
+//artistsController.$inject = ['randomNames'];
+>>>>>>> 2506e1d5124547d7280585ca61aeec577bbf763c

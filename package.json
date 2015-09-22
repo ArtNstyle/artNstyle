@@ -27,10 +27,16 @@
     "jquery": "^2.1.4",
     "jshint": "^2.8.0",
     "jshint-loader": "^0.8.3",
+    "lwip": "0.0.7",
     "method-override": "^2.3.5",
     "mongoose": "^4.1.6",
     "morgan": "^1.6.1",
+<<<<<<< HEAD
     "ng-dialog": "^0.5.1",
+=======
+    "multer": "^1.0.3",
+    "ng-file-upload": "^7.2.1",
+>>>>>>> 2506e1d5124547d7280585ca61aeec577bbf763c
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.3.2",
     "passport": "^0.3.0",

@@ -10,7 +10,11 @@ var config = require('./config'),
     webpack = require('webpack'),
     webpackConfig = require('../../../webpack.config'),
     webpackMiddleware = require('webpack-dev-middleware'),
+<<<<<<< HEAD
     ejs = require('ejs')
+=======
+    ejs = require('ejs');
+>>>>>>> 2506e1d5124547d7280585ca61aeec577bbf763c
 
 
 module.exports = function () {
@@ -66,9 +70,14 @@ module.exports = function () {
     require('../routes/cart.server.routes.js')(app);
     require('../routes/event.server.routes.js')(app);
     require('../routes/stylists.server.routes.js')(app);
+<<<<<<< HEAD
     require('../routes/auth.server.routes.js')(app);
     require('../routes/tanning.server.routes.js')(app);
 
+=======
+    require('../routes/pic.server.routes.js')(app);
+    require('../routes/auth.server.routes.js')(app);
+>>>>>>> 2506e1d5124547d7280585ca61aeec577bbf763c
 
     // THIS WILL BE ANGULAR APP
     // needs to come after setting the rendering engine

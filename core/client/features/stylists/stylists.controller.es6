@@ -1,34 +1,10 @@
-export default class stylistsController {
-    constructor(stylistsService) {
-        this.test = 'Hello from StylistsController';
-        this.stylistsService = stylistsService;
+import BaseWebController from "../commonControllers/baseWeb.controller"
 
-        this.getItems();
-        console.log("stylistsService", stylistsService.names);
+export default class stylistsController extends BaseWebController {
+    constructor($location, stylistsService, picsService) {
+        super($location, stylistsService, picsService);
+        this.test = 'Hello from stylistsController';
     }
-
-    getItems() {
-        this.stylistsService.getItems().then((data) => {
-            this.stylists = data;
-        });
-    }
-
-    saveItem(stylist) {
-        return this.stylistsService.saveItem(stylist);
-    }
-
-    deleteItem(stylist) {
-        return this.stylistsService.deleteItem(stylist).then((response)=> {
-            this.getItems();
-        });
-    }
-
-    addItem(stylist) {
-        return this.stylistsService.addItem(stylist).then((response)=> {
-            this.getItems();
-        });
-    }
-
 }
 
 //StylistsController.$inject = ['randomNames'];
