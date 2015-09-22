@@ -47,11 +47,9 @@ module.exports = function (app) {
     app.route('/loggeduser')
         .get(function (req, res) {
             res.render('loggeduser', {
-                user: {
-                    name: req.user.displayName,
-                    image: req.user.image
-                }
+                user: req.user
             });
+            console.log(req.user);
         });
 
 

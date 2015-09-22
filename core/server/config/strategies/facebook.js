@@ -1,5 +1,6 @@
 var passport = require('passport'),
-    FacebookStrategy = require('passport-facebook').Strategy;
+    FacebookStrategy = require('passport-facebook').Strategy,
+    User = require('../../models/user.server.model');
 
 module.exports = function () {
     passport.use(new FacebookStrategy(
@@ -10,16 +11,50 @@ module.exports = function () {
             passReqToCallback: true
         },
         function (req, accessToken, refreshToken, profile, done) {
-            var user = {};
+            var query = {};
 
-            // user.email = profile.emails[0].value;
-            // user.image = profile._json.image.url;
-            user.displayName = profile.displayName;
+            if (req.user) { // Condition never met. Doesn't work.
+                if (req.user.google) {
+                    console.log('google');
+                    query = { 'google.id': req.user.google.id };
+                }
+                else if (req.user.twitter) {
+                    console.log('twitter');
+                    query = { 'twitter.id': req.user.twitter.id };
+                }
 
-            user.facebook = {};
-            user.facebook.id = profile.id;
-            user.facebook.token = accessToken;
+                User.findOne(query, function (error, user) {
+                    if (user) {
+                        user.facebook = {};
+                        user.facebook.id = profile.id;
+                        user.facebook.token = accessToken;
 
-            done(null, user);
+                        user.save();
+                        done(null, user);
+                    }
+                });
+            }
+            else { // Always this. Can't avoid repetition of users in database
+                query = { 'facebook.id': profile.id };
+
+                User.findOne(query, function (error, user) {
+                    if (user) {
+                        console.log('Facebook user found in database: ', user);
+                        done(null, user);
+                    }
+                    else {
+                        console.log('Facebook user not found in database');
+                        user = new User;
+                        user.displayName = profile.displayName;
+
+                        user.facebook = {};
+                        user.facebook.id = profile.id;
+                        user.facebook.token = accessToken;
+
+                        user.save();
+                        done(null, user);
+                    }
+                });
+            }
         }));
 };
