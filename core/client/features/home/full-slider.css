@@ -1,39 +1,35 @@
-
-
 .carousel,
 .item,
 .active {
     height: 100%;
-    /*width:100%;*/
-    position: initial;
+    position: initial; 
+    background: radial-gradient(violet, blue, orange);  
 }
 
 .carousel-inner {
     height: 100%;
      /*width:100%;*/
-    position: absolute;
+    position: absolute;   
 }
-
 /* Background images are set within the HTML using inline CSS, not here */
-
 .fill {
     width: 100%;
-    height: 100%;
+    height: 100%;    
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    opacity: 0.4;
-    /*z-index: 1;*/
-            
+    opacity: 0.6;
+    
 }
 
-
-.carousel-caption{
-      top: 300px;
+.carousel-caption,
+h2 {
+    top: 300px;
     left: 0px;
     width:100%;
-    /*z-index: 6 !important;*/
-    color: #6889FB;
+    font-size: 80px;
+    color: white;
 }
+

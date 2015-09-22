@@ -5,7 +5,7 @@ import jQuery from 'jquery';
 import bootstrap from 'bootstrap'; 
 // import 'font-awesome/css/font-awesome.css';  
 import 'animate.css/animate.css'
-// import 'wow/'
+import 'hover.css/css/hover.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'angular-material/angular-material.css';
 import './app.scss';
