@@ -7,15 +7,6 @@ function stripe() {
         }
     }
 }
-$scope.handleStripe = function(status, response){
-  if(response.error) {
-    // there was an error. Fix it.
-  } else {
-    // got stripe token, now charge it or smt
-    token = response.id
-  }
-}
-
 
 export default angular.module('directives.stripe', [])
     .directive('stripe', stripe)
