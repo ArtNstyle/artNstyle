@@ -18,8 +18,6 @@ import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 import ngFileUpload from 'ng-file-upload';
 
-
-
 import goClick from './directives/goClick.directive';
 
 import home from './features/home';
