@@ -53,6 +53,14 @@ module.exports = function (app) {
         });
 
 
+    // CHECKING IF LOGIN
+    app.route('/checklogin')
+        .get(function (req, res) {
+            if (req.user) res.send(true);
+            else res.send(false);
+        });
+
+
     // PROTECTING ROUTES
     app.route('/notallowed')
         .get(function (req, res, next) {
