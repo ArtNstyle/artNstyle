@@ -56,7 +56,7 @@ module.exports = function () {
     }));
 
 
-    // google passport oauth
+    // passport auth
     require('./passport.js')(app);
 
 

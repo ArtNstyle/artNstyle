@@ -2,6 +2,8 @@ var usersCtrl = require('../controllers/auth.server.controller.js');
 var passport = require('passport');
 
 module.exports = function (app) {
+
+    // GOOGLE AUTHENTICATION ROUTES
     app.route('/auth/google/callback')
         .get(passport.authenticate('google', {
             successRedirect: '/loggeduser',
@@ -16,16 +18,50 @@ module.exports = function (app) {
             ]
         }));
 
+
+    // TWITTER AUTHENTICATION ROUTES
+    app.route('/auth/twitter/callback')
+        .get(passport.authenticate('twitter', {
+            successRedirect: '/loggeduser',
+            failure: '/error/'
+        }));
+
+    app.route('/auth/twitter')
+        .get(passport.authenticate('twitter'));
+
+
+    // FACEBOOK AUTHENTICATION ROUTES
+    app.route('/auth/facebook')
+        .get(passport.authenticate('facebook', {
+            scope: ['email']
+        }));
+
+    app.route('/auth/facebook/callback')
+        .get(passport.authenticate('facebook', {
+            successRedirect: '/loggeduser',
+            failureRedirect: '/error/'
+        }));
+
+
+    // SUCCESS REDIRECT
     app.route('/loggeduser')
         .get(function (req, res) {
             res.render('loggeduser', {
-                user: {
-                    name: req.user.displayName,
-                    image: req.user._json.image.url
-                }
+                user: req.user
             });
+            console.log(req.user);
         });
 
+
+    // CHECKING IF LOGIN
+    app.route('/checklogin')
+        .get(function (req, res) {
+            if (req.user) res.send(true);
+            else res.send(false);
+        });
+
+
+    // PROTECTING ROUTES
     app.route('/notallowed')
         .get(function (req, res, next) {
             if (!req.user) {
