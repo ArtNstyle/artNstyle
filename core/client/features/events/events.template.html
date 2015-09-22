@@ -1,7 +1,19 @@
 <div class="events">
     <main-menu></main-menu>
 
-    <h1>Hello from events</h1>
-    {{events.test}}
-</div>
+    <h2 class="title">EVENTS
+        <md-button hide-sm class="md-fab md-mini edit-button" ng-click="events.editing= events.editing ? undefined : true"
+                   save-editable ctrl="events">
+            <i class="material-icons" style="line-height: 1.5;">edit</i>
+        </md-button>
+        <hr>
+    </h2>
 
+    <div layout="column">
+        <div class="hvr-grow" ng-repeat="event in events.items | orderBy: 'orderInList'" >
+            <event editing="events.editing" info="event" ctrl="events"></event>
+        </div>
+        <add-item ng-if="events.editing" ctrl="events" label="Event Name"></add-item>
+    </div>
+
+</div>

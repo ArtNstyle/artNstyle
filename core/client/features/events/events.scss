@@ -1,7 +1,116 @@
-.events {
-  background-color: grey;
+$lighter-opacity:0.75;
+$main-color: #5B7AFF;
+$font-familiy: 'Lato', sans-serif;
+$max-content-width: 900px;
 
-  h1 {
-    color: blue;
+.events {
+  font-family: $font-familiy;
+  margin: 0px auto;
+  max-width: $max-content-width;
+  text-align: center;
+
+  p {
+    opacity: $lighter-opacity;
   }
+
+  .edit-button {
+    float: right;
+  }
+
+  .title {
+    color: $main-color;
+  }
+
+  .title hr {
+    max-width: 200px;
+    color: $main-color;
+  }
+
+  add-item {
+    margin: auto;
+  }
+
+}
+
+.event {
+  position: relative;
+  margin: 2%;
+
+  .image-container {
+    padding: 2%;
+  }
+
+  .square {
+    width: 100%;
+    padding-bottom: 100%; /* = width for a 1:1 aspect ratio */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; /* you change this from "cover" to "contain" if you don't want the images to be cropped */
+    margin-bottom: 4%;
+  }
+
+  .square:hover {
+    opacity: 0.8;
+  }
+
+  .event-content {
+    border: 1px solid $main-color;
+    border-radius: 5px;
+  }
+
+  .name {
+    background-color: $main-color;
+    color: white;
+    padding: 1%;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .timing {
+    background-color: $main-color;
+    color: white;
+    padding: 1%;
+    padding-bottom: 0px;
+  }
+
+  .date {
+    //padding: 0px 1%;
+  }
+
+  .time {
+    //padding: 0px 1%;
+  }
+
+  .description {
+    padding: 2%;
+    padding-bottom: 1%;
+  }
+
+  .link {
+    padding: 1%
+  }
+
+  md-input-container {
+    padding-bottom: 0px;
+  }
+
+
+   .hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
+
+
 }
