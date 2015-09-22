@@ -1,5 +1,5 @@
 export default class BaseWebController {
-    constructor($location, myWebService, picsService) {
+    constructor($location, myWebService, picsService, doNotGetItems) {
         this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
         this.picsUri = "/pics";
         this.thumbnailUri = "/thumbnail?id=";
@@ -8,11 +8,13 @@ export default class BaseWebController {
         this.picsService = picsService;
         this.myWebService = myWebService;
 
-        this.getItems();
+        if(! doNotGetItems) {
+            this.getItems();
+        }
     }
 
     getItems() {
-        this.myWebService.getItems().then((data) => {
+        this.myWebService.getItems(this.query).then((data) => {
             this.items = data;
         });
     }

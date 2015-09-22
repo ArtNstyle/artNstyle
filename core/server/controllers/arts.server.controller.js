@@ -12,6 +12,7 @@ module.exports = {
 
     readAll: function(req, res) {
         art.find()
+            .populate("artistId")
             .exec(function(err, result) {
                 if (err) return res.status(500).send(err);
                 res.send(result);
@@ -20,8 +21,9 @@ module.exports = {
 
 
     read: function(req, res) {
-        console.log(req.query.lastName);
-        art.findOne({_id: req.query.id})
+        //console.log(req.query);
+        art.find(req.query)
+            .populate("artistId")
             .exec(function(err, result) {
                 if (err) return res.status(500).send(err);
                 res.json(result);

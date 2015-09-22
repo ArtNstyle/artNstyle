@@ -54,6 +54,16 @@ module.exports = function (app) {
                     },
                 }
             })
+            .state('arts', {
+                url: '/arts/:artistId',
+                views: {
+                    main: {
+                        template: require('./features/arts/arts.template.html'),
+                        controller: 'artsController',
+                        controllerAs: 'arts'
+                    },
+                }
+            })
             .state('events', {
                 url: '/events',
                 views: {
