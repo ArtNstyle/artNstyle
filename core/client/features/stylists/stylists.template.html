@@ -2,7 +2,8 @@
     <main-menu></main-menu>
 
     <h2 class="title">MEMBERS OF OUR STYLING TEAM
-        <md-button hide-sm class="md-fab md-mini edit-button" ng-click="stylists.editing= stylists.editing ? undefined : true">
+        <md-button hide-sm class="md-fab md-mini edit-button" ng-click="stylists.editing= stylists.editing ? undefined : true"
+                save-editable ctrl="stylists">
             <i class="material-icons" style="line-height: 1.5;">edit</i>
         </md-button>
         <hr>
@@ -11,7 +12,7 @@
     <p class="intro">Booths available.<br>Please call Kessie at <a href="tel:19187421550 ">918-742-1550</a></p>
 
     <div layout="row" layout-wrap>
-        <div flex="25" flex-sm="50" ng-repeat="stylist in stylists.items" >
+        <div flex="25" flex-sm="50" ng-repeat="stylist in stylists.items | orderBy: 'orderInList'" >
             <stylist editing="stylists.editing" info="stylist" ctrl="stylists"></stylist>
         </div>
         <add-item ng-if="stylists.editing" flex="25" flex-sm="50" ctrl="stylists" label="Stylist Name"></add-item>
