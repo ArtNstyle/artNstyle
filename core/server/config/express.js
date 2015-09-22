@@ -63,6 +63,7 @@ module.exports = function () {
     // HERE WE INCLUDE THE ROUTES
     require('../routes/users.server.routes.js')(app);
     require('../routes/artists.server.routes.js')(app);
+    require('../routes/arts.server.routes.js')(app);
     require('../routes/cart.server.routes.js')(app);
     require('../routes/event.server.routes.js')(app);
     require('../routes/stylists.server.routes.js')(app);
