@@ -1,8 +1,69 @@
-<div class="home">
+
+<!--Custom Css-->
+<link href="features/home/full-slider.css" rel="stylesheet">
+ <!-- Full Page Image Background Carousel Header -->
+ 
+ 
+ <div class="home">
     <main-menu></main-menu>
+    <div id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <!--<ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>-->
 
-    <h1>Hello from home</h1>
-    {{home.test}}
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill"  style="background-image:url('http://45.55.16.198:3039/api/pocketScrum/fullpic?id=5600edd477086fc83d8ca58b');"></div>
+                <div class="carousel-caption">
+                    <h1 class="animated bounce">Art-N-Style</h1>
+                    <h2 class="animated bounceInUp">Become a walking work of art</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://45.55.16.198:3039/api/pocketScrum/fullpic?id=5600ee4f77086fc83d8ca58d');"></div>
+                <div class="carousel-caption">
+                    <h1 class="animated bounce">Art-N-Style</h1>
+                    <h2 class="animated bounceInUp">All personalities welcome</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://45.55.16.198:3039/api/pocketScrum/fullpic?id=5600f47f77086fc83d8ca595');"></div>
+                <div class="carousel-caption">
+                    <h1 class="animated bounce">Art-N-Style</h1>
+                    <h2 class="animated bounceInUp">Have a seat and enjoy the gallery</h2>
+                </div>
+            </div>
+             <div class="item">
+                <!-- Set the fourth background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://45.55.16.198:3039/api/pocketScrum/fullpic?id=5600ed9c77086fc83d8ca589');"></div>
+                <div class="carousel-caption">
+                    <h1 class="animated bounce">Art-N-Style</h1>
+                    <h2 class="animated bounceInUp">Support your local artist</h2>
+                </div>
+            </div>
+        </div>
 
-    <div class="bg"></div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
 </div>
+    </div>
+
+   <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
