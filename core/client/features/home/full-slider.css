@@ -11,7 +11,7 @@
 .carousel-inner {
     height: 100%;
      /*width:100%;*/
-    position:absolute;
+    position: absolute;
 }
 
 /* Background images are set within the HTML using inline CSS, not here */
@@ -24,8 +24,16 @@
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    opacity: 0.4;
+    /*z-index: 1;*/
+            
 }
 
-footer {
-    margin: 50px 0;
+
+.carousel-caption{
+      top: 300px;
+    left: 0px;
+    width:100%;
+    /*z-index: 6 !important;*/
+    color: #6889FB;
 }

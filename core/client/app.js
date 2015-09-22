@@ -2,7 +2,10 @@
 //console.log('app loaded');
 
 import jQuery from 'jquery';
-import bootstrap from 'bootstrap';   
+import bootstrap from 'bootstrap'; 
+// import 'font-awesome/css/font-awesome.css';  
+import 'animate.css/animate.css'
+// import 'wow/'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'angular-material/angular-material.css';
 import './app.scss';

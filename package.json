@@ -23,6 +23,7 @@
     "express-session": "^1.11.3",
     "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
+    "font-awesome": "^4.4.0",
     "html-loader": "^0.3.0",
     "jquery": "^2.1.4",
     "jshint": "^2.8.0",
@@ -43,7 +44,8 @@
     "url-loader": "^0.5.6",
     "webpack": "^1.12.1",
     "webpack-dev-middleware": "^1.2.0",
-    "webpack-dev-server": "^1.10.1"
+    "webpack-dev-server": "^1.10.1",
+    "wow": "0.0.6"
   },
   "devDependencies": {},
   "scripts": {
