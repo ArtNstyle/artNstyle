@@ -7,6 +7,6 @@ module.exports = function (app) {
         .put(artistCtrl.update)
         .delete(artistCtrl.remove);
 
-    app.route('/api/artists/all')	
-        .get(artistCtrl.readAll)
-}
+    app.route('/api/artists/all')
+        .get(artistCtrl.readAll);
+};

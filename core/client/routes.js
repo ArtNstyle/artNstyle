@@ -54,6 +54,16 @@ module.exports = function (app) {
                     },
                 }
             })
+            .state('arts', {
+                url: '/arts/:artistId',
+                views: {
+                    main: {
+                        template: require('./features/arts/arts.template.html'),
+                        controller: 'artsController',
+                        controllerAs: 'arts'
+                    },
+                }
+            })
             .state('events', {
                 url: '/events',
                 views: {
@@ -64,7 +74,11 @@ module.exports = function (app) {
                     },
                 }
             })
+<<<<<<< HEAD
             .state('cart', {
+=======
+            .state('cart',{
+>>>>>>> 44850be5d1735c20356a80ae338d240648fb58d6
                 url: '/cart',
                 views: {
                     main: {
@@ -72,6 +86,10 @@ module.exports = function (app) {
                         controller: 'cartController',
                         controllerAs: 'cart'
                     },
+<<<<<<< HEAD
+=======
+                    
+>>>>>>> 44850be5d1735c20356a80ae338d240648fb58d6
                 }
             })
     });

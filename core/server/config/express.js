@@ -56,16 +56,19 @@ module.exports = function () {
     }));
 
 
-    // google passport oauth
+    // passport auth
     require('./passport.js')(app);
 
 
     // HERE WE INCLUDE THE ROUTES
     require('../routes/users.server.routes.js')(app);
     require('../routes/artists.server.routes.js')(app);
+    require('../routes/arts.server.routes.js')(app);
     require('../routes/cart.server.routes.js')(app);
     require('../routes/event.server.routes.js')(app);
     require('../routes/stylists.server.routes.js')(app);
+    require('../routes/auth.server.routes.js')(app);
+    require('../routes/tanning.server.routes.js')(app);
     require('../routes/pic.server.routes.js')(app);
     require('../routes/auth.server.routes.js')(app);
 

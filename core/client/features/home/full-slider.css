@@ -20,7 +20,7 @@
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    opacity: 0.6;
+    opacity: 0.7;
     
 }
 
@@ -29,7 +29,13 @@ h2 {
     top: 300px;
     left: 0px;
     width:100%;
-    font-size: 80px;
+    font-size: 2em;
     color: white;
 }
 
+@media (max-width: 736px){
+    .carousel-caption,
+    h2{
+        font-size:1.5em;
+    }
+}

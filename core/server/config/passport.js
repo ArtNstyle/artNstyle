@@ -11,5 +11,7 @@ module.exports = function (app) {
         done(null, user);
     });
 
-    require('./strategies/google.js')();
+    require('./strategies/google.js')();    
+    require('./strategies/twitter.js')();
+    require('./strategies/facebook.js')();
 };

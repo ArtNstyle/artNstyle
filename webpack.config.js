@@ -2,6 +2,7 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 module.exports = {
+    devtool: "eval",
     context: path.resolve('core/client'),
 
     entry: './app.js',
@@ -60,7 +61,7 @@ module.exports = {
             {
                 test: /\.(png|jpg)$/,
                 exclude: /node_modules/,
-                loader: 'url-loader?limit=1000'
+                loader: 'file?name=[name].[ext]'
             }
         ]
     },

@@ -1,0 +1,19 @@
+<div class="arts">
+    <main-menu></main-menu>
+
+    <h2 class="title">{{arts.items[0].artistId.name}}
+        <md-button hide-sm class="md-fab md-mini edit-button" ng-click="arts.editing= arts.editing ? undefined : true"
+                   save-editable ctrl="arts">
+            <i class="material-icons" style="line-height: 1.5;">edit</i>
+        </md-button>
+        <hr>
+    </h2>
+
+    <div layout="row" layout-wrap>
+        <div flex="33" flex-sm="50" ng-repeat="art in arts.items | orderBy: 'orderInList'" >
+            <art editing="arts.editing" info="art" ctrl="arts"></art>
+        </div>
+        <add-item ng-if="arts.editing" flex="33" flex-sm="50" ctrl="arts" label="Art Name"></add-item>
+    </div>
+
+</div>
