@@ -1,9 +1,21 @@
+$menu-text-color: white;
+
 .tanning {
     text-align: center;
     background-color: #292118;
     color: #DFD6CD;
-    
-img{
+
+    md-toolbar, md-toolbar:not(.md-menu-toolbar) {
+        color: $menu-text-color;
+    }
+
+    md-toolbar i {
+        color: $menu-text-color;
+        border: 2px solid $menu-text-color;
+    }
+
+
+    img{
 	width: 100%;
 }
 

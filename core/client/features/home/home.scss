@@ -1,13 +1,22 @@
+$menu-text-color: white;
+
 .home{
-  
-main-menu{
+    md-toolbar, md-toolbar:not(.md-menu-toolbar) {
+        color: $menu-text-color;
+    }
+
+    md-toolbar i {
+        color: $menu-text-color;
+        border: 2px solid $menu-text-color;
+    }
+
+    main-menu{
         position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 5;
-    width: 100%;
-    color: white !important;
-    
-}
+        top: 0px;
+        left: 0px;
+        z-index: 5;
+        width: 100%;
+    }
+
 
 }
