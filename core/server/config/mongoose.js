@@ -9,5 +9,6 @@ module.exports = function () {
     require('../models/cart.server.model');
     require('../models/event.server.model');
     require('../models/stylist.server.model');
+    require('../models/tanning.server.model');
     return db;
 };

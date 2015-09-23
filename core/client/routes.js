@@ -54,6 +54,16 @@ module.exports = function (app) {
                     },
                 }
             })
+            .state('arts', {
+                url: '/arts/:artistId',
+                views: {
+                    main: {
+                        template: require('./features/arts/arts.template.html'),
+                        controller: 'artsController',
+                        controllerAs: 'arts'
+                    },
+                }
+            })
             .state('events', {
                 url: '/events',
                 views: {
@@ -62,6 +72,17 @@ module.exports = function (app) {
                         controller: 'eventsController',
                         controllerAs: 'events'
                     },
+                }
+            })
+            .state('cart',{
+                url: '/cart',
+                views: {
+                    main: {
+                        template: require('./features/cart/cart.template.html'),
+                        controller: 'cartController',
+                        controllerAs: 'cart'
+                    },
+                    
                 }
             })
     });

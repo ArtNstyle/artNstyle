@@ -2,6 +2,7 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 module.exports = {
+    devtool: "eval",
     context: path.resolve('core/client'),
 
     entry: './app.js',

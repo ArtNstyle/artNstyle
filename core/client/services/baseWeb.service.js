@@ -6,12 +6,15 @@ class BaseWebService {
         this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
         this.stylistsUri = "/stylists";
         this.artistsUri = "/artists";
+        this.artsUri = "/arts";
         this.eventsUri = "/events";
         this.allUri = "/all";
     }
 
-    getItems() {
-        return this.$http.get(this.url + this.myUri + this.allUri).then((response) => {
+    getItems(query) {
+        var queryUrl = query? this.url + this.myUri + query : this.url + this.myUri + this.allUri;
+        //console.log("BaseWebService: getItems", queryUrl);
+        return this.$http.get(queryUrl).then((response) => {
             return response.data;
         }, (err) => {
             this.$log.warn("error at getItems", err);
@@ -60,8 +63,16 @@ class artistsService extends BaseWebService {
         super($log, $http, $location);
         this.myUri = this.artistsUri;
     }
+}
+
+class artsService extends BaseWebService {
+    constructor($log, $http, $location) {
+        super($log, $http, $location);
+        this.myUri = this.artsUri;
+    }
 
 }
+
 
 class eventsService extends BaseWebService {
     constructor($log, $http, $location) {
@@ -75,5 +86,6 @@ class eventsService extends BaseWebService {
 export default angular.module('services.base-web', [])
     .service('stylistsService', stylistsService)
     .service('artistsService', artistsService)
+    .service('artsService', artsService)
     .service('eventsService', eventsService)
     .name;
