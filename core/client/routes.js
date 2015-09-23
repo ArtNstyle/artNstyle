@@ -74,11 +74,9 @@ module.exports = function (app) {
                     },
                 }
             })
-<<<<<<< HEAD
-            .state('cart', {
-=======
+
             .state('cart',{
->>>>>>> 44850be5d1735c20356a80ae338d240648fb58d6
+
                 url: '/cart',
                 views: {
                     main: {
@@ -86,10 +84,7 @@ module.exports = function (app) {
                         controller: 'cartController',
                         controllerAs: 'cart'
                     },
-<<<<<<< HEAD
-=======
-                    
->>>>>>> 44850be5d1735c20356a80ae338d240648fb58d6
+
                 }
             })
     });
