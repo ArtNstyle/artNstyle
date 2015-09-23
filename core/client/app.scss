@@ -10,3 +10,20 @@ body, html {
     background-color: transparent;
     font-family: 'Noticia Text', serif;
 }
+
+.cart-icon {
+    float:right;
+}
+
+
+$main-color: #5B7AFF;
+
+md-toolbar, md-toolbar:not(.md-menu-toolbar) {
+    color: $main-color;
+}
+
+md-toolbar i {
+    color: $main-color;
+    border: 2px solid $main-color;
+}
+
