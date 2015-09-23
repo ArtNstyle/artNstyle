@@ -4,6 +4,9 @@ export default class BaseWebController {
         this.picsUri = "/pics";
         this.thumbnailUri = "/thumbnail?id=";
         this.thumbnailUrl = this.url + this.picsUri + this.thumbnailUri;
+        this.fullPicUri = "/fullPic?id=";
+        this.fullPicUrl = this.url + this.picsUri + this.fullPicUri;
+        this.picUrl = this.thumbnailUrl;
 
         this.picsService = picsService;
         this.myWebService = myWebService;
@@ -11,6 +14,15 @@ export default class BaseWebController {
         if(! doNotGetItems) {
             this.getItems();
         }
+    }
+
+    setPicUrl(type) {
+        if(type === "full") {
+            this.picUrl = this.fullPicUrl;
+        } else {
+            this.picUrl = this.thumbnailUrl;
+        }
+        //console.log("BaseWebController setPicUrl", this.picUrl);
     }
 
     getItems() {
@@ -24,9 +36,13 @@ export default class BaseWebController {
     }
 
     deleteItem(item) {
-        return this.myWebService.deleteItem(item).then((response)=> {
-            this.getItems();
-        });
+        if(item.image) {
+            return this.deletePic(item).then((picResponse)=> {
+                return this.myWebService.deleteItem(item).then((response)=> {
+                    this.getItems();
+                });
+            })
+        }
     }
 
     addItem(item) {
@@ -40,7 +56,10 @@ export default class BaseWebController {
             if(url) {
                 var urlParts = url.split("=");
                 //console.log('getDeletePicId', urlParts);
-                if ((urlParts[0] + '=') === self.thumbnailUrl) {
+                if (((urlParts[0] + '=') === self.picUrl) ||
+                    ((urlParts[0] + '=') === self.thumbnailUrl) ||
+                    ((urlParts[0] + '=') === self.fullPicUrl)) {
+                    //console.log('returning id to delete pic', urlParts[1]);
                     return urlParts[1];
                 }
             }
@@ -50,7 +69,7 @@ export default class BaseWebController {
         var deletePicId = getDeletePicId(this, item.image);
         if(deletePicId) {
             //console.log("deletePic w picId", deletePicId);
-            this.picsService.removePicWithId(deletePicId);
+            return this.picsService.removePicWithId(deletePicId);
         }
     }
 
@@ -63,7 +82,7 @@ export default class BaseWebController {
                 this.currentPic = response.data;
                 //console.log("artistsController: addPic", this.currentPic);
                 this.deletePic(item);
-                item.image = this.thumbnailUrl + this.currentPic.picId;
+                item.image = this.picUrl + this.currentPic.picId;
                 this.saveItem(item).then((response)=> {
                     this.getItems();
                 });
