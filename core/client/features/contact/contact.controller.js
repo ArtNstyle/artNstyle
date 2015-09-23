@@ -1,5 +1,5 @@
 module.exports = function (app) {
-    app.controller('homeController', function ($scope) {
+    app.controller('contactController', function ($scope) {
         $scope.map = {
             center: {
                 latitude: 36.104283,
