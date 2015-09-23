@@ -1,4 +1,4 @@
-
+var lodash = require('lodash');
 //console.log('app loaded');
 
 import jQuery from 'jquery';
@@ -28,8 +28,15 @@ import arts from './features/arts';
 import events from './features/events';
 import cart from './features/cart';
 
-var app = angular.module('app', [uiRouter, ngMaterial, ngFileUpload, goClick, home, stylists, salon, tanning, artists, arts, events, cart]);  //
+
+var angularSimpleLogger = require('angular-simple-logger');
+var angularGoogleMaps = require('angular-google-maps');
+
+
+var app = angular.module('app', [lodash, uiRouter, ngMaterial, ngFileUpload, goClick, home, stylists, salon, tanning, artists, arts, events, cart, 'uiGmapgoogle-maps']); 
+
 
 require('./routes')(app);
+require('./features/contact/')(app);
 
 
