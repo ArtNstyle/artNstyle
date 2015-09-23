@@ -14,3 +14,4 @@ export default angular.module('directives.mainMenu', [])
     .directive('mainMenu', mainMenu)
     .name;
 
+import '../mainMenu/images/logo.png';

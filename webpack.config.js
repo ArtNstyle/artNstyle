@@ -60,7 +60,7 @@ module.exports = {
             {
                 test: /\.(png|jpg)$/,
                 exclude: /node_modules/,
-                loader: 'url-loader?limit=1000'
+                loader: 'file?name=[name].[ext]'
             }
         ]
     },
