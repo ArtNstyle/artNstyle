@@ -10,5 +10,31 @@ export default class artistsController extends BaseWebController {
   gotoArtist(artist) {
     this.$state.go('arts', {artistId: artist._id});
   }
+
+  getItems() {
+    this.artistsService.getItems().then((data) => {
+      this.artists = data;
+      //console.log("this.artists", this.artists);
+    });
+  }
+
+  saveItem(artist) {
+    return this.artistsService.saveItem(artist);
+  }
+
+  deleteItem(artist) {
+    return this.artistsService.deleteItem(artist).then((response)=> {
+      this.getItems();
+    });
+  }
+
+  addItem(artist) {
+    return this.artistsService.addItem(artist).then((response)=> {
+      this.getItems();
+    });
+  }
+
 }
+
+//StylistsController.$inject = ['randomNames'];
 //artistsController.$inject = ['randomNames'];

@@ -67,6 +67,8 @@ module.exports = function () {
     require('../routes/cart.server.routes.js')(app);
     require('../routes/event.server.routes.js')(app);
     require('../routes/stylists.server.routes.js')(app);
+    require('../routes/auth.server.routes.js')(app);
+    require('../routes/tanning.server.routes.js')(app);
     require('../routes/pic.server.routes.js')(app);
     require('../routes/auth.server.routes.js')(app);
 
