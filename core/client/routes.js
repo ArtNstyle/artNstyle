@@ -74,7 +74,9 @@ module.exports = function (app) {
                     },
                 }
             })
+
             .state('cart',{
+
                 url: '/cart',
                 views: {
                     main: {
@@ -82,7 +84,7 @@ module.exports = function (app) {
                         controller: 'cartController',
                         controllerAs: 'cart'
                     },
-                    
+
                 }
             })
     });
