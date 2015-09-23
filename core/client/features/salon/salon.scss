@@ -13,9 +13,7 @@ $main-color: #5B7AFF;
 	background-position: center;
 	padding: 12em 0 0;
 	text-align: center;
-	min-height: 506px;
-    
-    
+	min-height: 506px;  
 }
 .btn1 {
 	border: none;
@@ -83,7 +81,9 @@ $main-color: #5B7AFF;
     height: 100%;
 }
 .about_right img{
+    // margin-top: 50px;
 	display:inline-block;
+    padding-bottom: 200px;
 }
 .about_right h1{
 	color:#000;
@@ -107,6 +107,92 @@ $main-color: #5B7AFF;
 	-o-transition: 0.8s;
 	transition: 0.8s;
 }
+}
+
+.content-block {
+  padding: 30px ;
+  margin-bottom: 0px;
+  color: inherit;
+ background:#f2efe5;
+ 
+}
+
+
+.content-block-one {
+  padding: 30px;
+  margin-bottom: 0px;
+  color: inherit;
+ background:#f2efe5;
+}
+
+.content-block-one p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+}
+.content-block p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+  
+}
+
+.container .content-block-one {
+  border-radius: 6px;
+}
+.content-block-one .container {
+  max-width: 100%;
+}
+.container .content-block {
+  border-radius: 6px;
+ 
+}
+.content-block .container {
+  max-width: 100%;
+  
+}
+@media screen and (min-width: 768px) {
+  .content-block-one {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container .content-block-one {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+    .content-block {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container .content-block {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
 
 }
 
+.content-space-one {
+  padding: 0px;
+  margin-bottom: 0px;
+  color: inherit;
+  background: url(./images/team.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.content-space-two {
+  padding: 0px;
+  margin-bottom: 0px;
+  color: inherit;
+  background: url(./images/team.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}

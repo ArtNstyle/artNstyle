@@ -10,3 +10,4 @@ export default angular.module('app.salon', [mainMenu])
 
 import '../salon/images/blacksign.jpg';
 import '../salon/images/flower.jpg';
+

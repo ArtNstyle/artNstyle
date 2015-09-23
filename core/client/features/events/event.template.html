@@ -1,6 +1,6 @@
 <editable-item class="event" editing="{{editing}}" item="info" delete-item-fn="ctrl.deleteItem(info)"
                save-item-fn="ctrl.saveItem(info)" change-pic-fn="ctrl.addPic(info, file)">
-    <div layout="row" layout-wrap layout-align="center">
+    <div class="event-container" layout="row" layout-wrap layout-align="center">
         <div ng-if="info.image" flex="20" flex-sm="50" class="image-container">
             <div class="square" ng-style="{'background-image':'url({{info.image}})'}" ></div>
         </div>
@@ -10,9 +10,6 @@
                 <div class="date">
                     <editable-text editing="{{editing}}" item="info" field="date" placeholder="Date" ctrl="ctrl"></editable-text>
                 </div>
-                <!--<div class="time">-->
-                    <!--<editable-text editing="{{editing}}" item="info" field="time" placeholder="Time" ctrl="ctrl"></editable-text>-->
-                <!--</div>-->
             </div>
 
             <div class="name" >
