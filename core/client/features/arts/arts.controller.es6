@@ -5,9 +5,11 @@ export default class artsController extends BaseWebController {
         super($location, artsService, picsService, true);
         this.test = 'Hello from artsController';
         this.artistId = $stateParams.artistId;
+
+        // get items has to happen after query has been set
         this.query = "?artistId=" + this.artistId;
-        //console.log("artsController: constructor", this.artistId, this.query);
         this.getItems();
+        //console.log("artsController: constructor", this.artistId, this.query);
     }
 
     addItem(art) {
