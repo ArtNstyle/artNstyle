@@ -8,11 +8,11 @@ class loggedUserService {
 
     authenticate() {
         return this.$http.get('/checklogin').then((response) => {
-            console.log("authentication response", response);
+            //console.log("authentication response", response);
             this.authenticated = response.data;
             return this.authenticated;
         }, (err) =>{
-            console.log('erro authenticating: ', err);
+            console.log('error authenticating: ', err);
         });
     }
 

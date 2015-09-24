@@ -47,6 +47,10 @@ export default class BaseWebController {
                     this.getItems();
                 });
             })
+        } else {
+            return this.myWebService.deleteItem(item).then((response)=> {
+                this.getItems();
+            });
         }
     }
 

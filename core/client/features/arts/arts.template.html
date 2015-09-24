@@ -10,8 +10,8 @@
     </h2>
 
     <div layout="row" layout-wrap>
-        <div flex="33" flex-sm="50" ng-repeat="art in arts.items | orderBy: 'orderInList'" >
-            <art editing="arts.editing" info="art" ctrl="arts"></art>
+        <div class="hvr-trim" flex="33" flex-sm="50" ng-repeat="art in arts.items | orderBy: 'orderInList'" >
+            <art editing="arts.editing" info="art" ctrl="arts" ng-click="arts.showBiggerImage($event, art)"></art>
         </div>
         <add-item ng-if="arts.editing" flex="33" flex-sm="50" ctrl="arts" label="Art Name"></add-item>
     </div>

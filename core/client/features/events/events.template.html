@@ -2,45 +2,34 @@
     <main-menu></main-menu>
 
     <h2 class="title">EVENTS
-        <md-button ng-if="events.authenticated" hide-sm class="md-fab md-mini edit-button" ng-click="events.editing= events.editing ? undefined : true"
+        <md-button ng-if="events.authenticated" hide-sm class="md-fab md-mini edit-button"
+                   ng-click="events.editing= events.editing ? undefined : true"
                    save-editable ctrl="events">
             <i class="material-icons" style="line-height: 1.5;">edit</i>
         </md-button>
         <hr>
     </h2>
 
-    <div class="content-space-one-events col-md-12">
+    <div ng-repeat="event in events.items | orderBy: 'orderInList'">
+        <div class="content-space-one-events col-md-12">
+            <div class="text-center">
+            </div>
+        </div>
+
+        <div class="content-block-one text-center ">
+            <event editing="events.editing" info="event" ctrl="events"></event>
+        </div>
+    </div>
+
+    <div ng-if="! events.editing && events.items.length" class="content-space-one-events col-md-12">
         <div class="text-center">
         </div>
     </div>
 
-    <div class="content-block text-center ">
-        <event editing="events.editing" info="events.items[0]" ctrl="events"></event>
+    <!--show twn pic in case no events-->
+    <div ng-if="! events.editing && events.items.length === 0" class="image-only">
     </div>
 
-    <div class="content-space-one-events col-md-12">
-        <div class="text-center">
-        </div>
-    </div>
-
-    <div class="content-block-one text-center ">
-        <event editing="events.editing" info="events.items[1]" ctrl="events"></event>
-    </div>
-
-    <div class="content-space-two-events col-md-12">
-        <div class="text-center">s
-        </div>
-    </div>
-
-    <div class="content-block-one text-center ">
-        <event editing="events.editing" info="events.items[2]" ctrl="events"></event>
-    </div>
-<!--</div>-->
-
-    <div layout="column">
-        <div class="hvr-grow" ng-repeat="event in events.items | orderBy: 'orderInList'">
-        </div>
-        <add-item ng-if="events.editing" ctrl="events" label="Event Name"></add-item>
-    </div>
+    <add-item ng-if="events.editing" ctrl="events" label="Event Name"></add-item>
 
 </div>

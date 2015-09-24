@@ -71,6 +71,14 @@ class artsService extends BaseWebService {
         this.myUri = this.artsUri;
     }
 
+    setCurrentArt(art) {
+        this.currentArt = art;
+    }
+
+    getCurrentArt() {
+        return this.currentArt;
+    }
+
 }
 
 

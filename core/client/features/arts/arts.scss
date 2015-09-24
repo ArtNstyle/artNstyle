@@ -1,5 +1,6 @@
 $lighter-opacity:0.75;
 $main-color: #5B7AFF;
+$main-background-color:#f2efe5;
 $font-familiy: 'Lato', sans-serif;
 $max-content-width: 900px;
 
@@ -20,6 +21,35 @@ $max-content-width: 900px;
   .title hr {
     max-width: 400px;
     color: $main-color;
+  }
+
+  .hvr-trim {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+  }
+  .hvr-trim:before {
+    content: '';
+    position: absolute;
+    border: black solid 6px;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    opacity: 0;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+  }
+  .hvr-trim:hover:before, .hvr-trim:focus:before, .hvr-trim:active:before {
+    opacity: 1;
   }
 }
 
@@ -46,4 +76,16 @@ $max-content-width: 900px;
   md-input-container {
     padding-bottom: 0px;
   }
+}
+
+md-dialog {
+  background-color: $main-background-color;
+  width: 80%;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+
 }
