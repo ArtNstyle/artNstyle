@@ -74,6 +74,7 @@ module.exports = function (app) {
                     },
                 }
             })
+
             .state('cart', {
                 url: '/cart',
                 views: {
