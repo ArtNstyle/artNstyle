@@ -2,7 +2,7 @@
     <main-menu></main-menu>
 
     <h2 class="title">EVENTS
-        <md-button hide-sm class="md-fab md-mini edit-button" ng-click="events.editing= events.editing ? undefined : true"
+        <md-button ng-if="events.authenticated" hide-sm class="md-fab md-mini edit-button" ng-click="events.editing= events.editing ? undefined : true"
                    save-editable ctrl="events">
             <i class="material-icons" style="line-height: 1.5;">edit</i>
         </md-button>
