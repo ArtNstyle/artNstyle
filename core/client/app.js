@@ -1,5 +1,8 @@
 
 //console.log('app loaded');
+var lodash = require('lodash');
+require('angular-simple-logger');
+require('angular-google-maps');
 
 import jQuery from 'jquery';
 import bootstrap from 'bootstrap';
@@ -29,9 +32,14 @@ import events from './features/events';
 import cart from './features/cart';
 
 
-var app = angular.module('app', [uiRouter, ngMaterial, ngFileUpload, goClick, home, stylists, salon, tanning, artists, arts, events, cart]);  //
+var app = angular.module('app', [uiRouter, ngMaterial, ngFileUpload, goClick, home, stylists, salon, tanning, artists, arts, events, cart, 'uiGmapgoogle-maps']);
+
+
 
 
 require('./routes')(app);
+
+// the contacts page feature
+require('./features/contact/')(app);
 
 

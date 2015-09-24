@@ -2,7 +2,7 @@
     <main-menu></main-menu>
 
     <h2 class="title">{{arts.items[0].artistId.name}}
-        <md-button hide-sm class="md-fab md-mini edit-button" ng-click="arts.editing= arts.editing ? undefined : true"
+        <md-button ng-if="arts.authenticated" hide-sm class="md-fab md-mini edit-button" ng-click="arts.editing= arts.editing ? undefined : true"
                    save-editable ctrl="arts">
             <i class="material-icons" style="line-height: 1.5;">edit</i>
         </md-button>
