@@ -1,4 +1,6 @@
 function stripe($http, $rootScope) {
+
+	console.log('hello')
     return {
         restrict: 'E',
         templateUrl: "../../directives/stripe/stripe.template.html",
@@ -33,6 +35,7 @@ function stripe($http, $rootScope) {
 	      });
 
 	      $('#paymentButton').on('click', function(e) {
+	      	console.log('hi')
 	        // Open Checkout with further options
 	        handler.open({
 	          name: 'GYC Southwest',
