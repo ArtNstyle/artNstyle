@@ -4,7 +4,7 @@ export default class stylistsController extends BaseWebController {
     constructor($location, stylistsService, picsService, loggedUserService) {
         super($location, stylistsService, picsService, loggedUserService);
         this.test = 'Hello from stylistsController';
-        super.setPicUrl("full");
+        // super.setPicUrl("full");
     }
 }
 

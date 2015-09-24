@@ -12,7 +12,7 @@
     <p class="intro">Booths available.<br>Please call Kessie at <a href="tel:19187421550 ">918-742-1550</a></p>
 
     <div layout="row" layout-wrap>
-        <div class="hvr-pulse-grow" flex="25" flex-sm="50" ng-repeat="stylist in stylists.items | orderBy: 'orderInList'" >
+        <div class="hvr-grow" flex="25" flex-sm="50" ng-repeat="stylist in stylists.items | orderBy: 'orderInList'" >
             <stylist editing="stylists.editing" info="stylist" ctrl="stylists"></stylist>
         </div>
         <add-item ng-if="stylists.editing" flex="25" flex-sm="50" ctrl="stylists" label="Stylist Name"></add-item>

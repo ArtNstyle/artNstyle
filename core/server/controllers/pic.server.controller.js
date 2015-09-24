@@ -29,7 +29,7 @@ module.exports = {
                 if (oerr) return res.status(500).send(oerr);
                 image.contain(600, 600, function (err, croppedImage) {
                     if (err) console.log("image.scale error", err);
-                    image.crop(400, 400, function (err, croppedImage) {
+                    image.crop(600, 600, function (err, croppedImage) {
                         if (err) console.log("image.crop error", err);
                         croppedImage.toBuffer(imgType, function (err, buffer) {
                             if (err) console.log("toBuffer error", err);
