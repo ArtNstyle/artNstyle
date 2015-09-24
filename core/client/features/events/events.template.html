@@ -9,9 +9,36 @@
         <hr>
     </h2>
 
+    <div class="content-space-one-events col-md-12">
+        <div class="text-center">
+        </div>
+    </div>
+
+    <div class="content-block text-center ">
+        <event editing="events.editing" info="events.items[0]" ctrl="events"></event>
+    </div>
+
+    <div class="content-space-one-events col-md-12">
+        <div class="text-center">
+        </div>
+    </div>
+
+    <div class="content-block-one text-center ">
+        <event editing="events.editing" info="events.items[1]" ctrl="events"></event>
+    </div>
+
+    <div class="content-space-two-events col-md-12">
+        <div class="text-center">s
+        </div>
+    </div>
+
+    <div class="content-block-one text-center ">
+        <event editing="events.editing" info="events.items[2]" ctrl="events"></event>
+    </div>
+<!--</div>-->
+
     <div layout="column">
-        <div class="hvr-grow" ng-repeat="event in events.items | orderBy: 'orderInList'" >
-            <event editing="events.editing" info="event" ctrl="events"></event>
+        <div class="hvr-grow" ng-repeat="event in events.items | orderBy: 'orderInList'">
         </div>
         <add-item ng-if="events.editing" ctrl="events" label="Event Name"></add-item>
     </div>
