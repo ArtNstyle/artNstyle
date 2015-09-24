@@ -5,8 +5,8 @@ $max-content-width: 900px;
 
 .events {
   font-family: $font-family;
-  margin: 0px auto;
-  max-width: $max-content-width;
+  // margin: 0px auto;
+  // max-width: $max-content-width;
   text-align: center;
 
   p {
@@ -35,6 +35,15 @@ $max-content-width: 900px;
 .event {
   position: relative;
   margin: 2%;
+  
+.event-container{
+    width:100%;
+    padding-top:5%;
+    }
+// .content-block-one .event-container{
+//     width:100%;
+//     padding-top: 10%;
+// }
 
   .image-container {
     padding: 2%;
@@ -113,4 +122,95 @@ $max-content-width: 900px;
 }
 
 
+}
+
+.content-block {
+  // padding: 30px ;
+  margin-bottom: 0px;
+  color: inherit;
+ background:#f2efe5;
+ 
+}
+
+
+.content-block-one {
+  // padding: 30px;
+  margin-bottom: 0px;
+  color: inherit;
+ background:#f2efe5;
+ 
+}
+
+.content-block-one p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+}
+.content-block p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+  
+}
+
+.container .content-block-one {
+  border-radius: 6px;
+}
+.content-block-one .container {
+  max-width: 100%;
+  width: 100%;
+}
+.container .content-block {
+  border-radius: 6px;
+ 
+}
+.content-block .container {
+  max-width: 100%;
+  
+  
+}
+@media screen and (min-width: 768px) {
+  .content-block-one {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container .content-block-one {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+    .content-block {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container .content-block {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+}
+
+.content-space-one-events {
+  padding: 0px;
+  margin-bottom: 0px;
+  color: inherit;
+  background: url(./images/tTown.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.content-space-two-events {
+  padding: 0px;
+  margin-bottom: 0px;
+  color: inherit;
+  background: url(./images/tTown.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
