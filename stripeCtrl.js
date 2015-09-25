@@ -1,5 +1,5 @@
 var exports = module.exports;
-var stripe = require("stripe")('sk_test_Ns26RNDadYy1USJuPMbjalcS');
+var stripe = require("stripe")('pk_test_XcGa1WN1ZQKGkxYqksqFTeKE');
 
 exports.makePayment = function(req, res) {
   console.log('this is in stripeCtrl', req.body);
@@ -9,7 +9,7 @@ exports.makePayment = function(req, res) {
     amount: req.body.amount,
     currency: "usd",
     source: stripeToken,
-    description: "SWYC Registration"
+    description: "ArtNstyle"
   }, function(err, charge) {
     if (err) return res.status(505).send(err);
     console.log('this is charge', charge);
