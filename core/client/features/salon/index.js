@@ -9,5 +9,4 @@ export default angular.module('app.salon', [mainMenu])
     .name;
 
 
-import '../salon/images/flower.jpg';
 
