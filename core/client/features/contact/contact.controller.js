@@ -1,5 +1,5 @@
 module.exports = function (app) {
-    app.controller('contactController', function ($scope, ticketsResource) {
+    app.controller('contactController', function ($scope) {
 
         // code for the google map
         $scope.map = {
@@ -19,10 +19,6 @@ module.exports = function (app) {
         };
 
         // tickets management
-        $scope.tickets = ticketsResource.get({});
-
-
-
 
     });
 };
