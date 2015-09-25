@@ -1,10 +1,10 @@
-var cart = require('../models/cart.server.model.js');
+var order = require('../models/order.server.model.js');
 
 module.exports = {
 
   create: function(req, res) {
-    var newCartDocument = new cart(req.body);
-    newCartDocument.save(function(err, result) {
+    var newOrderDocument = new order(req.body);
+    newOrderDocument.save(function(err, result) {
       if (err) return res.status(500).send(err);
       res.send(result);
     });
@@ -12,7 +12,7 @@ module.exports = {
 
 
   read: function(req, res) {
-    cart.findOne({_id: req.query.id})
+    order.findOne({_id: req.query.id})
     .exec(function(err, result) {
       if (err) return res.status(500).send(err);
       res.json(result);
@@ -20,14 +20,14 @@ module.exports = {
   },
 
   remove: function(req, res) {
-    cart.findByIdAndRemove(req.query.id, function(err, result) {
+    order.findByIdAndRemove(req.query.id, function(err, result) {
       if (err) return res.status(500).send(err);
       res.send(result);
     });
   },
 
   update: function(req, res) {
-    cart.findByIdAndUpdate(
+    order.findByIdAndUpdate(
       req.query.id,
       req.body,
       function(err, result) {
