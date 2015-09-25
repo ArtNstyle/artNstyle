@@ -1,6 +1,49 @@
 <div class="cart">
-<main-menu></main-menu>
-I AM working!
-<stripe></stripe>
-{{test}}
+    <main-menu></main-menu>
+
+    <h2 class="title">SHOPPING CART
+        <button ng-click="cart.addTestItem()">Add Test Item</button>
+        <hr>
+    </h2>
+
+    <table>
+        <thead>
+            <tr>
+                <td class="name">Item</td>
+                <td>Price</td>
+                <td>Amount</td>
+                <td>Total</td>
+                <td></td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="item in cart.items">
+                <td class="name">{{item.name}}</td>
+                <td>{{item.price | currency }}</td>
+                <td>{{item.amount}}</td>
+                <td>{{item.total | currency}}</td>
+                <td
+                <md-button class="md-icon-button md-accent small-delete-button" ng-click="cart.deleteItem(item)">
+                    <i class="material-icons">delete</i>
+                </md-button>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="totals" ng-if="cart.items.length">
+        <div>SubTotal: {{cart.subTotal | currency}}</div>
+        <div>Tax: {{cart.taxTotal | currency}}</div>
+        <div>Order Total: {{cart.total| currency}}</div>
+    </div>
+
+    <br><br><br><br>
+    <br>
+    <br>
+    <stripe></stripe>
+    <br>
+
+
+
+
 </div>
