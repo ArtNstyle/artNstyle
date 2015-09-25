@@ -41,6 +41,7 @@ export default class BaseWebController {
     }
 
     deleteItem(item) {
+        //console.log("BaseWebController: deleting item", item);
         if(item.image) {
             return this.deletePic(item).then((picResponse)=> {
                 return this.myWebService.deleteItem(item).then((response)=> {

@@ -38,8 +38,8 @@ function stripe($http, $rootScope) {
 	      	console.log('hi')
 	        // Open Checkout with further options
 	        handler.open({
-	          name: 'GYC Southwest',
-	          description: 'SWYC Registration',
+	          name: 'Art-N-Style',
+	          description: 'Salon',
 	          amount: scope.total + '00'
 	        });
 	        e.preventDefault();
