@@ -3,7 +3,7 @@
 .active {
     height: 100%;
     position: initial; 
-    background: radial-gradient(violet, blue, orange);  
+    /*background: radial-gradient(violet, blue, orange);  */
 }
 
 .carousel-inner {
@@ -20,7 +20,7 @@
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    opacity: 0.7;
+    /*opacity: 0.7;*/
     
 }
 
@@ -31,6 +31,7 @@ h2 {
     width:100%;
     font-size: 2em;
     color: white;
+    text-shadow: 0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
 }
 
 @media (max-width: 736px){

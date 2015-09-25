@@ -17,9 +17,9 @@ $max-content-width: 900px;
     float: right;
   }
 
-  .title {
-    color: $main-color;
-  }
+  // .title {
+    // color: $main-color;
+  // }
 
   .title hr {
     max-width: 200px;
@@ -59,12 +59,13 @@ $max-content-width: 900px;
   }
 
   .event-content {
-    border: 1px solid $main-color;
-    border-radius: 5px;
+    // border: 1px solid $main-color;
+    // border-radius: 5px;
+    // background-color: white;
   }
 
   .name {
-    background-color: $main-color;
+    background-color: dimgray;
     color: white;
     padding: 1%;
     font-weight: 600;
@@ -72,14 +73,14 @@ $max-content-width: 900px;
   }
 
   .timing {
-    background-color: $main-color;
+    background-color: black;
     color: white;
     padding: 1%;
     padding-bottom: 0px;
   }
 
   .date {
-    //padding: 0px 1%;
+   color: white;
   }
 
   .time {
@@ -190,7 +191,7 @@ $max-content-width: 900px;
     padding: 0px;
     margin-bottom: 0px;
     color: inherit;
-    background: url(./images/tTown.jpg) no-repeat center center fixed;
+    background: url(./images/tulsa.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -202,7 +203,7 @@ $max-content-width: 900px;
     padding: 0px;
     margin-bottom: 0px;
     color: inherit;
-    background: url(./images/tTown.jpg) no-repeat center center fixed;
+    background: url(./images/tulsa.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -215,7 +216,7 @@ $max-content-width: 900px;
     padding: 0px;
     margin-bottom: 0px;
     color: inherit;
-    background: url(./images/tTown.jpg) no-repeat center center fixed;
+    background: url(./images/tulsa.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
