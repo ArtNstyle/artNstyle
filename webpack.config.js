@@ -1,6 +1,6 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+var webpack = require('webpack');
 module.exports = {
     devtool: "eval",
     context: path.resolve('core/client'),
@@ -67,7 +67,12 @@ module.exports = {
     },
 
     plugins: [
-        new ExtractTextPlugin('styles.css')
+        new ExtractTextPlugin('styles.css'),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
+        
     ],
 
     resolve: {

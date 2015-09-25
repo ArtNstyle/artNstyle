@@ -10,8 +10,12 @@
     </h2>
 
     <div layout="row" layout-wrap>
+<<<<<<< HEAD
         <div flex="50" flex-sm="100" ng-repeat="artist in artists.artists" >
         <div flex="50" flex-sm="100" ng-repeat="artist in artists.items | orderBy: 'orderInList'" >
+=======
+        <div class="hvr-float-shadow" flex="50" flex-sm="100" ng-repeat="artist in artists.items | orderBy: 'orderInList'" >
+>>>>>>> 62b794c6304ee0fa40ecaee2a3437ec2eea89f0b
             <artist editing="artists.editing" info="artist" ctrl="artists"></artist>
         </div>
         <add-item ng-if="artists.editing" flex="50" flex-sm="100" ctrl="artists" label="Artist Name"></add-item>
