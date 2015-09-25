@@ -1,13 +1,13 @@
 <editable-item class="event" editing="{{editing}}" item="info" delete-item-fn="ctrl.deleteItem(info)"
                save-item-fn="ctrl.saveItem(info)" change-pic-fn="ctrl.addPic(info, file)">
     <div class="event-container" layout="row" layout-wrap layout-align="center">
-        <div ng-if="info.image" flex="20" flex-sm="50" class="image-container">
-            <div class="square" ng-style="{'background-image':'url({{info.image}})'}" ></div>
+        <div ng-if="info.image" flex="20" flex-sm="50" class="image-container md-whiteframe-z2">
+            <div class="square md-whiteframe-z2" ng-style="{'background-image':'url({{info.image}})'}" ></div>
         </div>
 
-        <div class="event-content" layout="column" flex flex-sm="100">
-            <div layout="row" layout-align="center" class="timing">
-                <div class="date">
+        <div class="event-content md-whiteframe-z2" layout="column" flex flex-sm="100">
+            <div layout="row" layout-align="center" class="timing md-whiteframe-z2">
+                <div class="date ">
                     <editable-text editing="{{editing}}" item="info" field="date" placeholder="Date" ctrl="ctrl"></editable-text>
                 </div>
             </div>
