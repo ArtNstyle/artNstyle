@@ -2,7 +2,6 @@ $main-color: #5B7AFF;
 
 .mainMenu {
   md-toolbar, md-toolbar:not(.md-menu-toolbar) {
-    color: $main-color;
     font-weight: bold;
     font-size: 16px;
     background-color: transparent;
@@ -16,8 +15,6 @@ $main-color: #5B7AFF;
   }
 
   md-toolbar i {
-    color: $main-color;
-    border: 2px solid #6889FB;
     border-radius: 20%;
   }
 
@@ -40,4 +37,49 @@ $main-color: #5B7AFF;
     max-height: initial;
     height: initial;
   }
+  
+  @-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
 }

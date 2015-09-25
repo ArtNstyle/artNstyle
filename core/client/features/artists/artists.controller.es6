@@ -1,35 +1,36 @@
 import BaseWebController from "../commonControllers/baseWeb.controller"
 
 export default class artistsController extends BaseWebController {
-  constructor($location, artistsService, picsService) {
-    super($location, artistsService, picsService);
+  constructor($location, artistsService, picsService, loggedUserService, $state, artsService) {
+    super($location, artistsService, picsService, loggedUserService);
     this.test = 'Hello from artistsController';
+    this.$state = $state;
+    this.artsService = artsService;
   }
 
-  getItems() {
-    this.artistsService.getItems().then((data) => {
-      this.artists = data;
-      //console.log("this.artists", this.artists);
+  gotoArtist(artist) {
+    this.$state.go('arts', {artistId: artist._id});
+  }
+
+  deleteArts(artist) {
+    var artsQuery = "?artistId=" + artist._id;
+    //console.log("artistsController: deleteArts", artsQuery);
+    return this.artsService.getItems(artsQuery).then((arts) => {
+        //console.log("artistsController: deleteArts", arts);
+        for(var i = 0; i < arts.length; i++) {
+          this.artsService.deleteItem(arts[i]);
+        }
+        return;
     });
-  }
 
-  saveItem(artist) {
-    return this.artistsService.saveItem(artist);
   }
 
   deleteItem(artist) {
-    return this.artistsService.deleteItem(artist).then((response)=> {
-      this.getItems();
-    });
-  }
-
-  addItem(artist) {
-    return this.artistsService.addItem(artist).then((response)=> {
-      this.getItems();
-    });
+    this.deleteArts(artist).then((response) => {
+      super.deleteItem(artist);
+    })
   }
 
 }
 
-//StylistsController.$inject = ['randomNames'];
 //artistsController.$inject = ['randomNames'];

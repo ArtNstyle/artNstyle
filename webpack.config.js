@@ -59,9 +59,9 @@ module.exports = {
                 loader: 'html-loader'
             },
             {
-                test: /\.(png|jpg)$/,
+                test: /\.(png|jpg|jpeg)$/,
                 exclude: /node_modules/,
-                loader: 'url-loader?limit=1000'
+                loader: 'file?name=[name].[ext]'
             }
         ]
     },

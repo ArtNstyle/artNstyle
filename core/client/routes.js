@@ -54,6 +54,16 @@ module.exports = function (app) {
                     },
                 }
             })
+            .state('arts', {
+                url: '/arts/:artistId',
+                views: {
+                    main: {
+                        template: require('./features/arts/arts.template.html'),
+                        controller: 'artsController',
+                        controllerAs: 'arts'
+                    },
+                }
+            })
             .state('events', {
                 url: '/events',
                 views: {
@@ -64,7 +74,8 @@ module.exports = function (app) {
                     },
                 }
             })
-            .state('cart',{
+
+            .state('cart', {
                 url: '/cart',
                 views: {
                     main: {
@@ -72,8 +83,18 @@ module.exports = function (app) {
                         controller: 'cartController',
                         controllerAs: 'cart'
                     },
-                    
+
                 }
             })
+            .state('contact', {
+                url: '/contact',
+                views: {
+                    main: {
+                        template: require('./features/contact/contact.template.html'),
+                        controller: 'contactController'
+                    },
+
+                }
+            });
     });
 };

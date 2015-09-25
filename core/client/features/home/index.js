@@ -9,3 +9,7 @@ export default angular.module('app.home', [mainMenu])
     .name;
 
 
+import '../home/images/coolhair.jpg';
+import '../home/images/hstyle2.jpg';
+import '../home/images/art10.jpg';
+import '../home/images/ttown.jpg';

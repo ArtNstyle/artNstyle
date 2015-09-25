@@ -1,5 +1,8 @@
 
 //console.log('app loaded');
+var lodash = require('lodash');
+require('angular-simple-logger');
+require('angular-google-maps');
 
 import jQuery from 'jquery';
 import bootstrap from 'bootstrap';
@@ -9,8 +12,6 @@ import 'hover.css/css/hover.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'angular-material/angular-material.css';
 import './app.scss';
-
-
 
 
 import angular from 'angular';
@@ -26,11 +27,11 @@ import stylists from './features/stylists';
 import salon from './features/salon';
 import tanning from './features/tanning';
 import artists from './features/artists';
+import arts from './features/arts';
 import events from './features/events';
 import cart from './features/cart';
 
-
-var app = angular.module('app', [uiRouter, ngMaterial, ngFileUpload, goClick, home, stylists, salon, tanning, artists, events, cart]);  
+ 
 
 
 // Dear teammates: this controller would serve the only purpose of making the function $scope.isLoggedIn
@@ -51,9 +52,14 @@ var app = angular.module('app', [uiRouter, ngMaterial, ngFileUpload, goClick, ho
 
 
 
+var app = angular.module('app', [uiRouter, ngMaterial, ngFileUpload, goClick, home, stylists, salon, tanning, artists, arts, events, cart, 'uiGmapgoogle-maps']);
+
 
 
 
 require('./routes')(app);
+
+// the contacts page feature
+require('./features/contact/')(app);
 
 

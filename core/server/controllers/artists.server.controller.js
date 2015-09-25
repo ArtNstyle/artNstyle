@@ -21,7 +21,7 @@ module.exports = {
 
 
   read: function(req, res) {
-    console.log(req.query.lastName);
+    //console.log(req.query.lastName);
     artist.findOne({_id: req.query.id})
     .exec(function(err, result) {
       if (err) return res.status(500).send(err);

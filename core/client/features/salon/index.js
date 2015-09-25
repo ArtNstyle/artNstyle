@@ -8,3 +8,6 @@ export default angular.module('app.salon', [mainMenu])
     .controller('salonController', salonController)
     .name;
 
+
+import '../salon/images/flower.jpg';
+

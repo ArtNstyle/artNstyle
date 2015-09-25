@@ -1,0 +1,95 @@
+$lighter-opacity:0.75;
+$main-color: #5B7AFF;
+$main-background-color:#f2efe5;
+$font-familiy: 'Lato', sans-serif;
+$max-content-width: 900px;
+
+.arts {
+  font-family: $font-familiy;
+  margin: 0px auto;
+  max-width: $max-content-width;
+  text-align: center;
+
+  .edit-button {
+    float: right;
+  }
+
+  .title {
+
+  }
+
+  .title hr {
+    max-width: 400px;
+    color: $main-color;
+  }
+
+  .hvr-trim {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+  }
+  .hvr-trim:before {
+    content: '';
+    position: absolute;
+    border: black solid 6px;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    opacity: 0;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+  }
+  .hvr-trim:hover:before, .hvr-trim:focus:before, .hvr-trim:active:before {
+    opacity: 1;
+  }
+}
+
+
+.art {
+  position: relative;
+  padding: 4%;
+  margin: 2%;
+
+  .square {
+    width: 100%;
+    padding-bottom: 100%; /* = width for a 1:1 aspect ratio */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; /* you change this from "cover" to "contain" if you don't want the images to be cropped */
+    //border-radius: 10%;
+    margin-bottom: 4%;
+  }
+
+  .square:hover {
+    opacity: 0.8;
+  }
+
+  md-input-container {
+    padding-bottom: 0px;
+  }
+}
+
+md-dialog {
+  background-color: $main-background-color;
+  height: 80%;
+  max-width: 80%;
+  max-height: 80%;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: auto;
+  }
+
+}
