@@ -12,3 +12,4 @@ artSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('art', artSchema)
+
