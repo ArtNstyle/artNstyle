@@ -11,7 +11,7 @@ function stripe($http, $rootScope) {
 	        key: 'pk_test_XcGa1WN1ZQKGkxYqksqFTeKE',
 	        // image: './img/cc.png',
 	        token: function(token, args) {
-	          token.amount = scope.total + '00'
+	          token.amount = scope.cart.total + '00'
 	          var $input = $('<input type=hidden name=stripeToken />').val(
 	            token.id);
 	          $('form').append($input).submit();
