@@ -8,7 +8,7 @@ function stripe($http, $rootScope) {
 	      console.log('this is directive scope', scope);
 
 	      var handler = StripeCheckout.configure({
-	        key: 'pk_test_dxhB60qLTabpgCmSeQiY7sc1',
+	        key: 'pk_test_XcGa1WN1ZQKGkxYqksqFTeKE',
 	        // image: './img/cc.png',
 	        token: function(token, args) {
 	          token.amount = scope.total + '00'

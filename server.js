@@ -6,7 +6,7 @@ var port = process.env.PORT || 5000;
 var mongoose = require('./core/server/config/mongoose'),
     express = require('./core/server/config/express');
     // stripe
-var stripe = require('stripe')('pk_test_dxhB60qLTabpgCmSeQiY7sc1');
+var stripe = require('stripe')('pk_test_XcGa1WN1ZQKGkxYqksqFTeKE');
 var stripeCtrl = require('./stripeCtrl');
 // app.post('/api/payment', stripeCtrl.makePayment);
 
