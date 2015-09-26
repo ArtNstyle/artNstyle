@@ -1,12 +1,8 @@
 var mongoose = require('mongoose');
 
 stripeSchema = new mongoose.Schema({
-  token: {type: String, required: true},
-  subscription: {
-  	     type: String,
-  		  enum: ['one-time', 
-         'subscription']
-  }
+  email: {type: String, required: true},
+  token: {type: String, required: true}
 })
 
 module.exports = mongoose.model('stripe', stripeSchema)
