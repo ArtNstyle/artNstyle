@@ -20,6 +20,7 @@
               <a class="hvr-pulse" href="/#/artists">Artists </a>
               <a class="hvr-pulse" href="/#/events">Events </a>
               <a class="hvr-pulse" ui-sref="contact">Contact</a>
+              <a ng-if="authenticated" class="hvr-pulse" href="/#/orders">Orders</a>
 
             </span>
 
@@ -50,6 +51,9 @@
                           </md-menu-item>
                           <md-menu-item>
                               <md-button go-click="/contact"><span md-menu-align-target>Contact</span></md-button>
+                          </md-menu-item>
+                          <md-menu-item ng-if="authenticated">
+                              <md-button go-click="/orders"><span md-menu-align-target>Orders</span></md-button>
                           </md-menu-item>
                       </md-menu-content>
                   </md-menu>

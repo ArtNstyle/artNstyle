@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 artSchema = new mongoose.Schema({
     name: {type: String, required: true},
     image: {type: String},
+    price: {type: String},
     artistId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "artist",
@@ -12,3 +13,4 @@ artSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('art', artSchema)
+

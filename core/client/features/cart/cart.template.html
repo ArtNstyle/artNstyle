@@ -1,6 +1,90 @@
 <div class="cart">
-<main-menu></main-menu>
-I AM working!
-<stripe></stripe>
-{{test}}
+    <main-menu></main-menu>
+
+    <h2 class="title">SHOPPING CART
+        <button ng-click="cart.addTestItem()">Add Item</button>
+        <button ng-click="cart.addTestSub()">Add Sub</button>
+        <hr>
+    </h2>
+
+    <div ng-if="! cart.items.length && ! cart.subscriptions.length">
+        No Items in Cart
+    </div>
+
+    <div ng-if="cart.items.length">
+        <table>
+            <thead>
+                <tr>
+                    <td class="name">Item</td>
+                    <td>Price</td>
+                    <td>Amount</td>
+                    <td>Total</td>
+                    <td></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="item in cart.items">
+                    <td class="name">{{item.name}}</td>
+                    <td>{{item.price | currency }}</td>
+                    <td>{{item.amount}}</td>
+                    <td>{{item.total | currency}}</td>
+                    <td>
+                        <md-button ng-disabled="cart.orderSubmitted" class="md-icon-button" ng-click="cart.deleteItem(item)">
+                            <i class="material-icons">delete</i>
+                        </md-button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div ng-if="cart.subscriptions.length">
+        <h3>New Subscriptions (Monthly Price, first month included in Totals)</h3>
+        <table>
+            <thead>
+            <tr>
+                <td class="name">Item</td>
+                <td>Price</td>
+                <td>Amount</td>
+                <td>Total</td>
+                <td></td>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="item in cart.subscriptions">
+                <td class="name">{{item.name}}</td>
+                <td>{{item.price | currency }}</td>
+                <td>{{item.amount}}</td>
+                <td>{{item.total | currency}}</td>
+                <td>
+                    <md-button ng-disabled="cart.orderSubmitted" class="md-icon-button" ng-click="cart.deleteSubscription(item)">
+                        <i class="material-icons">delete</i>
+                    </md-button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="totals" ng-if="cart.items.length || cart.subscriptions.length">
+        <div>SubTotal: {{cart.subTotal | currency}}</div>
+        <div>Tax: {{cart.taxTotal | currency}}</div>
+        <div>Order Total: {{cart.total| currency}}</div>
+        <input type="text" ng-model="cart.customerEmail" placeholder="email"/>
+        <md-button ng-disabled="cart.orderSubmitted" class="md-raised md-primary" ng-click="cart.submitOrder()">Submit Order</md-button>
+        <p ng-if="cart.orderSubmitted" class="order-submitted">Order Submitted</p>
+    </div>
+
+
+    <br><br><br><br>
+    <br>
+    <br>
+    <stripe></stripe>
+    <br>
+
+
+
+
 </div>

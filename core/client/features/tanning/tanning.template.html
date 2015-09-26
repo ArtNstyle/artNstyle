@@ -1,4 +1,5 @@
 <div class="tanning">
+<<<<<<< HEAD
 <main-menu></main-menu>
   <div class="content-space-one-tanning col-md-12">
         <div class="text-center">
@@ -8,56 +9,71 @@
 <img class="col-md-6" src="images/versa1.png"/>
 
 
- <div class="content-space-one-tanning col-md-12">
-        <div class="text-center">
-        </div>
-    </div>
-     <div class="content-block text-center ">
-<h2 class="header0605">No Contract Tanning Packages*</h2><br>
-  <p>Single Tan, $30, quick and easy way to get a great tan!</p>
-  <md-button class="md-raised">Add to cart</md-button>
-  <p>3 tans, $65 shareable with 1-2 friends!</p>
- <md-button class="md-raised">Add to cart</md-button>
-  <p>4 tans $80, shareable with 1-3 friends!</p>
-  <md-button class="md-raised">Add to cart</md-button>
-     </div>
-     
-     
-      <div class="content-space-one-tanning col-md-12">
+    <div class="content-space-one-tanning col-md-12">
         <div class="text-center">
         </div>
     </div>
     <div class="content-block text-center ">
-<h2 class="header0605">Monthly Tanning Packages*</h2><br>
-  <p>Minimalist $20, 1 tan per month (Bronzer only)</p>
-  <md-button class="md-raised">Add to cart</md-button>
-  <p>Starry Night $50, Unlimited Tanning </p>
-        <p>Be the star of every night with the</p><p>Starry Night package (PH-N-Bronzer)</p>
-       <md-button class="md-raised">Add to cart</md-button>
-         <p>Mona Lisa $60, Unlimited Tanning</p>
-        <p>The Mona Lisa of all Packages.</p>  <p>Balance, Bronze-N-Moisturize to create a work of Perfection!</p><p>  Smooth fine lines, reduce cellulite and tighten skin</p>
-       <md-button class="md-raised">Add to cart</md-button>
+        <h2 class="header0605">No Contract Tanning Packages*</h2><br>
+
+        <p>Single Tan, $30, quick and easy way to get a great tan!</p>
+        <md-button ng-if="tanning.cartSupported" class="md-raised" ng-click="tanning.addItemToCart('Single Tan', 30)">Add to cart</md-button>
+
+        <p>3 tans, $65 shareable with 1-2 friends!</p>
+        <md-button ng-if="tanning.cartSupported" class="md-raised" ng-click="tanning.addItemToCart('3 Tans', 65)">Add to cart</md-button>
+
+        <p>4 tans $80, shareable with 1-3 friends!</p>
+        <md-button ng-if="tanning.cartSupported" class="md-raised" ng-click="tanning.addItemToCart('4 Tans', 80)">Add to cart</md-button>
     </div>
-    
-        
-      <div class="content-space-one-tanning col-md-12">
+
+
+    <div class="content-space-one-tanning col-md-12">
         <div class="text-center">
         </div>
     </div>
     <div class="content-block text-center ">
-<h2 class="header0605">Monthly Moisturizing Treatment 
-Packages*(Collagen Rejuvinating)</h2><br>
-<p>  Melt away those fine lines, minimize cellulite and tighten</p><p> for a copacetic blend of supple skin.</p>
-<p> Dali #1: $20, Unlimited Facial Treatments</p>
-<md-button class="md-raised">Add to cart</md-button>
-<p>Dali #2: $30, Unlimited Full Body Treatments</p>
-<md-button class="md-raised">Add to cart</md-button>
-<p>*Monthly Packages consist of a 3 month contract.</p> 
-<p>No contract packages must be used within 90 days of purchase.</p>
-</div>
-  <div class="content-space-one-tanning col-md-12">
+
+        <h2 class="header0605">Monthly Tanning Packages*</h2><br>
+
+        <p>Minimalist $20, 1 tan per month (Bronzer only)</p>
+        <md-button ng-if="tanning.cartSupported" class="md-raised" ng-click="tanning.addSubscriptionToCart('Minimalist, 1 tan per month', 18)">Add to cart</md-button>
+
+        <p>Starry Night $50, Unlimited Tanning </p>
+        <p>Be the star of every night with the</p>
+        <p>Starry Night package (PH-N-Bronzer)</p>
+        <md-button ng-if="tanning.cartSupported" class="md-raised" ng-click="tanning.addSubscriptionToCart('Starry Night, Unlimited Tanning', 50)">Add to cart</md-button>
+
+        <p>Mona Lisa $60, Unlimited Tanning</p>
+        <p>The Mona Lisa of all Packages.</p>
+        <p>Balance, Bronze-N-Moisturize to create a work of Perfection!</p>
+        <p> Smooth fine lines, reduce cellulite and tighten skin</p>
+        <md-button ng-if="tanning.cartSupported" class="md-raised" ng-click="tanning.addSubscriptionToCart('Mona Lisa, Unlimited Tanning', 60)">Add to cart</md-button>
+    </div>
+
+
+    <div class="content-space-one-tanning col-md-12">
         <div class="text-center">
         </div>
+    </div>
+
+    <div class="content-block text-center ">
+
+        <h2 class="header0605">Monthly Moisturizing Treatment
+            Packages*(Collagen Rejuvinating)</h2><br>
+
+        <p> Melt away those fine lines, minimize cellulite and tighten</p>
+
+        <p> for a copacetic blend of supple skin.</p>
+
+        <p> Dali #1: $20, Unlimited Facial Treatments</p>
+        <md-button ng-if="tanning.cartSupported" class="md-raised" ng-click="tanning.addSubscriptionToCart('Dali #1:, Unlimited Facial Treatments', 20)">Add to cart</md-button>
+
+        <p>Dali #2: $30, Unlimited Full Body Treatments</p>
+        <md-button ng-if="tanning.cartSupported" class="md-raised" ng-click="tanning.addSubscriptionToCart('Dali #2:, Unlimited Full Body Treatments', 30)">Add to cart</md-button>
+
+        <p>*Monthly Packages consist of a 3 month contract.</p>
+
+        <p>No contract packages must be used within 90 days of purchase.</p>
     </div>
 </div>
 

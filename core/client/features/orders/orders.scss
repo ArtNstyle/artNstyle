@@ -3,11 +3,19 @@ $main-color: #5B7AFF;
 $font-family: 'Lato', sans-serif;
 $max-content-width: 900px;
 
-.cart {
+.orders {
   font-family: $font-family;
    margin: 0px auto;
    max-width: $max-content-width;
   text-align: center;
+
+  md-input-container {
+    max-width: 200px;
+    text-align:left;
+    margin: 5%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
 
   td {
     width: 80px;
@@ -41,9 +49,5 @@ $max-content-width: 900px;
   .totals {
     margin: 8%;
     text-align: right;
-  }
-
-  .order-submitted {
-    color: red;
   }
 }
