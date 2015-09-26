@@ -1,0 +1,43 @@
+<div class="orders">
+    <main-menu></main-menu>
+
+    <h2 class="title">ORDERS
+        <hr>
+    </h2>
+
+    <table>
+        <thead>
+            <tr>
+                <td class="name">Customer</td>
+                <td class="name">Item</td>
+                <td>Price</td>
+                <td>Amount</td>
+                <td>Total</td>
+                <td></td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="item in orders.items">
+                <td class="name">{{item.customer}}</td>
+                <td class="name">{{item.name}}</td>
+                <td>{{item.price | currency }}</td>
+                <td>{{item.amount}}</td>
+                <td>{{item.total | currency}}</td>
+                <td>
+                    <md-button class="md-icon-button" ng-click="orders.deleteItem(item)">
+                        <i class="material-icons">delete</i>
+                    </md-button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--<div class="totals" ng-if="orders.items.length">-->
+        <!--<div>SubTotal: {{orders.subTotal | currency}}</div>-->
+        <!--<div>Tax: {{orders.taxTotal | currency}}</div>-->
+        <!--<div>Order Total: {{orders.total| currency}}</div>-->
+    <!--</div>-->
+
+
+</div>

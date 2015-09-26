@@ -27,6 +27,7 @@ function stripe($http, $rootScope) {
 	              }
 	            })
 	            .error(function(err) {
+					  console.log('stripe post error', err);
 	              throw new Error(err);
 	            });
 	        }

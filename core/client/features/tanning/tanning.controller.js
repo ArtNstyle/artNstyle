@@ -5,8 +5,16 @@ export default class tanningCtrl {
 		this.test = "tanningCtrl working";
 	}
 
-	addToCart(name, price) {
+	addItemToCart(name, price) {
 		this.cartService.addItem({
+			name: name,
+			price: price,
+			amount: 1
+		})
+	}
+
+	addSubscriptionToCart(name, price) {
+		this.cartService.addSubscription({
 			name: name,
 			price: price,
 			amount: 1
