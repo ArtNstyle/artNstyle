@@ -3,7 +3,7 @@ function savePrevious(previousItem, ctrl) {
     if(previousItem) {
         if(previousItem.visibilities) {
            previousItem.visibilities = {};
-            console.log("savePrevious", previousItem);
+            //console.log("savePrevious", previousItem);
             ctrl.saveItem(previousItem);
             previousItem = undefined;
             return previousItem;

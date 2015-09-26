@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 artSchema = new mongoose.Schema({
     name: {type: String, required: true},
     image: {type: String},
+    price: {type: String},
     artistId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "artist",
