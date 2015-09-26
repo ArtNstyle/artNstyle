@@ -15,3 +15,4 @@ module.exports = function (app) {
 
 };
 
+// app.post('/api/payment', stripeCtrl.makePayment);

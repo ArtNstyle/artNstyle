@@ -7,8 +7,11 @@ var mongoose = require('./core/server/config/mongoose'),
     // stripe
 var stripe = require('stripe')('pk_test_m15Rgu5CaL9nnBd1wFvTIiBV');
 var stripeCtrl = require('./stripeCtrl');
+<<<<<<< HEAD
 app.post('/api/payment', stripeCtrl.makePayment);
+=======
 
+>>>>>>> bc033808f3e9ee8463dd4a8c4f4928e15a3679b0
 
 
 var db = mongoose(),
