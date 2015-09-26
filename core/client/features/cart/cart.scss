@@ -1,0 +1,49 @@
+$lighter-opacity:0.75;
+$main-color: #5B7AFF;
+$font-family: 'Lato', sans-serif;
+$max-content-width: 900px;
+
+.cart {
+  font-family: $font-family;
+   margin: 0px auto;
+   max-width: $max-content-width;
+  text-align: center;
+
+  td {
+    width: 80px;
+    padding: 2%;
+  }
+
+  .name {
+    width: 150px;
+  }
+
+  thead td {
+    font-weight: 600;
+  }
+
+  tbody td {
+    opacity: $lighter-opacity;
+  }
+
+  .title {
+  }
+
+  .title hr {
+    max-width: 200px;
+    color: $main-color;
+  }
+
+  table {
+    margin: auto;
+  }
+
+  .totals {
+    margin: 8%;
+    text-align: right;
+  }
+
+  .order-submitted {
+    color: red;
+  }
+}

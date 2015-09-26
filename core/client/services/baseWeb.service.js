@@ -3,7 +3,7 @@ class BaseWebService {
         this.$log = $log;
         this.$http = $http;
 
-        this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
+        this.url = "/api";
         this.stylistsUri = "/stylists";
         this.artistsUri = "/artists";
         this.artsUri = "/arts";
@@ -69,6 +69,14 @@ class artsService extends BaseWebService {
     constructor($log, $http, $location) {
         super($log, $http, $location);
         this.myUri = this.artsUri;
+    }
+
+    setCurrentArt(art) {
+        this.currentArt = art;
+    }
+
+    getCurrentArt() {
+        return this.currentArt;
     }
 
 }

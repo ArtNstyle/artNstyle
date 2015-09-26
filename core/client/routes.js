@@ -74,6 +74,7 @@ module.exports = function (app) {
                     },
                 }
             })
+
             .state('cart', {
                 url: '/cart',
                 views: {
@@ -85,6 +86,19 @@ module.exports = function (app) {
 
                 }
             })
+
+            .state('orders', {
+                url: '/orders',
+                views: {
+                    main: {
+                        template: require('./features/orders/orders.template.html'),
+                        controller: 'ordersController',
+                        controllerAs: 'orders'
+                    },
+
+                }
+            })
+
             .state('contact', {
                 url: '/contact',
                 views: {
