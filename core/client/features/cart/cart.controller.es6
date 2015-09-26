@@ -1,9 +1,11 @@
 //import BaseWebController from "../commonControllers/baseWeb.controller"
 
 export default class cartController {
-    constructor(cartService) {
+    constructor(cartService, ordersService) {
         this.test = 'Hello from cartController';
         this.cartService = cartService;
+        this.ordersService = ordersService;
+        this.orderSubmitted = false;
 
         this.getItemsAndSubscriptions();
         this.testItemCount = 1;
@@ -30,6 +32,11 @@ export default class cartController {
     deleteSubscription(item) {
         this.cartService.deleteSubscription(item);
         this.getItemsAndSubscriptions();
+    }
+
+    submitOrder() {
+        this.ordersService.addOrders(this.customerEmail, this.items, this.subscriptions);
+        this.orderSubmitted = true;
     }
 
 

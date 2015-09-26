@@ -1,5 +1,3 @@
-//import BaseWebController from "../commonControllers/baseWeb.controller"
-
 export default class ordersController {
     constructor(ordersService, loggedUserService, $state) {
         this.test = 'Hello from ordersController';
@@ -21,12 +19,19 @@ export default class ordersController {
     }
 
     getItems() {
-        this.items = this.ordersService.getItems();
+        this.ordersService.getItems().then((items) => {
+                //console.log("ordersController: items", items)
+                this.items = items;
+        }, (err) => {
+                console.log("ordersController: error getItems", err);
+            }
+        );
     }
 
     deleteItem(item) {
-        this.ordersService.deleteItem(item);
-        this.getItems();
+        this.ordersService.deleteItem(item).then((response) => {
+            this.getItems();
+        })
     }
 
 }

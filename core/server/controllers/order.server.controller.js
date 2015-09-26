@@ -10,6 +10,14 @@ module.exports = {
     });
   },
 
+  readAll: function(req, res) {
+    // console.log('in bookCtrl readAll');
+    order.find()
+        .exec(function(err, result) {
+          if (err) return res.status(500).send(err);
+          res.send(result);
+        });
+  },
 
   read: function(req, res) {
     order.findOne({_id: req.query.id})

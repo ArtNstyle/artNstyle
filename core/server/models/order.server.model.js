@@ -1,13 +1,12 @@
 var mongoose = require('mongoose');
 
 orderSchema = new mongoose.Schema({
-  item: {type: String},
+  customer: {type: String},
+  name: {type: String},
   price: {type: Number},
   amount: {type: Number},
-  total: {type: Number},
-  SubTotal: {type: Number},
-  tax: {type: Number},
-  orderTotal: {type: Number}
+  type: {type: String, enum: ["item", "subscription"]},
+  delivered: {type: Boolean, default: false}
   })
 
 module.exports = mongoose.model('order', orderSchema)

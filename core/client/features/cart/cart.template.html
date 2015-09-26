@@ -30,7 +30,7 @@
                     <td>{{item.amount}}</td>
                     <td>{{item.total | currency}}</td>
                     <td>
-                        <md-button class="md-icon-button" ng-click="cart.deleteItem(item)">
+                        <md-button ng-disabled="cart.orderSubmitted" class="md-icon-button" ng-click="cart.deleteItem(item)">
                             <i class="material-icons">delete</i>
                         </md-button>
                     </td>
@@ -40,7 +40,7 @@
     </div>
 
     <div ng-if="cart.subscriptions.length">
-        <h3>New Subscriptions (Monthly Price, first month paid now)</h3>
+        <h3>New Subscriptions (Monthly Price, first month included in Totals)</h3>
         <table>
             <thead>
             <tr>
@@ -59,7 +59,7 @@
                 <td>{{item.amount}}</td>
                 <td>{{item.total | currency}}</td>
                 <td>
-                    <md-button class="md-icon-button" ng-click="cart.deleteSubscription(item)">
+                    <md-button ng-disabled="cart.orderSubmitted" class="md-icon-button" ng-click="cart.deleteSubscription(item)">
                         <i class="material-icons">delete</i>
                     </md-button>
                 </td>
@@ -72,7 +72,11 @@
         <div>SubTotal: {{cart.subTotal | currency}}</div>
         <div>Tax: {{cart.taxTotal | currency}}</div>
         <div>Order Total: {{cart.total| currency}}</div>
+        <input type="text" ng-model="cart.customerEmail" placeholder="email"/>
+        <md-button ng-disabled="cart.orderSubmitted" class="md-raised md-primary" ng-click="cart.submitOrder()">Submit Order</md-button>
+        <p ng-if="cart.orderSubmitted" class="order-submitted">Order Submitted</p>
     </div>
+
 
     <br><br><br><br>
     <br>

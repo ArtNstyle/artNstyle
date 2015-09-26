@@ -8,43 +8,50 @@ class ordersService {
     }
 
     getItems() {
-        return this.items;
+        return this.$http.get('/api/order/all').then((response) => {
+            //console.log("ordersService: getItems", response);
+            return response.data;
+        })
     }
 
-    countItemTotal(item) {
-        item.total = item.amount * item.price;
+    addItems(customerEmail, items) {
+        for(var i = 0; i < items.length; i++ ) {
+            items[i].customer = customerEmail;
+            items[i].type = "item";
+            this.$http.post('/api/order', items[i]).then((response) => {
+                //console.log("added order", response.data)
+            }, (err) => {
+                console.log("error adding order", items[i]);
+            })
+        }
     }
 
-    addItem(item) {
-        item.id = this.sessionId++;
-        item.amount = item.amount || 1;
-        this.countItemTotal(item);
-        this.items.push(item);
-        //this.countTotals();
+    addSubscriptions(customerEmail, subscriptions) {
+        for(var i = 0; i < subscriptions.length; i++ ) {
+            subscriptions[i].customer = customerEmail;
+            subscriptions[i].type = "subscription";
+            this.$http.post('/api/order', subscriptions[i]).then((response) => {
+                //console.log("added subscription", response.data)
+            }, (err) => {
+                console.log("error adding subscription", subscriptions[i]);
+            })
+        }
     }
+
+    addOrders(customerEmail, items, subscriptions) {
+        this.addItems(customerEmail, items);
+        this.addSubscriptions(customerEmail, subscriptions);
+    }
+
+
 
     deleteItem(item) {
-        for(var i = 0; i < this.items.length; i++) {
-            if(this.items[i].id === item.id) {
-                this.items.splice(i, 1);
-            }
-        }
-        //this.countTotals();
-
+        //console.log("deleting order", item);
+        return this.$http.delete('/api/order?id=' + item._id).then((response) => {
+        }, (err) => {
+            console.log("error deleting order", item);
+        })
     }
-
-    //countTotals() {
-    //    this.subTotal= 0;
-    //    for(var i = 0; i < this.items.length; i++) {
-    //        this.subTotal += this.items[i].total;
-    //    }
-    //    this.taxTotal = this.tax/100 * this.subTotal;
-    //    this.total = this.subTotal + this.taxTotal;
-    //}
-    //
-    //submitOrder() {
-    //
-    //}
 
 }
 

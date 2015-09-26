@@ -10,7 +10,6 @@
     </h2>
 
     <div layout="row" layout-wrap>
-        <div flex="50" flex-sm="100" ng-repeat="artist in artists.items | orderBy: 'orderInList'" >
         <div class="hvr-trim" flex="50" flex-sm="100" ng-repeat="artist in artists.items | orderBy: 'orderInList'" >
             <artist editing="artists.editing" info="artist" ctrl="artists"></artist>
         </div>
