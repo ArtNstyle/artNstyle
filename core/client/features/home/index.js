@@ -16,8 +16,8 @@ import '../home/images/ttown.jpg';
 import '../home/images/flowerGirl.jpg';
 import '../home/images/fish.jpeg';
 import '../home/images/flower.jpg';
-import '../home/images/hairC.jpg';
-import '../home/images/hairCo.jpg';
+
+
 import '../home/images/Hair.jpg';
 import '../home/images/hair1.jpg';
 import '../home/images/hair2.jpg';
