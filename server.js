@@ -5,13 +5,16 @@ var port = process.env.PORT || 5000;
 var mongoose = require('./core/server/config/mongoose'),
     express = require('./core/server/config/express');
     // stripe
-var stripe = require('stripe')('pk_test_XcGa1WN1ZQKGkxYqksqFTeKE');
+var stripe = require('stripe')('pk_test_31ZEa41V3AWPDgXegf0z7uAD');
 var stripeCtrl = require('./stripeCtrl');
-app.post('/api/payment', stripeCtrl.makePayment);
+console.log('do you see me');
 
 
 var db = mongoose(),
     app = express();
+
+//stripe post
+app.post('/api/payment', stripeCtrl.makePayment);
 
 
 app.listen(port, function () {

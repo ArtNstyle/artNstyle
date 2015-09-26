@@ -71,7 +71,7 @@ module.exports = function () {
     require('../routes/tanning.server.routes.js')(app);
     require('../routes/pic.server.routes.js')(app);
     require('../routes/auth.server.routes.js')(app);
-    require('../routes/stripe.server.routes.js')(app);
+    // require('../routes/stripe.server.routes.js')(app);
 
     // THIS WILL BE ANGULAR APP
     // needs to come after setting the rendering engine

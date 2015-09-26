@@ -1,10 +1,9 @@
 var exports = module.exports;
-var stripe = require("stripe")('pk_test_XcGa1WN1ZQKGkxYqksqFTeKE');
+var stripe = require("stripe")('pk_test_31ZEa41V3AWPDgXegf0z7uAD');
 
 exports.makePayment = function(req, res) {
   console.log('this is in stripeCtrl', req.body);
   var stripeToken = req.body.id;
-
   var charge = stripe.charges.create({
     amount: req.body.amount,
     currency: "usd",
