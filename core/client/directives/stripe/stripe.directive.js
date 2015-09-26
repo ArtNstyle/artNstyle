@@ -9,22 +9,19 @@ function stripe($http, $rootScope) {
 
 	      var handler = StripeCheckout.configure({
 
-	        key: 'pk_test_m15Rgu5CaL9nnBd1wFvTIiBV',
+	        key: 'pk_test_CjsDYe4Aj8fYmJN5m1aYd94A',
 	        // image: './img/cc.png',
 	        token: function(token, args) {
 	          token.amount = scope.cart.total * 100
-	          var $input = $('<input type=hidden name=stripeToken />').val(
-	            token.id);
+	          var $input = $('<input type=hidden name=stripeToken />').val(token.id);
 	          $('form').append($input).submit();
-	          console.log('this is token,',
-	            token);
+	          console.log('this is token,', token);
 
 	          $http.post('/api/payment', token)
 	            .success(function(response) {
-	              console.info('response stripe directive: ',
-	                response);
+	              console.info('response stripe directive: ', response);
 	              if (response.paid === true) {
-	               
+	               console.log('yesssss')
 	              }
 	            })
 	            .error(function(err) {

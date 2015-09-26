@@ -1,11 +1,11 @@
 var exports = module.exports;
 
-var stripe = require("stripe")('pk_test_m15Rgu5CaL9nnBd1wFvTIiBV');
+var stripe = require("stripe")('sk_test_fgfZJsb4ZDW0L2huWhoNYF72');
 
 exports.makePayment = function(req, res) {
-  console.log('this is in stripeCtrl', req.body);
+  // console.log('this is in stripeCtrl', req.body);
   var stripeToken = req.body.id;
-
+  console.log('stripeToken', stripeToken)
   var charge = stripe.charges.create({
     amount: req.body.amount,
     currency: "usd",
@@ -17,3 +17,4 @@ exports.makePayment = function(req, res) {
     return res.json(charge);
   });
 }
+

@@ -5,7 +5,7 @@ var port = process.env.PORT || 5000;
 var mongoose = require('./core/server/config/mongoose'),
     express = require('./core/server/config/express');
     // stripe
-var stripe = require('stripe')('pk_test_m15Rgu5CaL9nnBd1wFvTIiBV');
+var stripe = require('stripe')('sk_test_fgfZJsb4ZDW0L2huWhoNYF72');
 var stripeCtrl = require('./stripeCtrl');
 
 
