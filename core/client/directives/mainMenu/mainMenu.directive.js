@@ -1,10 +1,11 @@
 import '../../directives/mainMenu/mainMenu.scss';
 
-function mainMenu() {
+function mainMenu(loggedUserService) {
     return {
         restrict: 'E',
         templateUrl: "../../directives/mainMenu/mainMenu.template.html",
-        link: function( $scope, lElem, lAttr ){
+        link: function( $scope, lElem, lAttr){
+            $scope.authenticated = loggedUserService.authenticated;
         }
     }
 }

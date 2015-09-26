@@ -7,4 +7,7 @@ module.exports = function (app) {
         .put(orderCtrl.update)
         .delete(orderCtrl.remove);
 
+    app.route('/api/order/all')
+        .get(orderCtrl.readAll)
+
 }

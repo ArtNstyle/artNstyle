@@ -30,6 +30,7 @@ import artists from './features/artists';
 import arts from './features/arts';
 import events from './features/events';
 import cart from './features/cart';
+import orders from './features/orders';
 
  
 
@@ -52,7 +53,7 @@ import cart from './features/cart';
 
 
 
-var app = angular.module('app', [uiRouter, ngMaterial, ngFileUpload, goClick, home, stylists, salon, tanning, artists, arts, events, cart, 'uiGmapgoogle-maps']);
+var app = angular.module('app', [uiRouter, ngMaterial, ngFileUpload, goClick, home, stylists, salon, tanning, artists, arts, events, cart, orders, 'uiGmapgoogle-maps']);
 
 
 
