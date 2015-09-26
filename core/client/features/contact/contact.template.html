@@ -1,12 +1,37 @@
+<main-menu>
 
 
-
-  <main-menu></main-menu>
+</main-menu>
 
 <ui-gmap-google-map center='map.center' zoom='map.zoom'>
     <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
     </ui-gmap-marker>
 </ui-gmap-google-map>
 
-tickets: {{ tickets }}
-
+<div layout="row" layout-fill layout-padding layout-wrap>
+    <div ng-repeat="ticket in tickets">
+        <md-card flex>
+            <md-card-content>
+                <md-subheader>{{ ticket.name }}</md-subheader>
+                <md-list class="quizcard">
+                    <md-list-item>
+                        <h4 class="md-list-item-text">{{ ticket.email }}</h4>
+                    </md-list-item>
+                    <md-list-item>
+                        <h4 class="md-list-item-text">{{ ticket.phone }}</h4>
+                    </md-list-item>
+                    <md-list-item>
+                        <h4 class="md-list-item-text">{{ ticket.comment }}</h4>
+                    </md-list-item>
+                </md-list>
+            </md-card-content>
+            <md-divider></md-divider>
+            <md-card-footer layout="row" layout-align="space-between center">
+                <div class="md-actions" layout="row" layout-align="start center">
+                    <md-button class="md-raised md-warn" ng-click="">Delete</md-button>
+                </div>
+                <md-checkbox ng-model="ticket.solved" ng-click="" aria-label="quiz"></md-checkbox>
+            </md-card-footer>
+        </md-card>
+    </div>
+</div>
