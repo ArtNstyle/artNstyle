@@ -32,6 +32,26 @@ import events from './features/events';
 import cart from './features/cart';
 import orders from './features/orders';
 
+ 
+
+
+// Dear teammates: this controller would serve the only purpose of making the function $scope.isLoggedIn
+// globally available in all controllers, so we can use ng-show/ng-hide on elements that only
+// the owner should see
+// app.controller('checkAdminController', function ($scope, $http, $rootScope) {
+//     $scope.isLoggedIn = function () {
+//         $http.get('/checklogin')
+//             .success(function (data) {
+//                 console.log(data);
+//                 $rootScope.loggedIn = data;
+//             })
+//             .error(function (data) {
+//                 console.log('error: ' + data);
+//             });
+//     };
+// });
+
+
 
 var app = angular.module('app', [uiRouter, ngMaterial, ngFileUpload, goClick, home, stylists, salon, tanning, artists, arts, events, cart, orders, 'uiGmapgoogle-maps']);
 
