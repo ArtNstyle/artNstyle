@@ -8,10 +8,10 @@ function stripe($http, $rootScope) {
 	      console.log('this is directive scope', scope);
 
 	      var handler = StripeCheckout.configure({
+
 	        key: 'pk_test_m15Rgu5CaL9nnBd1wFvTIiBV',
 	        // image: './img/cc.png',
 	        token: function(token, args) {
-
 	          token.amount = scope.cart.total * 100
 	          var $input = $('<input type=hidden name=stripeToken />').val(
 	            token.id);

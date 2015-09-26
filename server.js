@@ -7,15 +7,13 @@ var mongoose = require('./core/server/config/mongoose'),
     // stripe
 var stripe = require('stripe')('pk_test_m15Rgu5CaL9nnBd1wFvTIiBV');
 var stripeCtrl = require('./stripeCtrl');
-
-
+app.post('/api/payment', stripeCtrl.makePayment);
 
 
 
 var db = mongoose(),
     app = express();
-   // stripe end point
-app.post('/api/payment', stripeCtrl.makePayment);
+
 
 app.listen(port, function () {
     console.log('listening on ' + port);
