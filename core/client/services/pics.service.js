@@ -5,7 +5,7 @@ class picsService {
     constructor($http, $location, Upload) {
         //console.log("init picsService");
 
-        this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
+        this.url = "/api";
         this.picturesUri = "/pics";
         this.idSelector = "?id=";
         this.picIdSelector = "?picId=";

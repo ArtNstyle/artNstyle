@@ -4,10 +4,13 @@ class loggedUserService {
     constructor($http) {
         this.authenticated = false;
         this.$http = $http;
+        this.url = "";
+        this.myUri = "/checklogin";
+
     }
 
     authenticate() {
-        return this.$http.get('/checklogin').then((response) => {
+        return this.$http.get(this.url + this.myUri).then((response) => {
             //console.log("authentication response", response);
             this.authenticated = response.data;
             return this.authenticated;

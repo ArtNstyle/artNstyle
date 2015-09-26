@@ -3,12 +3,17 @@
 class ordersService {
     constructor($http) {
         this.$http = $http;
+        this.url = "/api";
+        this.myUri = "/order";
+        this.allUri = "/all";
+        this.idSelector = "?id=";
+
         this.items = [];
 
     }
 
     getItems() {
-        return this.$http.get('/api/order/all').then((response) => {
+        return this.$http.get(this.url + this.myUri + this.allUri).then((response) => {
             //console.log("ordersService: getItems", response);
             return response.data;
         })
@@ -18,7 +23,7 @@ class ordersService {
         for(var i = 0; i < items.length; i++ ) {
             items[i].customer = customerEmail;
             items[i].type = "item";
-            this.$http.post('/api/order', items[i]).then((response) => {
+            this.$http.post(this.url + this.myUri, items[i]).then((response) => {
                 //console.log("added order", response.data)
             }, (err) => {
                 console.log("error adding order", items[i]);
@@ -30,7 +35,7 @@ class ordersService {
         for(var i = 0; i < subscriptions.length; i++ ) {
             subscriptions[i].customer = customerEmail;
             subscriptions[i].type = "subscription";
-            this.$http.post('/api/order', subscriptions[i]).then((response) => {
+            this.$http.post(this.url + this.myUri, subscriptions[i]).then((response) => {
                 //console.log("added subscription", response.data)
             }, (err) => {
                 console.log("error adding subscription", subscriptions[i]);
@@ -47,7 +52,7 @@ class ordersService {
 
     deleteItem(item) {
         //console.log("deleting order", item);
-        return this.$http.delete('/api/order?id=' + item._id).then((response) => {
+        return this.$http.delete(this.url + this.myUri + this.idSelector + item._id).then((response) => {
         }, (err) => {
             console.log("error deleting order", item);
         })

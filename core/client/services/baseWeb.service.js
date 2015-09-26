@@ -3,7 +3,7 @@ class BaseWebService {
         this.$log = $log;
         this.$http = $http;
 
-        this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
+        this.url = "/api";
         this.stylistsUri = "/stylists";
         this.artistsUri = "/artists";
         this.artsUri = "/arts";
