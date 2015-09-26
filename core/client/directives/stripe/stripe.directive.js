@@ -1,11 +1,13 @@
 function stripe($http, $rootScope) {
 
+
 	console.log('hello')
     return {
         restrict: 'E',
         templateUrl: "../../directives/stripe/stripe.template.html",
 	    link: function(scope, elem, attrs) {
 	      console.log('this is directive scope', scope);
+
 
 	      var handler = StripeCheckout.configure({
 
@@ -21,7 +23,8 @@ function stripe($http, $rootScope) {
 	            .success(function(response) {
 	              console.info('response stripe directive: ', response);
 	              if (response.paid === true) {
-	               console.log('yesssss')
+	              	scope.disable = true;
+	               	console.log('yesssss')
 	              }
 	            })
 	            .error(function(err) {
@@ -35,6 +38,8 @@ function stripe($http, $rootScope) {
 
 	      $('#paymentButton').on('click', function(e) {
 	      	console.log('hi')
+
+
 	        // Open Checkout with further options
 	        handler.open({
 	          name: 'Art-N-Style',
@@ -42,6 +47,8 @@ function stripe($http, $rootScope) {
 	          amount: scope.total + '00'
 	        });
 	        e.preventDefault();
+	       	
+
 	      });
 
 	      // Close Checkout on page navigation
@@ -52,6 +59,7 @@ function stripe($http, $rootScope) {
 	      // end link
 	    }
     }
+
 }
 
 export default angular.module('directives.stripe', [])
