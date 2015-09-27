@@ -1,5 +1,8 @@
 module.exports = function (app) {
-    app.controller('contactController', function ($scope) {
+
+    app.controller('contactController', ['$scope', '$log', '$location', '$q', 'ticketsService', contactController]);
+
+    function contactController($scope, $log, $location, $q, ticketsService) {
 
         // code for the google map
         $scope.map = {
@@ -18,7 +21,87 @@ module.exports = function (app) {
             id: '1'
         };
 
-        // tickets management
 
-    });
+
+        // code for tickets
+        (refreshTickets());
+
+        function refreshTickets() {
+            ticketsService.getAllTickets()
+                .then(function (data) {
+                    console.log(data); // debugging
+                    $scope.tickets = data; // atención
+                    $scope.ticketsKind = "Tickets";
+                })
+                .catch(function (errorMsg) {
+                    console.log('Error: ' + errorMsg);
+                });
+
+        }
+
+
+        $scope.populateTicketObject = function () {
+            this.newTicket = {};
+            this.newTicket.name = this.name;
+            this.newTicket.email = this.email;
+            this.newTicket.phone = this.phone;
+            this.newTicket.message = this.message;
+        };
+
+
+        $scope.cleanForm = function () {
+            this.name = '';
+            this.email = '';
+            this.phone = '';
+            this.message = '';
+        };
+
+
+        // crud
+        $scope.addTicket = function () {
+            ticketsService.postNewTicket($scope.newTicket)
+                .then(function (message) {
+                    $log.info(message); // debugging
+                    refreshTickets();
+                    $scope.cleanForm();
+                })
+                .catch(function (errorMsg) {
+                    $log.error(errorMsg);
+                });
+        };
+
+
+        $scope.editTicket = function (ticket) {
+            ticketsService.putTicket(
+                {
+                    name: ticket.name,
+                    email: ticket.email,
+                    phone: ticket.phone,
+                    message: ticket.message,
+                    solved: !ticket.solved
+                }
+                , ticket._id)
+                .then(function (message) {
+                    $log.info(message);
+                    refreshTickets();
+                })
+                .catch(function (errorMsg) {
+                    $log.error(errorMsg);
+                });
+        };
+
+
+        $scope.removeTicket = function (ticket) {
+            ticketsService.deleteTicket(ticket._id)
+                .then(function (message) {
+                    $log.info(message);
+                    refreshTickets();
+                })
+                .catch(function (errorMsg) {
+                    $log.error(errorMsg);
+                });
+        };
+
+    };
 };
+

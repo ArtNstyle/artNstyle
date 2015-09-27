@@ -72,7 +72,7 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery"
         })
-        
+
     ],
 
     resolve: {
