@@ -1,5 +1,7 @@
 module.exports = function (app) {
     app.controller('contactController', function ($scope) {
+
+        // code for the google map
         $scope.map = {
             center: {
                 latitude: 36.104283,
@@ -15,5 +17,8 @@ module.exports = function (app) {
             options: '',
             id: '1'
         };
+
+        // tickets management
+
     });
 };
