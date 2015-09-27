@@ -21532,6 +21532,9 @@ md-toolbar i {
   background-color: transparent;
   padding: 2%; }
 
+.mainMenu .cart-icon {
+  padding-left: 10px; }
+
 .mainMenu .md-button {
   font-family: 'Noticia Text', serif;
   font-weight: bold;
@@ -22093,9 +22096,11 @@ md-dialog {
     font-size: 20px; }
   .event .timing {
     background-color: black;
-    color: white;
+    color: white !important;
     padding: 1%;
     padding-bottom: 0px; }
+  .event .timing md-input-container .md-input {
+    color: white; }
   .event .date {
     color: white; }
   .event .description {
