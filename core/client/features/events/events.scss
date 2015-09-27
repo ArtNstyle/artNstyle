@@ -74,9 +74,13 @@ $max-content-width: 900px;
 
   .timing {
     background-color: black;
-    color: white;
+    color: white !important;
     padding: 1%;
     padding-bottom: 0px;
+  }
+  
+  .timing md-input-container .md-input {
+      color: white;
   }
 
   .date {
@@ -95,9 +99,9 @@ $max-content-width: 900px;
   .link {
     padding: 1%
   }
-
-  md-input-container {
+md-input-container {
     padding-bottom: 0px;
+   
   }
 
 
