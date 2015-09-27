@@ -10,10 +10,6 @@ module.exports = function () {
     require('../models/event.server.model');
     require('../models/stylist.server.model');
     require('../models/tanning.server.model');
-
-    require('../models/ticket.server.model');
-
     require('../models/stripe.server.model');
-
     return db;
 };

@@ -1,7 +1,7 @@
 $lighter-opacity:0.75;
 $main-color: #5B7AFF;
 $font-family: 'Lato', sans-serif;
-$max-content-width: 1500px;
+$max-content-width: 900px;
 
 .orders {
   font-family: $font-family;
@@ -9,21 +9,12 @@ $max-content-width: 1500px;
    max-width: $max-content-width;
   text-align: center;
 
-  .toolbar {
-    margin: auto;
-  }
-
   md-input-container {
     max-width: 200px;
     text-align:left;
+    margin: 5%;
     margin-bottom: 0px;
     padding-bottom: 0px;
-    padding-left: 30px;
-  }
-
-  h3 {
-    text-align: left;
-    margin-left: 4%;
   }
 
   td {
@@ -31,13 +22,8 @@ $max-content-width: 1500px;
     padding: 2%;
   }
 
-  .when {
-    width: 200px;
-    padding: 0px;
-  }
-
   .name {
-    width: 400px;
+    width: 150px;
   }
 
   thead td {

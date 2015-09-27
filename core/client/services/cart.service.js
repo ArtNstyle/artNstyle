@@ -8,7 +8,6 @@ class cartService {
         this.tax = 1; // 1 %
         this.sessionId = 1;
 
-        this.orderSubmitted = false;
         this.cartSupported = true;
         //
         //this.TANNING_SUBS = {
@@ -34,9 +33,14 @@ class cartService {
         return this.subscriptions;
     }
 
+    countItemTotal(item) {
+        item.total = item.amount * item.price;
+    }
+
     addItem(item) {
         item.id = this.sessionId++;
         item.amount = item.amount || 1;
+        this.countItemTotal(item);
         this.items.push(item);
         this.countTotals();
     }
@@ -44,6 +48,7 @@ class cartService {
     addSubscription(item) {
         item.id = this.sessionId++;
         item.amount = item.amount || 1;
+        this.countItemTotal(item);
         this.subscriptions.push(item);
         this.countTotals();
     }
@@ -72,10 +77,10 @@ class cartService {
     countTotals() {
         this.subTotal= 0;
         for(var i = 0; i < this.items.length; i++) {
-            this.subTotal += this.items[i].price;
+            this.subTotal += this.items[i].total;
         }
         for(var i = 0; i < this.subscriptions.length; i++) {
-            this.subTotal += this.subscriptions[i].price;
+            this.subTotal += this.subscriptions[i].total;
         }
         this.taxTotal = this.tax/100 * this.subTotal;
         this.total = this.subTotal + this.taxTotal;

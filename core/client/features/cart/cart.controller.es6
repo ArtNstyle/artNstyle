@@ -1,7 +1,7 @@
 //import BaseWebController from "../commonControllers/baseWeb.controller"
 
 export default class cartController {
-    constructor(cartService, ordersService, loggedUserService) {
+    constructor(cartService, ordersService) {
         this.test = 'Hello from cartController';
         this.cartService = cartService;
         this.ordersService = ordersService;
@@ -10,12 +10,6 @@ export default class cartController {
         this.getItemsAndSubscriptions();
         this.testItemCount = 1;
 
-        this.orderSubmitted = this.cartService.orderSubmitted;
-
-        this.authenticated = false;
-        loggedUserService.isAuthenticated().then((status) => {
-            this.authenticated = status;
-        });
     }
 
     getTotals() {
@@ -42,8 +36,7 @@ export default class cartController {
 
     submitOrder() {
         this.ordersService.addOrders(this.customerEmail, this.items, this.subscriptions);
-        this.cartService.orderSubmitted = true;
-        this.orderSubmitted = this.cartService.orderSubmitted;
+        this.orderSubmitted = true;
     }
 
 
