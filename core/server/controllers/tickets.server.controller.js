@@ -33,6 +33,10 @@ exports.putTicket = function (req, res) {
             if (err) res.status(500).send(err);
             else {
                 ticket.name = req.body.name;
+                ticket.email = req.body.email;
+                ticket.phone = req.body.phone;
+                ticket.message = req.body.message;
+                ticket.solved = req.body.solved;
                 ticket.save();
                 res.json(ticket);
             }

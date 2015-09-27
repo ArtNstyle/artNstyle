@@ -11,12 +11,16 @@ var TicketSchema = new Schema({
     phone: {
         type: String
     },
-    comment: {
+    message: {
         type: String
     },
     solved: {
         type: Boolean,
         default: false
+    },
+    created: {
+        type: Date,
+        default: Date.now
     }
 });
 

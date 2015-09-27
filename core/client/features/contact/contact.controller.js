@@ -21,7 +21,7 @@ module.exports = function (app) {
             id: '1'
         };
 
-        
+
 
         // code for tickets
         (refreshTickets());
@@ -40,11 +40,30 @@ module.exports = function (app) {
         }
 
 
+        $scope.populateTicketObject = function () {
+            this.newTicket = {};
+            this.newTicket.name = this.name;
+            this.newTicket.email = this.email;
+            this.newTicket.phone = this.phone;
+            this.newTicket.message = this.message;
+        };
+
+
+        $scope.cleanForm = function () {
+            this.name = '';
+            this.email = '';
+            this.phone = '';
+            this.message = '';
+        };
+
+
+        // crud
         $scope.addTicket = function () {
-            ticketsService.postNewTicket({ name: $scope.newTicket })
+            ticketsService.postNewTicket($scope.newTicket)
                 .then(function (message) {
                     $log.info(message); // debugging
                     refreshTickets();
+                    $scope.cleanForm();
                 })
                 .catch(function (errorMsg) {
                     $log.error(errorMsg);
@@ -52,8 +71,16 @@ module.exports = function (app) {
         };
 
 
-        $scope.editTicket = function () {
-            ticketsService.putTicket($scope.currentTicket, $scope.currentTicket._id)
+        $scope.editTicket = function (ticket) {
+            ticketsService.putTicket(
+                {
+                    name: ticket.name,
+                    email: ticket.email,
+                    phone: ticket.phone,
+                    message: ticket.message,
+                    solved: !ticket.solved
+                }
+                , ticket._id)
                 .then(function (message) {
                     $log.info(message);
                     refreshTickets();
@@ -64,8 +91,8 @@ module.exports = function (app) {
         };
 
 
-        $scope.removeTicket = function () {
-            ticketsService.deleteTicket($scope.currentTicket._id)
+        $scope.removeTicket = function (ticket) {
+            ticketsService.deleteTicket(ticket._id)
                 .then(function (message) {
                     $log.info(message);
                     refreshTickets();

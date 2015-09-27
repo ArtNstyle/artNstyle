@@ -33,7 +33,7 @@ module.exports = function (app) {
                 data: newTicket
             })
                 .then(function (response) {
-                    return 'Keyword added';
+                    return 'Ticket added';
                 })
                 .catch(function (response) {
                     return $q.reject('Error: ' + response.status);
@@ -41,11 +41,11 @@ module.exports = function (app) {
         }
 
 
-        function putTicket(word, id) { // update one
+        function putTicket(ticket, id) { // update one
             return $http({
                 method: 'PUT',
                 url: 'api/tickets/' + id,
-                data: word
+                data: ticket
             })
                 .then(function () {
                     return "Ticket updated.";
@@ -54,6 +54,7 @@ module.exports = function (app) {
                     return "There was an error.";
                 });
         }
+        
 
         function deleteTicket(id) { // delete one
             return $http({
