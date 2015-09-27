@@ -5,34 +5,38 @@
         <hr>
     </h2>
 
-    <md-input-container>
-        <label>Search</label>
-        <input ng-model="search">
-    </md-input-container>
+    <div class="toolbar" layout="row" layout-align="start center">
+        <md-input-container flex="33">
+            <label>Search</label>
+            <input ng-model="search">
+        </md-input-container>
+        <h3 flex="66">
+        Total orders: {{orders.total}} of which Items: {{orders.itemsTotal}} & Subscriptions: {{orders.subscriptionsTotal}}
+        </h3>
+    </div>
 
     <table>
         <thead>
             <tr>
+                <td class="when">When</td>
                 <td class="name">Customer</td>
                 <td class="name">Item</td>
                 <td>Type</td>
                 <td>Price</td>
-                <td>Amount</td>
-                <td>Total</td>
                 <td>Delivered</td>
                 <td></td>
             </tr>
         </thead>
 
         <tbody>
-            <tr ng-repeat="item in orders.items | filter: search">
+            <tr ng-repeat="item in orders.items | filter: search | reverse">
+                <td class="when">{{item.time | date:'MMM-dd-yyyy H:mm'}}</td>
                 <td class="name">{{item.customer}}</td>
                 <td class="name">{{item.name}}</td>
                 <td>{{item.type}}</td>
                 <td>{{item.price | currency }}</td>
-                <td>{{item.amount}}</td>
-                <td>{{item.price * item.amount | currency}}</td>
-                <td>{{item.delivered}}</td>
+                <td><md-checkbox ng-model="item.delivered" ng-change="orders.saveItem(item)"
+                                 aria-label="Delivered"></md-checkbox></td>
                 <td>
                     <md-button class="md-icon-button" ng-click="orders.deleteItem(item)">
                         <i class="material-icons">delete</i>

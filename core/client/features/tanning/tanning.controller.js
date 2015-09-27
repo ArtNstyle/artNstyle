@@ -3,6 +3,8 @@ export default class tanningCtrl {
 		this.cartService = cartService;
 		this.cartSupported = cartService.cartSupported;
 		this.test = "tanningCtrl working";
+
+		this.orderSubmitted = cartService.orderSubmitted;
 	}
 
 	addItemToCart(name, price) {

@@ -2,8 +2,8 @@
     <main-menu></main-menu>
 
     <h2 class="title">SHOPPING CART
-        <button ng-click="cart.addTestItem()">Add Item</button>
-        <button ng-click="cart.addTestSub()">Add Sub</button>
+        <button ng-if="cart.authenticated" ng-click="cart.addTestItem()">Add Item</button>
+        <button ng-if="cart.authenticated" ng-click="cart.addTestSub()">Add Sub</button>
         <hr>
     </h2>
 
@@ -17,8 +17,8 @@
                 <tr>
                     <td class="name">Item</td>
                     <td>Price</td>
-                    <td>Amount</td>
-                    <td>Total</td>
+                    <!--<td>Amount</td>-->
+                    <!--<td>Total</td>-->
                     <td></td>
                 </tr>
             </thead>
@@ -27,8 +27,8 @@
                 <tr ng-repeat="item in cart.items">
                     <td class="name">{{item.name}}</td>
                     <td>{{item.price | currency }}</td>
-                    <td>{{item.amount}}</td>
-                    <td>{{item.total | currency}}</td>
+                    <!--<td>{{item.amount}}</td>-->
+                    <!--<td>{{item.total | currency}}</td>-->
                     <td>
                         <md-button ng-disabled="cart.orderSubmitted" class="md-icon-button" ng-click="cart.deleteItem(item)">
                             <i class="material-icons">delete</i>
@@ -46,8 +46,6 @@
             <tr>
                 <td class="name">Item</td>
                 <td>Price</td>
-                <td>Amount</td>
-                <td>Total</td>
                 <td></td>
             </tr>
             </thead>
@@ -56,8 +54,6 @@
             <tr ng-repeat="item in cart.subscriptions">
                 <td class="name">{{item.name}}</td>
                 <td>{{item.price | currency }}</td>
-                <td>{{item.amount}}</td>
-                <td>{{item.total | currency}}</td>
                 <td>
                     <md-button ng-disabled="cart.orderSubmitted" class="md-icon-button" ng-click="cart.deleteSubscription(item)">
                         <i class="material-icons">delete</i>
