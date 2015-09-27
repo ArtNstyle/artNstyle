@@ -6,4 +6,4 @@ build/*
 
 npm-debug.log
 
-core/client/build/*
+
