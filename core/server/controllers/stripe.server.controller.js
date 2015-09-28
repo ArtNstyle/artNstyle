@@ -19,9 +19,10 @@ exports.makePayment = function(req, res) {
 }
 
 exports.createFirstSubscription = function(req, res) {
-	var stripeToken = req.body.id;
-	var customer = stripe.customer.create({
-		source: stripeToken,
+	// var stripeToken = req.body.id;
+	console.log(req.body);
+	var customer = stripe.customers.create({
+		source: req.body.token.id,
 		plan: req.body.plan,
 		email: req.body.email
 	}, function(err, customer) {
@@ -30,30 +31,17 @@ exports.createFirstSubscription = function(req, res) {
 	});
 }
 
-// var stripe = require("stripe")("sk_test_fgfZJsb4ZDW0L2huWhoNYF72");
 
-// // (Assuming you're using express - expressjs.com)
-// // Get the credit card details submitted by the form
-// var stripeToken = request.body.stripeToken;
 
-// stripe.customers.create({
-//   source: stripeToken,
-//   plan: "gold",
-//   email: "payinguser@example.com"
-// }, function(err, customer) {
-//   // ...
-// });
-
-exports.addSubscription = function(req, res) {
-	var stripeToken = req.body.id;
-	var subscription = stripe.subscription.create(
-		req.body.customerid,
-		{plan: req.body.plan}),
-	}, function(err, charge) {
-		if (err) return res.status(505).send(err);
-		return res.json(charge);
-	});
-}
+// exports.addSubscription = function(req, res) {
+// 	var stripeToken = req.body.id;
+// 	var subscription = stripe.subscription.create({
+		
+// 	}, function(err, charge) {
+// 		if (err) return res.status(505).send(err);
+// 		return res.json(charge);
+// 	});
+// }
 
 
 
