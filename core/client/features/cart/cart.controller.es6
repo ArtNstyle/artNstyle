@@ -19,6 +19,7 @@ export default class cartController {
     }
 
     getTotals() {
+        this.itemsTotal = this.cartService.itemsTotal;
         this.subTotal = this.cartService.subTotal;
         this.taxTotal = this.cartService.taxTotal;
         this.total = this.cartService.total;
