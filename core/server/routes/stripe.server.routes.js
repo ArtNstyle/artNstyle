@@ -7,6 +7,12 @@ var db = mongoose(),
 
 app.post('/api/payment', stripeCtrl.makePayment);
 
+app.post('api/firstsubscription', stripeCtrl.createFirstSubscription);
+
+app.post('api/addsubscription', stripeCtrl. addSubscription);
+
+
+
 
 // var stripeCtrl = require('../controllers/stripe.server.controller.js');
 

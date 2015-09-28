@@ -3,7 +3,7 @@ var exports = module.exports;
 var stripe = require("stripe")('sk_test_fgfZJsb4ZDW0L2huWhoNYF72');
 
 exports.makePayment = function(req, res) {
-  // console.log('this is in stripeCtrl', req.body);
+   console.log('this is in stripeCtrl', req.body);
   var stripeToken = req.body.id;
   console.log('stripeToken', stripeToken)
   var charge = stripe.charges.create({
@@ -16,19 +16,12 @@ exports.makePayment = function(req, res) {
     console.log('this is charge', charge);
     return res.json(charge);
   });
+
+  // RESPONSE FOR TESTING
+  //var response = {
+  //    paid: true
+  //};
+  //res.send(response);
 }
 
-
-
-// // (Assuming you're using express - expressjs.com)
-// // Get the credit card details submitted by the form
-// var stripeToken = request.body.stripeToken;
-
-// stripe.customers.create({
-//   source: stripeToken,
-//   plan: "Dali #1",
-//   email: "payinguser@example.com"
-// }, function(err, customer) {
-//   // ...
-// });
 
