@@ -15,6 +15,8 @@ var db = mongoose(),
     app = express();
 
 app.post('/api/payment', stripeCtrl.makePayment);
+app.post('/api/firstsubscription', stripeCtrl.createFirstSubscription);
+app.post('/api/addsubscription', stripeCtrl.addSubscription);
 
 
 app.listen(port, function () {

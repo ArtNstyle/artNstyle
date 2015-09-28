@@ -17,8 +17,6 @@
                 <tr>
                     <td class="name">Item</td>
                     <td>Price</td>
-                    <!--<td>Amount</td>-->
-                    <!--<td>Total</td>-->
                     <td></td>
                 </tr>
             </thead>
@@ -27,8 +25,6 @@
                 <tr ng-repeat="item in cart.items">
                     <td class="name">{{item.name}}</td>
                     <td>{{item.price | currency }}</td>
-                    <!--<td>{{item.amount}}</td>-->
-                    <!--<td>{{item.total | currency}}</td>-->
                     <td>
                         <md-button ng-disabled="cart.orderSubmitted" class="md-icon-button" ng-click="cart.deleteItem(item)">
                             <i class="material-icons">delete</i>
@@ -73,9 +69,6 @@
         <p ng-if="cart.orderSubmitted" class="order-submitted">Order Submitted</p>
     </div>
 
-
-    <br><br><br><br>
-    <br>
     <br>
     <stripe></stripe>
     <br>
