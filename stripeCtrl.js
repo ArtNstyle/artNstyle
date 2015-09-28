@@ -18,3 +18,17 @@ exports.makePayment = function(req, res) {
   });
 }
 
+
+
+// // (Assuming you're using express - expressjs.com)
+// // Get the credit card details submitted by the form
+// var stripeToken = request.body.stripeToken;
+
+// stripe.customers.create({
+//   source: stripeToken,
+//   plan: "Dali #1",
+//   email: "payinguser@example.com"
+// }, function(err, customer) {
+//   // ...
+// });
+
