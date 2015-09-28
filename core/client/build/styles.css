@@ -21532,6 +21532,9 @@ md-toolbar i {
   background-color: transparent;
   padding: 2%; }
 
+.mainMenu .cart-icon {
+  padding-left: 10px; }
+
 .mainMenu .md-button {
   font-family: 'Noticia Text', serif;
   font-weight: bold;
@@ -21694,7 +21697,7 @@ md-toolbar i {
 .salon {
   background-color: #f2efe5; }
   .salon .about_left {
-    background: url(/build/product.jpeg) no-repeat center top;
+    background: url(/build/product.jpg) no-repeat center top;
     background-size: 100% 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -22093,9 +22096,11 @@ md-dialog {
     font-size: 20px; }
   .event .timing {
     background-color: black;
-    color: white;
+    color: white !important;
     padding: 1%;
     padding-bottom: 0px; }
+  .event .timing md-input-container .md-input {
+    color: white; }
   .event .date {
     color: white; }
   .event .description {
@@ -22211,7 +22216,7 @@ md-dialog {
     width: 80px;
     padding: 2%; }
   .cart .name {
-    width: 150px; }
+    width: 300px; }
   .cart thead td {
     font-weight: 600; }
   .cart tbody td {
@@ -22229,19 +22234,27 @@ md-dialog {
 .orders {
   font-family: "Lato", sans-serif;
   margin: 0px auto;
-  max-width: 900px;
+  max-width: 1500px;
   text-align: center; }
+  .orders .toolbar {
+    margin: auto; }
   .orders md-input-container {
     max-width: 200px;
     text-align: left;
-    margin: 5%;
     margin-bottom: 0px;
-    padding-bottom: 0px; }
+    padding-bottom: 0px;
+    padding-left: 30px; }
+  .orders h3 {
+    text-align: left;
+    margin-left: 4%; }
   .orders td {
     width: 80px;
     padding: 2%; }
+  .orders .when {
+    width: 200px;
+    padding: 0px; }
   .orders .name {
-    width: 150px; }
+    width: 400px; }
   .orders thead td {
     font-weight: 600; }
   .orders tbody td {

@@ -7,7 +7,7 @@ module.exports = function () {
         {
             clientID: "1527150407576361",
             clientSecret: "f6130a59bf4bb6794c8a8a6eec874109",
-            callbackURL: "http://localhost:5000/auth/facebook/callback",
+            callbackURL: "http://artnstylesalon.com/auth/facebook/callback",
             passReqToCallback: true
         },
         function (req, accessToken, refreshToken, profile, done) {
