@@ -5,12 +5,11 @@ export default class cartController {
         this.test = 'Hello from cartController';
         this.cartService = cartService;
         this.ordersService = ordersService;
-        this.orderSubmitted = false;
 
         this.getItemsAndSubscriptions();
         this.testItemCount = 1;
 
-        this.orderSubmitted = this.cartService.orderSubmitted;
+        this.status = this.cartService.status;
 
         this.authenticated = false;
         loggedUserService.isAuthenticated().then((status) => {
@@ -40,13 +39,6 @@ export default class cartController {
         this.cartService.deleteSubscription(item);
         this.getItemsAndSubscriptions();
     }
-
-    submitOrder() {
-        this.ordersService.addOrders(this.customerEmail, this.items, this.subscriptions);
-        this.cartService.orderSubmitted = true;
-        this.orderSubmitted = this.cartService.orderSubmitted;
-    }
-
 
     addTestItem() {
         var newItem = {

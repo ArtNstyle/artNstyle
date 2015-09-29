@@ -13,38 +13,38 @@ class paymentService {
             console.info('makePayment:', response);
             return response.data.paid;
         }, (err) => {
-            console.log('stripe post error', err);
+            console.log('makePayment error', err);
             //throw new Error(err);
             return err;
         });
     }
 
-    createFirstSubscription(token) {
+    createFirstSubscription(customerEmail, planId, token) {
         var data = {
             token: token,
-            email: 'tamiwohlers99@gmail.com',
-            plan: 'Minimalist'
+            email: customerEmail,
+            plan: planId
         };
         return this.$http.post('/api/firstsubscription', data).then((response) => {
             console.info('createFirstSubscription:', response);
-            return response.data.paid;
+            return response.data.id;
         }, (err) => {
-            console.log('stripe post error', err);
+            console.log('createFirstSubscription error', err);
             //throw new Error(err);
             return err;
         });
     }
 
-    addSubscription(token) {
+    addSubscription(customerId, planId) {
         var data = {
-            customerId: "cus_74HCc6pPzNKPYY",
-            plan: "Minimalist"
+            customerId: customerId,
+            plan: planId
         }
         return this.$http.post('/api/addsubscription', data).then((response) => {
             console.info('addSubscription:', response);
-            return response.data.paid;
+            return response.data;
         }, (err) => {
-            console.log('stripe post error', err);
+            console.log('addSubscription  error', err);
             //throw new Error(err);
             return err;
         });

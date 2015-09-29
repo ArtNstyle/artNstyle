@@ -8,22 +8,10 @@ class cartService {
         this.tax = 0; // 0 %
         this.sessionId = 1;
 
-        this.orderSubmitted = false;
+        this.status = {
+            orderSubmitted: false
+        };
         this.cartSupported = true;
-        //
-        //this.TANNING_SUBS = {
-        //    MINIMALIST: "Minimalist",
-        //    STARRYNIGHT: "Starry Night",
-        //    MONALISA: "Mona Lisa",
-        //    DALI1: "Dali #1",
-        //    DALI2: "Dali #2"
-        //};
-        //
-        //this.TANNING_ITEMS = {
-        //    SINGLE: "Single Tan",
-        //    TANS3: "3 Tans",
-        //    TANS4: "4 Tans"
-        //};
     }
 
     getItems() {
