@@ -1,5 +1,23 @@
 export default class tanningCtrl {
 	constructor(cartService) {
+               (function(){
+
+  var parallax = document.querySelectorAll(".parallax"),
+      speed = 0.25;
+
+  window.onscroll = function(){
+    [].slice.call(parallax).forEach(function(el,i){
+
+      var windowYOffset = window.pageYOffset,
+          elBackgrounPos = "100% " + (windowYOffset * speed) + "px";
+
+      el.style.backgroundPosition = elBackgrounPos;
+
+    });
+  };
+
+})();
+        
 		this.cartService = cartService;
 		this.cartSupported = cartService.cartSupported;
 		this.test = "tanningCtrl working";
@@ -24,3 +42,5 @@ export default class tanningCtrl {
 		})
 	}
 }
+
+
