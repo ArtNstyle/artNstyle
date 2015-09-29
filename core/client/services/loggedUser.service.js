@@ -12,7 +12,7 @@ class loggedUserService {
     authenticate() {
         return this.$http.get(this.url + this.myUri).then((response) => {
             //console.log("authentication response", response);
-            // this.authenticated = response.data;
+            this.authenticated = response.data;
 
             // SET TO TRUE ONLY FOR DEVELOPMENT TESTNG 
             // this.authenticated = true;
