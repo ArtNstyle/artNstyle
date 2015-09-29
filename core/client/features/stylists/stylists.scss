@@ -1,10 +1,10 @@
 $lighter-opacity:0.75;
 $main-color: #5B7AFF;
-$font-familiy: 'Lato', sans-serif;
+$font-family:  'Raleway', Helvetica, Arial, sans-serif;
 $max-content-width: 900px;
 
 .stylists {
-  font-family: $font-familiy;
+  font-family: $font-family;
   margin: 0px auto;
   max-width: $max-content-width;
   text-align: center;
@@ -16,20 +16,11 @@ $max-content-width: 900px;
   .edit-button {
     float: right;
   }
-
-  .title {
-
-  }
-
+  
   .title hr {
     max-width: 400px;
     color: $main-color;
         border-top: 1px solid black;
-  }
-
-  .intro {
-
-
   }
 }
 
@@ -37,7 +28,6 @@ $max-content-width: 900px;
   position: relative;
   padding: 4%;
   margin: 2%;
-
 
   .square {
     width: 100%;
@@ -82,9 +72,7 @@ $max-content-width: 900px;
   md-input-container {
     padding-bottom: 0px;
   }
-  
-  
-  
+   
   .hvr-grow {
     display: inline-block;
     vertical-align: middle;

@@ -1,6 +1,7 @@
 <div class="cart">
     <main-menu></main-menu>
-
+    <md-card>
+ <md-card-content>
     <h2 class="title">SHOPPING CART
         <button ng-if="cart.authenticated" ng-click="cart.addTestItem()">Add Item</button>
         <button ng-if="cart.authenticated" ng-click="cart.addTestSub()">Add Sub</button>
@@ -59,7 +60,8 @@
             </tbody>
         </table>
     </div>
-
+    </md-card>
+ </md-card-content>
     <div class="totals" ng-if="cart.items.length || cart.subscriptions.length">
         <div>SubTotal: {{cart.subTotal | currency}}</div>
         <div>Tax: {{cart.taxTotal | currency}}</div>

@@ -1,1 +1,3 @@
-.angular-google-map-container { height: 400px; }
+.angular-google-map-container { 
+    font-family:  "Raleway", Helvetica, Arial, sans-serif;
+    height: 400px; }
