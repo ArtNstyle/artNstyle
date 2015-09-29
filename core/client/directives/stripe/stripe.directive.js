@@ -1,23 +1,27 @@
 import paymentService from '../../services/payment.service';
+import ordersService from '../../services/orders.service';
+import cartService from '../../services/cart.service';
 
-function stripe($q, paymentService) {
+function stripe($q, paymentService, ordersService, cartService) {
 
-	console.log('hello')
     return {
         restrict: 'E',
         templateUrl: "../../directives/stripe/stripe.template.html",
 	    link: function(scope, elem, attrs) {
-	      console.log('this is directive scope', scope);
+	      //console.log('this is directive scope', scope);
+			scope.status = cartService.status;
 
 	      var handler = StripeCheckout.configure({
 
 	        key: 'pk_test_CjsDYe4Aj8fYmJN5m1aYd94A',
 	        // image: './img/cc.png',
 	        token: function(token, args) {
+				var customerEmail = token.email;
+				var customerId = "NA";
 				token.amount = scope.cart.total * 100;
 				var $input = $('<input type=hidden name=stripeToken />').val(token.id);
 				$('form').append($input).submit();
-				console.log('this is token,', token);
+				//console.log('this is token,', token);
 
 				function itemsBought(cart) {
 					return cart.items && cart.items.length > 0;
@@ -27,17 +31,22 @@ function stripe($q, paymentService) {
 					token.amount = cart.itemsTotal * 100;
 					if (itemsBought(cart)) {
 						paymentService.makePayment(token).then((response) => {
+							ordersService.addItems(customerEmail, customerId, cart.items);
 						});
+
 					}
-					scope.disable = true;
+					cartService.status.orderSubmitted = true; // this is visible to all UXs needing it
 				}
 
 				if(scope.cart.subscriptions && scope.cart.subscriptions.length > 0) {
 					token.amount = scope.cart.subscriptions[0].price * 100;
-					paymentService.createFirstSubscription(token).then((response) => {
+					paymentService.createFirstSubscription(token).then((newCustomerId) => {
+						customerId = newCustomerId;
+						ordersService.addSubscription(customerEmail, customerId, scope.cart.subscriptions[0]);
 						if (scope.cart.subscriptions.length > 1) { // many subs
 							token.amount = scope.cart.subscriptions[1].price * 100;
 							paymentService.addSubscription(token).then((response) => {
+								ordersService.addSubscription(customerEmail, customerId, scope.cart.subscriptions[1]);
 								payItemsIfNeeded(scope.cart, token);
 							});
 						} else { // one subs
@@ -54,7 +63,7 @@ function stripe($q, paymentService) {
 	      });
 
 	      $('#paymentButton').on('click', function(e) {
-	      	console.log('scope.cart.total', scope.cart.total);
+	      	//console.log('scope.cart.total', scope.cart.total);
 
 	        // Open Checkout with further options
 	        handler.open({

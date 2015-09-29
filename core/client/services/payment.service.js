@@ -21,7 +21,7 @@ class paymentService {
     createFirstSubscription(token) {
         return this.$http.post('/api/firstsubscription', token).then((response) => {
             console.info('createFirstSubscription:', response);
-            return response.data.paid;
+            return response.data.customerId;
         }, (err) => {
             console.log('stripe post error', err);
             //throw new Error(err);
@@ -32,7 +32,7 @@ class paymentService {
     addSubscription(token) {
         return this.$http.post('/api/addsubscription', token).then((response) => {
             console.info('addSubscription:', response);
-            return response.data.paid;
+            return response.data;
         }, (err) => {
             console.log('stripe post error', err);
             //throw new Error(err);

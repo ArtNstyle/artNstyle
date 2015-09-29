@@ -33,7 +33,8 @@ exports.createFirstSubscription = function(req, res) {
 
   // RESPONSE FOR TESTING
   var response = {
-    paid: true
+    //paid: true,
+    customerId: "test123"
   };
   res.send(response);
 }
@@ -46,7 +47,7 @@ exports.addSubscription = function(req, res) {
 
   // RESPONSE FOR TESTING
   var response = {
-    paid: true
+    //paid: true
   };
   res.send(response);
 }

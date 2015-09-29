@@ -19,8 +19,9 @@
         <thead>
             <tr>
                 <td class="when">When</td>
-                <td class="name">Customer</td>
-                <td class="name">Item</td>
+                <td class="name">Customer Id</td>
+                <td class="name">Customer Email</td>
+                <td class="name">Name/ Subs Id</td>
                 <td>Type</td>
                 <td>Price</td>
                 <td>Delivered</td>
@@ -31,8 +32,9 @@
         <tbody>
             <tr ng-repeat="item in orders.items | filter: search | reverse">
                 <td class="when">{{item.time | date:'MMM-dd-yyyy H:mm'}}</td>
+                <td class="name">{{item.customerId}}</td>
                 <td class="name">{{item.customer}}</td>
-                <td class="name">{{item.name}}</td>
+                <td class="name">{{item.planId || item.name}}</td>
                 <td>{{item.type}}</td>
                 <td>{{item.price | currency }}</td>
                 <td><md-checkbox ng-model="item.delivered" ng-change="orders.saveItem(item)"

@@ -4,7 +4,7 @@ export default class tanningCtrl {
 		this.cartSupported = cartService.cartSupported;
 		this.test = "tanningCtrl working";
 
-		this.orderSubmitted = cartService.orderSubmitted;
+		this.status = cartService.status;
 	}
 
 	addItemToCart(name, price) {
@@ -15,8 +15,9 @@ export default class tanningCtrl {
 		})
 	}
 
-	addSubscriptionToCart(name, price) {
+	addSubscriptionToCart(planId, name, price) {
 		this.cartService.addSubscription({
+			planId: planId,
 			name: name,
 			price: price,
 			amount: 1

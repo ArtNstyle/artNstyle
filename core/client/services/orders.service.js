@@ -19,9 +19,10 @@ class ordersService {
         })
     }
 
-    addItems(customerEmail, items) {
+    addItems(customerEmail, customerId, items) {
         for(var i = 0; i < items.length; i++ ) {
             items[i].customer = customerEmail;
+            items[i].customerId = customerId;
             items[i].time = Date().slice(0, -18); // e.g. Sat Sep 26 2015 18:18
             items[i].type = "item";
             this.$http.post(this.url + this.myUri, items[i]).then((response) => {
@@ -32,8 +33,9 @@ class ordersService {
         }
     }
 
-    addSubscription(customerEmail, subscription) {
+    addSubscription(customerEmail, customerId, subscription) {
         subscription.customer = customerEmail;
+        subscription.customerId = customerId;
         subscription.time = Date().slice(0, -18); // e.g. Sat Sep 26 2015 18:18
         subscription.type = "subscription";
         this.$http.post(this.url + this.myUri, subscription).then((response) => {
@@ -41,18 +43,6 @@ class ordersService {
         }, (err) => {
             console.log("error adding subscription", subscriptions[i]);
         });
-    }
-
-
-    addSubscriptions(customerEmail, subscriptions) {
-        for(var i = 0; i < subscriptions.length; i++ ) {
-            this.addSubscription(customerEmail, subscriptions[i]);
-        }
-    }
-
-    addOrders(customerEmail, items, subscriptions) {
-        this.addItems(customerEmail, items);
-        this.addSubscriptions(customerEmail, subscriptions);
     }
 
     deleteItem(item) {
