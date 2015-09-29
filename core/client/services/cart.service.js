@@ -5,7 +5,7 @@ class cartService {
         this.items = [];
         this.subscriptions = [];
 
-        this.tax = 1; // 1 %
+        this.tax = 0; // 0 %
         this.sessionId = 1;
 
         this.orderSubmitted = false;
@@ -70,19 +70,16 @@ class cartService {
     }
 
     countTotals() {
-        this.subTotal= 0;
+        this.itemsTotal= 0;
         for(var i = 0; i < this.items.length; i++) {
-            this.subTotal += this.items[i].price;
+            this.itemsTotal += this.items[i].price;
         }
+        this.subTotal = this.itemsTotal;
         for(var i = 0; i < this.subscriptions.length; i++) {
             this.subTotal += this.subscriptions[i].price;
         }
         this.taxTotal = this.tax/100 * this.subTotal;
         this.total = this.subTotal + this.taxTotal;
-    }
-
-    submitOrder() {
-
     }
 
 }

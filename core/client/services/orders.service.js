@@ -32,16 +32,21 @@ class ordersService {
         }
     }
 
+    addSubscription(customerEmail, subscription) {
+        subscription.customer = customerEmail;
+        subscription.time = Date().slice(0, -18); // e.g. Sat Sep 26 2015 18:18
+        subscription.type = "subscription";
+        this.$http.post(this.url + this.myUri, subscription).then((response) => {
+            //console.log("added subscription", response.data)
+        }, (err) => {
+            console.log("error adding subscription", subscriptions[i]);
+        });
+    }
+
+
     addSubscriptions(customerEmail, subscriptions) {
         for(var i = 0; i < subscriptions.length; i++ ) {
-            subscriptions[i].customer = customerEmail;
-            subscriptions[i].time = Date().slice(0, -18); // e.g. Sat Sep 26 2015 18:18
-            subscriptions[i].type = "subscription";
-            this.$http.post(this.url + this.myUri, subscriptions[i]).then((response) => {
-                //console.log("added subscription", response.data)
-            }, (err) => {
-                console.log("error adding subscription", subscriptions[i]);
-            })
+            this.addSubscription(customerEmail, subscriptions[i]);
         }
     }
 

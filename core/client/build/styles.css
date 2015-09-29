@@ -21532,6 +21532,9 @@ md-toolbar i {
   background-color: transparent;
   padding: 2%; }
 
+.mainMenu .cart-icon {
+  padding-left: 10px; }
+
 .mainMenu .md-button {
   font-family: 'Noticia Text', serif;
   font-weight: bold;
@@ -21603,7 +21606,8 @@ md-toolbar i {
     float: right; }
   .stylists .title hr {
     max-width: 400px;
-    color: #5B7AFF; }
+    color: #5B7AFF;
+    border-top: 1px solid black; }
 
 .stylist {
   position: relative;
@@ -21618,7 +21622,8 @@ md-toolbar i {
     background-size: contain;
     /* you change this from "cover" to "contain" if you don't want the images to be cropped */
     border-radius: 50%;
-    margin-bottom: 4%; }
+    margin-bottom: 4%;
+    margin-top: 10%; }
   .stylist .square:hover {
     opacity: 0.8; }
   .stylist .name {
@@ -21938,7 +21943,8 @@ md-toolbar i {
     float: right; }
   .artists .title hr {
     max-width: 400px;
-    color: #5B7AFF; }
+    color: #5B7AFF;
+    border-top: 1px solid black; }
 
 .angular-google-map-container {
   height: 400px; }
@@ -22093,9 +22099,11 @@ md-dialog {
     font-size: 20px; }
   .event .timing {
     background-color: black;
-    color: white;
+    color: white !important;
     padding: 1%;
     padding-bottom: 0px; }
+  .event .timing md-input-container .md-input {
+    color: white; }
   .event .date {
     color: white; }
   .event .description {
