@@ -35,7 +35,7 @@ exports.createFirstSubscription = function(req, res) {
 
 exports.addSubscription = function(req, res) {
     // var stripeToken = req.body.id;
-    console.log('##@@##########&&&&&&&&&&&&&&&&&&&req.body!!!!', req.body);
+    // console.log('##@@##########&&&&&&&&&&&&&&&&&&&req.body!!!!', req.body);
 
     stripe.customers.createSubscription(req.body.customerId, {
         plan: req.body.plan
@@ -46,7 +46,7 @@ exports.addSubscription = function(req, res) {
 }
 
 exports.makePayment = function(req, res) {
-	console.log('!!!!!!!!!!!!!!!', req.body)
+	// console.log('!!!!!!!!!!!!!!!', req.body)
     stripe.invoiceItems.create({
     	customer: req.body.customerId,
         amount: req.body.amount,
