@@ -38,6 +38,7 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2)$/,
+                // loader: 'file?name=[name].[ext]'
                 loader: "url?prefix=font/&limit=5000"
             },
             {

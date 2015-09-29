@@ -1,9 +1,11 @@
 $menu-text-color: #5B7AFF;
-
+$font-family:  "Raleway", Helvetica, Arial, sans-serif;
 .tanning {
     text-align: center;
     background-color: #f2efe5;
-    color: black;}
+    color: black;
+    font-family:$font-family;
+}
 .info{
     padding-top: 12%;
 }
@@ -63,7 +65,7 @@ $menu-text-color: #5B7AFF;
     padding-top: 48px;
     padding-bottom: 48px;
   }
-  .container .content-block-one {
+  .tanning .content-block-one {
     padding-right: 60px;
     padding-left: 60px;
   }
@@ -71,7 +73,7 @@ $menu-text-color: #5B7AFF;
     padding-top: 48px;
     padding-bottom: 48px;
   }
-  .container .content-block {
+ .tanning .content-block {
     padding-right: 60px;
     padding-left: 60px;
   }
@@ -103,7 +105,6 @@ $menu-text-color: #5B7AFF;
   padding-bottom: 100px;
 }
 
-    
 // background:#f2efe5;
 //     md-toolbar, md-toolbar:not(.md-menu-toolbar) {
 //         color: $menu-text-color;
