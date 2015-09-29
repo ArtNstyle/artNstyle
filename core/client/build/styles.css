@@ -8413,8 +8413,8 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url(/build/f4769f9bdb7466be65088239c12046d1.eot);
-  src: url(/build/f4769f9bdb7466be65088239c12046d1.eot?#iefix) format('embedded-opentype'), url(/build/448c34a56d699c29117adc64c43affeb.woff2) format('woff2'), url(/build/fa2772327f55d8198301fdb8bcfc8158.woff) format('woff'), url(/build/e18bbf611f2a2e43afc071aa2f4e1512.ttf) format('truetype'), url(/build/89889688147bd7575d6327160d64e760.svg#glyphicons_halflingsregular) format('svg');
+  src: url(/build/120b15b795b82590bc25f0f3ad01999d.eot);
+  src: url(/build/120b15b795b82590bc25f0f3ad01999d.eot?#iefix) format('embedded-opentype'), url(/build/448c34a56d699c29117adc64c43affeb.woff2) format('woff2'), url(/build/fa2772327f55d8198301fdb8bcfc8158.woff) format('woff'), url(/build/cfdfba945426bcc3866ed371fcffcd69.ttf) format('truetype'), url(/build/b1cb0838a1edb51f94c17c9de39dee32.svg#glyphicons_halflingsregular) format('svg');
 }
 .glyphicon {
   position: relative;
@@ -21510,22 +21510,21 @@ md-toolbar, md-toolbar:not(.md-menu-toolbar) {
 md-toolbar i {
   color: #5B7AFF;
   border: 2px solid #5B7AFF; }
-.home md-toolbar, .home md-toolbar:not(.md-menu-toolbar) {
-  color: white; }
-
-.home md-toolbar i {
-  color: white;
-  border: 2px solid white; }
-
-.home main-menu {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 5;
-  width: 100%; }
-
-.home .ANS1 {
-  color: white; }
+.home {
+  font-family: "Raleway", Helvetica, Arial, sans-serif; }
+  .home md-toolbar, .home md-toolbar:not(.md-menu-toolbar) {
+    color: white; }
+  .home md-toolbar i {
+    color: white;
+    border: 2px solid white; }
+  .home main-menu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    width: 100%; }
+  .home .ANS1 {
+    color: white; }
 .mainMenu md-toolbar, .mainMenu md-toolbar:not(.md-menu-toolbar) {
   font-weight: bold;
   font-size: 16px;
@@ -21596,7 +21595,7 @@ md-toolbar i {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite; }
 .stylists {
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
   margin: 0px auto;
   max-width: 900px;
   text-align: center; }
@@ -21697,6 +21696,7 @@ md-toolbar i {
   right: 4%;
   z-index: 5; }
 .salon {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
   background-color: #f2efe5; }
   .salon .about_left {
     background: url(/build/product.jpg) no-repeat center top;
@@ -21816,13 +21816,13 @@ md-toolbar i {
   .content-block-one {
     padding-top: 48px;
     padding-bottom: 48px; }
-  .container .content-block-one {
+  .salon .content-block-one {
     padding-right: 60px;
     padding-left: 60px; }
   .content-block {
     padding-top: 48px;
     padding-bottom: 48px; }
-  .container .content-block {
+  .salon .content-block {
     padding-right: 60px;
     padding-left: 60px; } }
 
@@ -21852,7 +21852,8 @@ md-toolbar i {
 .tanning {
   text-align: center;
   background-color: #f2efe5;
-  color: black; }
+  color: black;
+  font-family: "Raleway", Helvetica, Arial, sans-serif; }
 
 .info {
   padding-top: 12%; }
@@ -21901,13 +21902,13 @@ md-toolbar i {
   .content-block-one {
     padding-top: 48px;
     padding-bottom: 48px; }
-  .container .content-block-one {
+  .tanning .content-block-one {
     padding-right: 60px;
     padding-left: 60px; }
   .content-block {
     padding-top: 48px;
     padding-bottom: 48px; }
-  .container .content-block {
+  .tanning .content-block {
     padding-right: 60px;
     padding-left: 60px; } }
 
@@ -21935,7 +21936,7 @@ md-toolbar i {
   padding-top: 100px;
   padding-bottom: 100px; }
 .artists {
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
   margin: 0px auto;
   max-width: 900px;
   text-align: center; }
@@ -21947,7 +21948,7 @@ md-toolbar i {
     border-top: 1px solid black; }
 
 .angular-google-map-container {
-  height: 400px; }
+  height: 560px; }
 
 .artist {
   position: relative;
@@ -21995,7 +21996,7 @@ md-toolbar i {
 .hvr-trim:hover:before, .hvr-trim:focus:before, .hvr-trim:active:before {
   opacity: 1; }
 .arts {
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
   margin: 0px auto;
   max-width: 900px;
   text-align: center; }
@@ -22060,7 +22061,7 @@ md-dialog {
     height: auto;
     margin: auto; }
 .events {
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
   text-align: center; }
   .events p {
     opacity: 0.75; }
@@ -22211,7 +22212,7 @@ md-dialog {
   padding-top: 400px;
   padding-bottom: 400px; }
 .cart {
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
   margin: 0px auto;
   max-width: 900px;
   text-align: center; }
@@ -22235,7 +22236,7 @@ md-dialog {
   .cart .order-submitted {
     color: red; }
 .orders {
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
   margin: 0px auto;
   max-width: 1500px;
   text-align: center; }

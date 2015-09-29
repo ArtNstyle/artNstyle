@@ -1,4 +1,5 @@
 $menu-text-color: #5B7AFF;
+<<<<<<< HEAD
 .green {
   color:#859D53;
 }
@@ -8,10 +9,15 @@ $menu-text-color: #5B7AFF;
 .blue {
   color: #448D9D;
 }
+=======
+$font-family:  "Raleway", Helvetica, Arial, sans-serif;
+>>>>>>> 2da2b77b9a7266dd1bdd724c962a4d3fbdeef03f
 .tanning {
     text-align: center;
     background-color: #f2efe5;
-    color: black;}
+    color: black;
+    font-family:$font-family;
+}
 .info{
     padding-top: 12%;
 }
@@ -71,7 +77,7 @@ $menu-text-color: #5B7AFF;
     padding-top: 48px;
     padding-bottom: 48px;
   }
-  .container .content-block-one {
+  .tanning .content-block-one {
     padding-right: 60px;
     padding-left: 60px;
   }
@@ -79,7 +85,7 @@ $menu-text-color: #5B7AFF;
     padding-top: 48px;
     padding-bottom: 48px;
   }
-  .container .content-block {
+ .tanning .content-block {
     padding-right: 60px;
     padding-left: 60px;
   }
@@ -111,7 +117,6 @@ $menu-text-color: #5B7AFF;
   padding-bottom: 100px;
 }
 
-    
 // background:#f2efe5;
 //     md-toolbar, md-toolbar:not(.md-menu-toolbar) {
 //         color: $menu-text-color;

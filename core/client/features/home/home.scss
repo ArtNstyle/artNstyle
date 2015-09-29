@@ -1,8 +1,12 @@
 $menu-text-color: white;
+$font-family:  "Raleway", Helvetica, Arial, sans-serif;
 
 .home{
+     font-family:$font-family;
+     
     md-toolbar, md-toolbar:not(.md-menu-toolbar) {
         color: $menu-text-color;
+       
     }
 
     md-toolbar i {
