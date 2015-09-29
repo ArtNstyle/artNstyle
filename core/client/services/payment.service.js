@@ -7,9 +7,27 @@ class paymentService {
 
     }
 
-    makePayment(token) {
+    // makePayment(token) {
         
-        return this.$http.post('/api/payment', token).then((response) => {
+    //     return this.$http.post('/api/payment', token).then((response) => {
+    //         console.info('makePayment:', response);
+    //         return response.data.paid;
+    //     }, (err) => {
+    //         console.log('makePayment error', err);
+    //         //throw new Error(err);
+    //         return err;
+    //     });
+    // }
+
+    makePayment(token) {
+        var data = {
+            customerId: "cus_74N8yD4VwSKdEP",
+            amount: 1000,
+            currency: "usd",
+            description: "ArtnStyle"
+        };
+        
+        return this.$http.post('/api/payment', data).then((response) => {
             console.info('makePayment:', response);
             return response.data.paid;
         }, (err) => {
@@ -50,7 +68,10 @@ class paymentService {
         });
     }
 
+    // cus_74N8yD4VwSKdEP
+
 }
+
 
 export default angular.module('services.paymentService', [])
     .service('paymentService', paymentService)
