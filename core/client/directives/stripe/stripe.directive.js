@@ -39,13 +39,15 @@ function stripe($q, paymentService, ordersService, cartService) {
 				}
 
 				if(scope.cart.subscriptions && scope.cart.subscriptions.length > 0) {
-					token.amount = scope.cart.subscriptions[0].price * 100;
-					paymentService.createFirstSubscription(token).then((newCustomerId) => {
+					//token.amount = scope.cart.subscriptions[0].price * 100;
+					var planId = scope.cart.subscriptions[0].planId;
+					paymentService.createFirstSubscription(customerEmail, planId, token).then((newCustomerId) => {
 						customerId = newCustomerId;
 						ordersService.addSubscription(customerEmail, customerId, scope.cart.subscriptions[0]);
 						if (scope.cart.subscriptions.length > 1) { // many subs
-							token.amount = scope.cart.subscriptions[1].price * 100;
-							paymentService.addSubscription(token).then((response) => {
+							//token.amount = scope.cart.subscriptions[1].price * 100;
+							planId = scope.cart.subscriptions[1].planId;
+							paymentService.addSubscription(customerId, planId).then((response) => {
 								ordersService.addSubscription(customerEmail, customerId, scope.cart.subscriptions[1]);
 								payItemsIfNeeded(scope.cart, token);
 							});
