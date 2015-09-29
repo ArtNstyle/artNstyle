@@ -7,9 +7,8 @@ require('angular-google-maps');
 import jQuery from 'jquery';
 import bootstrap from 'bootstrap';
 
-// import 'font-awesome/fonts/fontawesome-webfont.woff';
-// import 'font-awesome/css/font-awesome.css';
-
+// import 'font-awesome/fonts/fontawesome-webfont.woff2';
+import 'font-awesome/css/font-awesome.css';
 
 import 'animate.css/animate.css';
 import 'hover.css/css/hover.css';
