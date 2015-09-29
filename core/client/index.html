@@ -2,32 +2,35 @@
 <html ng-app="app" lang="en">
 
 <head>
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <i class="data-icon">shoppingcart</i> -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>artNstyle</title>
+
+    <title>Art-N-Style</title>
+
+    <!--angular material icons-->
     <base href="/">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--bundle CSS-->
     <link rel="stylesheet" href="/build/styles.css">
- <!-- STRIPE -->
+    <!-- STRIPE -->
     <script src="https://checkout.stripe.com/checkout.js"></script>
-
-    <link rel="ArtNStyle" href="http://favicon.htmlkit.com/favicon/download/nocache-193306616/temp-3b3dhpvd47n2ko8oj1mppd9gi5/favicon.">
+    <!--Favicon-->
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAelBdRPeJqLmGlstdiHFnOv+/h/3/vor+/72J/e7Fn5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/MDAC/3Sd+/90nf7/c53+/3iB/v99W/7+vYr//76K/v69iv//vor+/8uZ/wAAAAAAAAAAAAAAAAAAAAAAAAAA/3Sd+v90nf7/dJ3+/3Od/v97XP7/fFv+/3tb/v+9i/7/vov+/76K/v++iv4eGRYMAAAAAAAAAAAAAAAAAAAAAP9znf7/dJ3+/3Sc/v91m/7/fFz+/3xb/v98W/74pHT++L6L/oTgZv6L3mb+88OS3wAAAAAAAAAAAAAAALqhsCmURMT+dDXX/nU40v6QQMb+/3tc/v98W/7/fFv+bM1M/nflYv535GL+d+Ri/njkZv6E/6j8AAAAAEpKcAF3dv/6dTbT/3U11P51NdT+dTXV/ng6tv7/fFr+o7JS/3jUWP535GL/d+Vi/nfkYv52+ZP+dvya/rb5w5eEh/rudHX7/nQ6z/53N9H+dTfQ/nY11P5zNrr+hkik/nXHT/535mL+eeZg/nPmYv563Gf+d/yY/nf7nP51/Jn8dHP//n571f55fuH+dDHZ/oNqrP5/Yrn+gW6x/nVcn/6Dsof+Zraa/jP0vf449rb+fruO/oa1kP51/Jv+d/ya/XV1//59eMn+f33I/oWKwf9JQtf+Hyjh/jsy8f5ldb/+g5q4/0rUt/43/Nj/cbup/n60pf5205D+hcCS/nT9mvxzdv/8dHT//nR0//44Qv/+NkD//jZA//4zQ//+GUP//iuS9f4ikvH+NPzV/jX81P41/NT+NfzU/nf8m/6Y57RYjIwtEnR0//54dv/+NkH//jZA//42QP/+GkH//juM/v4+kf/+I5Dx/jf33P41/NT+NfzU/jT81f6L/6j/AAAAAAAAAACbm9U9XGL+/jZA//42QP/+NkD//jR3/P4/kf/+PpH//j+R//5QvPn+Sfzd/k783/50/f7+AAAAAAAAAAAAAAAAAAAAANDG8ymAlf/+gJT//n2S//5Ik//+PpH//j6R//4+kf/+Zdf5/nP9//5z/f/+c/3+/1nf3wQAAAAAAAAAAAAAAABYg4MDfZH+/32S//59kv/+gpD//j+R//4+kf/+PpH//nP9//5z/f/+c/3//on9//QAAAAAAAAAAAAAAAAAAAAAAAAAAL/F7D59kv/+fZL//n2S//57kf/+P5H//mHX+P5z/f/+c/3//oP///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDAqAYeb//93jv7+g5b//wAAAABYcHANYY6ONABwcAEAAAAAAAAAAAAAAAAAAAAA+w8AAOAHAADABwAAwAMAAMABAACAAAAAAAAAAAAAAAAAAAAAAAEAAIABAADAAwAA4AMAAOADAADwBwAA+P8AAA=="
+    rel="icon" type="image/x-icon" />
 
 </head>
 
 <body>
-    <!--<a ui-sref="cart" class="cart-icon"><i class="material-icons">shopping_cart</i></a>-->
 
     <div class="content">
 
-
         <div ui-view="main"></div>
-
+        <!--Bundle JS-->
         <script src="/build/bundle.js"></script>
+
+        <!--Google Map-->
         <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
     </div>
 

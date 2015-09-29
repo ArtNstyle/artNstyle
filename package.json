@@ -26,6 +26,7 @@
     "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
     "font-awesome": "^4.4.0",
+    "font-awesome-webpack": "0.0.3",
     "hover.css": "^2.0.2",
     "html-loader": "^0.3.0",
     "jquery": "^2.1.4",
