@@ -38,19 +38,33 @@ function stripe($q, paymentService, ordersService, cartService) {
 					cartService.status.orderSubmitted = true; // this is visible to all UXs needing it
 				}
 
+				function addOneSubscription(subscription) {
+					var planId = subscription.planId;
+					return paymentService.addSubscription(customerId, planId).then((response) => {
+						ordersService.addSubscription(customerEmail, customerId, subscription);
+						return response;
+					}, (err) =>{
+						console.log("error adding subscription", subscription);
+						return err;
+					});
+				}
+
 				if(scope.cart.subscriptions && scope.cart.subscriptions.length > 0) {
-					//token.amount = scope.cart.subscriptions[0].price * 100;
 					var planId = scope.cart.subscriptions[0].planId;
 					paymentService.createFirstSubscription(customerEmail, planId, token).then((newCustomerId) => {
 						customerId = newCustomerId;
 						ordersService.addSubscription(customerEmail, customerId, scope.cart.subscriptions[0]);
-						if (scope.cart.subscriptions.length > 1) { // many subs
-							//token.amount = scope.cart.subscriptions[1].price * 100;
-							planId = scope.cart.subscriptions[1].planId;
-							paymentService.addSubscription(customerId, planId).then((response) => {
-								ordersService.addSubscription(customerEmail, customerId, scope.cart.subscriptions[1]);
+
+						if (scope.cart.subscriptions.length > 1) { // more than one subscriptions
+
+							var restSubs = scope.cart.subscriptions.slice(1);
+							$q.all(restSubs.map(function(d){
+								return addOneSubscription(d);
+							})).then((responses) => {
+								console.log("$q all responses", responses);
 								payItemsIfNeeded(scope.cart, token);
 							});
+
 						} else { // one subs
 							payItemsIfNeeded(scope.cart, token);
 						}
