@@ -71,6 +71,7 @@ module.exports = function () {
     require('../routes/tanning.server.routes.js')(app);
     require('../routes/pic.server.routes.js')(app);
     require('../routes/auth.server.routes.js')(app);
+    require('../routes/stripe.server.routes.js')(app);
 
     require('../routes/tickets.server.routes.js')(app);
 

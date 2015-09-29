@@ -8,6 +8,7 @@ class paymentService {
     }
 
     makePayment(token) {
+        
         return this.$http.post('/api/payment', token).then((response) => {
             console.info('makePayment:', response);
             return response.data.paid;
@@ -19,7 +20,12 @@ class paymentService {
     }
 
     createFirstSubscription(token) {
-        return this.$http.post('/api/firstsubscription', token).then((response) => {
+        var data = {
+            token: token,
+            email: 'tamiwohlers99@gmail.com',
+            plan: 'Minimalist'
+        };
+        return this.$http.post('/api/firstsubscription', data).then((response) => {
             console.info('createFirstSubscription:', response);
             return response.data.customerId;
         }, (err) => {
@@ -30,7 +36,11 @@ class paymentService {
     }
 
     addSubscription(token) {
-        return this.$http.post('/api/addsubscription', token).then((response) => {
+        var data = {
+            customerId: "cus_74HCc6pPzNKPYY",
+            plan: "Minimalist"
+        }
+        return this.$http.post('/api/addsubscription', data).then((response) => {
             console.info('addSubscription:', response);
             return response.data;
         }, (err) => {
