@@ -26,7 +26,7 @@
                     <td class="name">{{item.name}}</td>
                     <td>{{item.price | currency }}</td>
                     <td>
-                        <md-button ng-disabled="cart.orderSubmitted" class="md-icon-button" ng-click="cart.deleteItem(item)">
+                        <md-button ng-disabled="cart.status.orderSubmitted" class="md-icon-button" ng-click="cart.deleteItem(item)">
                             <i class="material-icons">delete</i>
                         </md-button>
                     </td>
@@ -51,7 +51,7 @@
                 <td class="name">{{item.name}}</td>
                 <td>{{item.price | currency }}</td>
                 <td>
-                    <md-button ng-disabled="cart.orderSubmitted" class="md-icon-button" ng-click="cart.deleteSubscription(item)">
+                    <md-button ng-disabled="cart.status.orderSubmitted" class="md-icon-button" ng-click="cart.deleteSubscription(item)">
                         <i class="material-icons">delete</i>
                     </md-button>
                 </td>
@@ -64,16 +64,9 @@
         <div>SubTotal: {{cart.subTotal | currency}}</div>
         <div>Tax: {{cart.taxTotal | currency}}</div>
         <div>Order Total: {{cart.total| currency}}</div>
-        <input type="text" ng-model="cart.customerEmail" placeholder="email"/>
-        <md-button ng-disabled="cart.orderSubmitted" class="md-raised md-primary" ng-click="cart.submitOrder()">Submit Order</md-button>
-        <p ng-if="cart.orderSubmitted" class="order-submitted">Order Submitted</p>
+        <stripe></stripe>
+        <p ng-if="cart.status.orderSubmitted" class="order-submitted">Order Submitted</p>
     </div>
-
-    <br>
-    <stripe></stripe>
-    <br>
-
-
 
 
 </div>

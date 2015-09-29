@@ -33,16 +33,29 @@ exports.createFirstSubscription = function(req, res) {
 
 
 
-// exports.addSubscription = function(req, res) {
-// 	var stripeToken = req.body.id;
-// 	var subscription = stripe.subscription.create({
-		
-// 	}, function(err, charge) {
-// 		if (err) return res.status(505).send(err);
-// 		return res.json(charge);
-// 	});
-// }
+exports.addSubscription = function(req, res) {
+	// var stripeToken = req.body.id;
+	console.log('##@@##########&&&&&&&&&&&&&&&&&&&req.body!!!!',req.body);
 
+	stripe.customers.createSubscription(req.body.customerId, {plan: req.body.plan
+	}, function(err, subscription) {
+		if (err) return res.status(505).send(err);
+		return res.json(subscription);
+	});
+}
+
+
+// var stripe = require("stripe")(
+//   "sk_test_fgfZJsb4ZDW0L2huWhoNYF72"
+// );
+
+// stripe.customers.createSubscription(
+//   "cus_74HCc6pPzNKPYY",
+//   {plan: "Minimalist"},
+//   function(err, subscription) {
+//     // asynchronously called
+//   }
+// );
 
 
 // // (Assuming you're using express - expressjs.com)

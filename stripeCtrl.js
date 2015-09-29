@@ -25,3 +25,29 @@ exports.makePayment = function(req, res) {
 }
 
 
+exports.createFirstSubscription = function(req, res) {
+  console.log('createFirstSubscription', req.body);
+  var stripeToken = req.body.id;
+  console.log('stripeToken', stripeToken);
+  // TO BE IMPLEMENTED
+
+  // RESPONSE FOR TESTING
+  var response = {
+    //paid: true,
+    customerId: "test123"
+  };
+  res.send(response);
+}
+
+exports.addSubscription = function(req, res) {
+  console.log('addSubscription', req.body);
+  var stripeToken = req.body.id;
+  console.log('stripeToken', stripeToken)
+  // TO BE IMPLEMENTED
+
+  // RESPONSE FOR TESTING
+  var response = {
+    //paid: true
+  };
+  res.send(response);
+}
