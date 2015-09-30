@@ -24,7 +24,7 @@ var options = {
     cert: fs.readFileSync('./artnstylesalon.com.crt'),
 };
 
-
+https.createServer(config,app).listen(443);
 
 var server = https.createServer(options, app).listen(port, function(){
   console.log("Express server listening on port " + port);
