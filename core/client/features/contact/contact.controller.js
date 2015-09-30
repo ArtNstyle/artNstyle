@@ -1,8 +1,8 @@
 module.exports = function (app) {
 
-    app.controller('contactController', ['$scope', '$log', '$location', '$q', 'ticketsService', contactController]);
+    app.controller('contactController', ['$scope', '$log', '$location', '$q', 'ticketsService', 'loggedService', contactController]);
 
-    function contactController($scope, $log, $location, $q, ticketsService) {
+    function contactController($scope, $log, $location, $q, ticketsService, loggedService) {
 
         // code for the google map
         $scope.map = {
@@ -101,6 +101,19 @@ module.exports = function (app) {
                     $log.error(errorMsg);
                 });
         };
+
+
+        // code to show or hide tickets
+
+        $scope.isUserAuthenticated = function () {
+            loggedService.userAuthenticated()
+                .then(function (message) {
+                    $scope.userAuthenticated = message;
+                    $log.info(message);
+                });
+        };
+
+        $scope.isUserAuthenticated();
 
     };
 };
