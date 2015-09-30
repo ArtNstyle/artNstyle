@@ -13,7 +13,7 @@ function stripe($q, paymentService, ordersService, cartService) {
 
 	      var handler = StripeCheckout.configure({
 
-	        key: 'pk_test_CjsDYe4Aj8fYmJN5m1aYd94A',
+	        key: 'pk_live_6RmNbGwe5vNDt7vE96HErgTd',
 	        // image: './img/cc.png',
 	        token: function(token, args) {
 				var customerEmail = token.email;
