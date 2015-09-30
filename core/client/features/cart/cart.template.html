@@ -67,7 +67,7 @@
         <div>Tax: {{cart.taxTotal | currency}}</div>
         <div>Order Total: {{cart.total| currency}}</div>
         <stripe></stripe>
-        <p ng-if="cart.status.orderSubmitted" class="order-submitted">Order Submitted</p>
+        <p ng-if="cart.status.orderSubmitted" class="order-submitted">Order Submitted with ref {{cart.status.reference}}</p>
     </div>
 
 

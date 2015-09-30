@@ -30,8 +30,10 @@ function stripe($q, paymentService, ordersService, cartService) {
 				function payItemsIfNeeded(cart, token) {
 					token.amount = cart.itemsTotal * 100;
 					if (itemsBought(cart)) {
-						paymentService.makePayment(token).then((response) => {
-							ordersService.addItems(customerEmail, customerId, cart.items);
+						paymentService.makePayment(token).then((chargeId) => {
+							//console.log("payItemsIfNeeded", chargeId);
+							ordersService.addItems(customerEmail, chargeId, cart.items);
+							cartService.status.reference = chargeId;
 						});
 
 					}
@@ -47,6 +49,7 @@ function stripe($q, paymentService, ordersService, cartService) {
 
 					}
 					cartService.status.orderSubmitted = true; // this is visible to all UXs needing it
+					cartService.status.reference = customerId;
 				}
 
 				function addOneSubscription(subscription) {
@@ -72,7 +75,7 @@ function stripe($q, paymentService, ordersService, cartService) {
 							$q.all(restSubs.map(function(d){
 								return addOneSubscription(d);
 							})).then((responses) => {
-								console.log("$q all responses", responses);
+								//console.log("$q all responses", responses);
 								addItemsIfNeeded(scope.cart);
 							});
 
