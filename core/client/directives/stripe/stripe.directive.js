@@ -38,6 +38,17 @@ function stripe($q, paymentService, ordersService, cartService) {
 					cartService.status.orderSubmitted = true; // this is visible to all UXs needing it
 				}
 
+				function addItemsIfNeeded(cart) {
+					var amount = cart.itemsTotal * 100;
+					if (itemsBought(cart)) {
+						paymentService.addInvoiceItem(customerId, amount).then((response) => {
+							ordersService.addItems(customerEmail, customerId, cart.items);
+						});
+
+					}
+					cartService.status.orderSubmitted = true; // this is visible to all UXs needing it
+				}
+
 				function addOneSubscription(subscription) {
 					var planId = subscription.planId;
 					return paymentService.addSubscription(customerId, planId).then((response) => {
@@ -62,15 +73,16 @@ function stripe($q, paymentService, ordersService, cartService) {
 								return addOneSubscription(d);
 							})).then((responses) => {
 								console.log("$q all responses", responses);
-								payItemsIfNeeded(scope.cart, token);
+								addItemsIfNeeded(scope.cart);
 							});
 
 						} else { // one subs
-							payItemsIfNeeded(scope.cart, token);
+							addItemsIfNeeded(scope.cart);
 						}
 					});
 				} else { // no subs
 					payItemsIfNeeded(scope.cart, token);
+					// this call does not create customer, only charging item
 				}
 
 	        }
