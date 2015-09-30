@@ -1,4 +1,4 @@
-var stripe = require('stripe')('pk_test_m15Rgu5CaL9nnBd1wFvTIiBV');
+var stripe = require('stripe')('pk_live_6RmNbGwe5vNDt7vE96HErgTd');
 var stripeCtrl = require('../controllers/stripe.server.controller');
 
 
