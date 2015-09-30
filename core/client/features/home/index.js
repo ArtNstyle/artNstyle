@@ -10,7 +10,5 @@ export default angular.module('app.home', [mainMenu])
 
 import '../home/images/hair.jpg';
 import '../home/images/hairart.jpg';
-import '../home/images/coolhair.jpg';
 import '../home/images/ttown.jpg';
-import '../home/images/hair3.jpg';
 import '../home/images/art.jpeg';
