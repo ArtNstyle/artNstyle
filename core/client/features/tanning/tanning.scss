@@ -15,7 +15,22 @@ $font-family:  "Raleway", Helvetica, Arial, sans-serif;
     background-color: #f2efe5;
     color: black;
     font-family:$font-family;
+
+.vs{
+    float: right;
 }
+.infov {
+    height: 15%;
+    width: 15%;
+}
+.versaspa {
+   padding-top:10%;
+    margin-top: 10%;
+}
+// .spaHeader {
+   
+//     justify-content: center;
+// }
 .info{
     padding-top: 12%;
 }
@@ -114,31 +129,8 @@ $font-family:  "Raleway", Helvetica, Arial, sans-serif;
   padding-top: 100px;
   padding-bottom: 100px;
 }
+}
 
-// background:#f2efe5;
-//     md-toolbar, md-toolbar:not(.md-menu-toolbar) {
-//         color: $menu-text-color;
-//     }
-
-//     md-toolbar i {
-//         color: $menu-text-color;
-//         border: 2px solid $menu-text-color;
-//     }
-
-
-//     img{
-// 	width: 100%;
-// }
-
-// .button0605{
-// 	// float: right;
-// 	color: black;
-// }
-// hr {	width: 50%;
-// }
-
-
-// .angular-google-map-container { height: 400px; }
 
 
 
