@@ -10,7 +10,7 @@ class paymentService {
      makePayment(token) {
          return this.$http.post('/api/payment', token).then((response) => {
              //console.info('makePayment:', response);
-             return response.data.paid;
+             return response.data.id;
          }, (err) => {
              console.log('makePayment error', err);
              //throw new Error(err);
