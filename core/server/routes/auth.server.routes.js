@@ -61,6 +61,14 @@ module.exports = function (app) {
         });
 
 
+    // LOGING OUT
+    app.route('/logout')
+        .get(function (req, res) {
+            req.logout();
+            res.redirect('/');
+        });
+
+
     // PROTECTING ROUTES
     app.route('/notallowed')
         .get(function (req, res, next) {
