@@ -62,11 +62,11 @@ module.exports = function (app) {
 
 
     // LOGING OUT
-    // app.route('/logout')
-    //     .get(function (req, res) {
-    //         req.logout();
-    //         res.redirect('/');
-    //     });
+    app.route('/logout')
+        .get(function (req, res) {
+            req.logout();
+            res.redirect('/');
+        });
 
 
     // PROTECTING ROUTES
