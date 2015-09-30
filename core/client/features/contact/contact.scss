@@ -4,26 +4,40 @@ $font-family:  "Raleway", Helvetica, Arial, sans-serif;
  
  
 .angular-google-map-container { 
-    font-family:  "Raleway", Helvetica, Arial, sans-serif;
-    height: 472px; }
-    
- .contact{ 
-  background: url(images/shop2.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-.bottom{
-    padding-bottom: 5%;
-}
-.contact1{
-    font-family: $font-family;
-    padding-top:8%;
-    color: white;
-    text-shadow: 2px 2px 8px #000, -2px -2px #000, 3px 3px #000;
-    text-align: center;
-}
-.md-title{
-    text-align: center;
-}
+  font-family:  "Raleway", Helvetica, Arial, sans-serif;
+  height: 472px; }
+
+
+ .contact {
+   background: url(images/shop2.jpg) no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   font-family: $font-family;
+
+   md-toolbar, md-toolbar:not(.md-menu-toolbar) {
+     color: $menu-text-color;
+
+   }
+
+   md-toolbar i {
+     color: $menu-text-color;
+     border: 2px solid $menu-text-color;
+   }
+
+   .bottom {
+     padding-bottom: 5%;
+   }
+   .contact1 {
+     font-family: $font-family;
+     padding-top: 8%;
+     color: white;
+     text-shadow: 2px 2px 8px #000, -2px -2px #000, 3px 3px #000;
+     text-align: center;
+   }
+   .md-title {
+     text-align: center;
+   }
+
+ }
