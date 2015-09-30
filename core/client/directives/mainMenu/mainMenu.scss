@@ -1,5 +1,9 @@
 $main-color: #5B7AFF;
 
+md-menu-content {
+  max-height: 400px;
+}
+
 .mainMenu {
   md-toolbar, md-toolbar:not(.md-menu-toolbar) {
     font-weight: bold;
@@ -20,6 +24,7 @@ $main-color: #5B7AFF;
   md-toolbar i {
     border-radius: 20%;
   }
+
 
   a {
     margin: 0px 2px;
