@@ -18,24 +18,25 @@ $font-family:  "Raleway", Helvetica, Arial, sans-serif;
 
 .vs{
     float: right;
+    padding-right:0;
 }
 .infov {
+    font-family:$font-family;
     height: 15%;
     width: 15%;
 }
 .versaspa {
-   padding-top:10%;
-    margin-top: 10%;
+   padding-top:12%;
+    margin-top: 12%;
+       padding-bottom:4%;
+    margin-bottom: 4%;
 }
-// .spaHeader {
-   
-//     justify-content: center;
-// }
 .info{
     padding-top: 12%;
 }
 .header0605{
    color: #5B7AFF
+   
 }
 .content-block {
   // padding: 30px ;
@@ -53,6 +54,7 @@ $font-family:  "Raleway", Helvetica, Arial, sans-serif;
   margin-bottom: 0px;
   color: inherit;
  background:#f2efe5;
+  font-family:$font-family;
  
 }
 
@@ -60,6 +62,7 @@ $font-family:  "Raleway", Helvetica, Arial, sans-serif;
   margin-bottom: 15px;
   font-size: 21px;
   font-weight: 200;
+   font-family:$font-family;
 }
 .content-block p {
   margin-top: 15px;

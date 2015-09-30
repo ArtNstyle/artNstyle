@@ -1,4 +1,4 @@
-import '../arts/arts.scss';
+import './arts.scss';
 
 import mainMenu from '../../directives/mainMenu/mainMenu.directive';
 import editableText from '../../directives/editableText.directive';
