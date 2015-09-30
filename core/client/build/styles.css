@@ -23890,13 +23890,17 @@ md-toolbar i {
   color: black;
   font-family: "Raleway", Helvetica, Arial, sans-serif; }
   .tanning .vs {
-    float: right; }
+    float: right;
+    padding-right: 0; }
   .tanning .infov {
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
     height: 15%;
     width: 15%; }
   .tanning .versaspa {
-    padding-top: 10%;
-    margin-top: 10%; }
+    padding-top: 12%;
+    margin-top: 12%;
+    padding-bottom: 4%;
+    margin-bottom: 4%; }
   .tanning .info {
     padding-top: 12%; }
   .tanning .header0605 {
@@ -23910,11 +23914,13 @@ md-toolbar i {
   .tanning .content-block-one {
     margin-bottom: 0px;
     color: inherit;
-    background: #f2efe5; }
+    background: #f2efe5;
+    font-family: "Raleway", Helvetica, Arial, sans-serif; }
   .tanning .content-block-one p {
     margin-bottom: 15px;
     font-size: 21px;
-    font-weight: 200; }
+    font-weight: 200;
+    font-family: "Raleway", Helvetica, Arial, sans-serif; }
   .tanning .content-block p {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -23975,9 +23981,6 @@ md-toolbar i {
     max-width: 400px;
     color: #5B7AFF;
     border-top: 1px solid black; }
-
-.angular-google-map-container {
-  height: 560px; }
 
 .artist {
   position: relative;
@@ -24300,3 +24303,26 @@ md-dialog {
   .orders .totals {
     margin: 8%;
     text-align: right; }
+.angular-google-map-container {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  height: 472px; }
+
+.contact {
+  background: url(/build/shop2.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.bottom {
+  padding-bottom: 5%; }
+
+.contact1 {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  padding-top: 8%;
+  color: white;
+  text-shadow: 2px 2px 8px #000, -2px -2px #000, 3px 3px #000;
+  text-align: center; }
+
+.md-title {
+  text-align: center; }
