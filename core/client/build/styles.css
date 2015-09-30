@@ -23551,6 +23551,9 @@ md-toolbar i {
     width: 100%; }
   .home .ANS1 {
     color: white; }
+md-menu-content {
+  max-height: 400px; }
+
 .mainMenu md-toolbar, .mainMenu md-toolbar:not(.md-menu-toolbar) {
   font-weight: bold;
   font-size: 16px;
@@ -24312,17 +24315,20 @@ md-dialog {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
-
-.bottom {
-  padding-bottom: 5%; }
-
-.contact1 {
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
-  padding-top: 8%;
-  color: white;
-  text-shadow: 2px 2px 8px #000, -2px -2px #000, 3px 3px #000;
-  text-align: center; }
-
-.md-title {
-  text-align: center; }
+  background-size: cover;
+  font-family: "Raleway", Helvetica, Arial, sans-serif; }
+  .contact md-toolbar, .contact md-toolbar:not(.md-menu-toolbar) {
+    color: white; }
+  .contact md-toolbar i {
+    color: white;
+    border: 2px solid white; }
+  .contact .bottom {
+    padding-bottom: 5%; }
+  .contact .contact1 {
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    padding-top: 8%;
+    color: white;
+    text-shadow: 2px 2px 8px #000, -2px -2px #000, 3px 3px #000;
+    text-align: center; }
+  .contact .md-title {
+    text-align: center; }
