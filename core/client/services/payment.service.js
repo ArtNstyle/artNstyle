@@ -7,29 +7,28 @@ class paymentService {
 
     }
 
-    // makePayment(token) {
-        
-    //     return this.$http.post('/api/payment', token).then((response) => {
-    //         console.info('makePayment:', response);
-    //         return response.data.paid;
-    //     }, (err) => {
-    //         console.log('makePayment error', err);
-    //         //throw new Error(err);
-    //         return err;
-    //     });
-    // }
+     makePayment(token) {
+         return this.$http.post('/api/payment', token).then((response) => {
+             //console.info('makePayment:', response);
+             return response.data.id;
+         }, (err) => {
+             console.log('makePayment error', err);
+             //throw new Error(err);
+             return err;
+         });
+     }
 
-    makePayment(token) {
+    addInvoiceItem(customerId, amount) {
         var data = {
-            customerId: "cus_74N8yD4VwSKdEP",
-            amount: 1000,
+            customerId: customerId,
+            amount: amount,
             currency: "usd",
             description: "ArtnStyle"
         };
         
-        return this.$http.post('/api/payment', data).then((response) => {
-            console.info('makePayment:', response);
-            return response.data.paid;
+        return this.$http.post('/api/addinvoiceitem', data).then((response) => {
+            //console.info('addInvoiceItem:', response);
+            return response.data;
         }, (err) => {
             console.log('makePayment error', err);
             //throw new Error(err);
@@ -44,7 +43,7 @@ class paymentService {
             plan: planId
         };
         return this.$http.post('/api/firstsubscription', data).then((response) => {
-            console.info('createFirstSubscription:', response);
+            //console.info('createFirstSubscription:', response);
             return response.data.id;
         }, (err) => {
             console.log('createFirstSubscription error', err);
@@ -59,7 +58,7 @@ class paymentService {
             plan: planId
         }
         return this.$http.post('/api/addsubscription', data).then((response) => {
-            console.info('addSubscription:', response);
+            //console.info('addSubscription:', response);
             return response.data;
         }, (err) => {
             console.log('addSubscription  error', err);
