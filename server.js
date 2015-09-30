@@ -9,9 +9,25 @@ var db = mongoose(),
     app = express();
 
 
-app.listen(port, function () {
-    console.log('listening on ' + port);
-});
+// app.listen(port, function () {
+//     console.log('listening on ' + port);
+// });
 
+//for https/ssl
+
+var fs = require('fs'),
+    http = require('http'),
+    https = require('https'),
+
+var options = {
+    key: fs.readFileSync('./artnstylesalon.com.key'),
+    cert: fs.readFileSync('./artnstylesalon.com.crt'),
+};
+
+
+
+var server = https.createServer(options, app).listen(port, function(){
+  console.log("Express server listening on port " + port);
+});
 
 module.exports = app;
