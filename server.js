@@ -9,11 +9,6 @@ var db = mongoose(),
     app = express();
 
 
-// app.listen(port, function () {
-//     console.log('listening on ' + port);
-// });
-
-//for https/ssl
 
 if (process.env.NODE_ENV === 'development') {
     app.listen(port, function () {
@@ -34,6 +29,24 @@ else if (process.env.NODE_ENV === 'production') {
        console.log("Express server listening on port " + port);
      });
 
+    insecureServer = http.createServer();
+    insecureServer.on('request', function (req, res) {
+        // TODO also redirect websocket upgrades
+        res.setHeader(
+            'Location'
+            , 'https://artnstylesalon.com'
+        );
+        res.statusCode = 302;
+        res.end();
+    });
+
+    insecureServer.listen(port, function(){
+        console.log("\nRedirecting all http traffic to https\n");
+    });
+
 }
 
+
+
 module.exports = app;
+
