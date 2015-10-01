@@ -9,30 +9,47 @@ var db = mongoose(),
     app = express();
 
 
-
+// app.listen(port, function () {
+//     console.log('listening on ' + port);
+// });
 
 //for https/ssl
 
-if (process.env.NODE_ENV !== 'development') {
-    var fs = require('fs'),
-        http = require('http'),
-        https = require('https');
+var fs = require('fs'),
+    http = require('http'),
+    https = require('https');
 
-    var options = {
-        key: fs.readFileSync('./artnstylesalon.com.key'),
-        cert: fs.readFileSync('./artnstylesalon.com.crt'),
-    };
-
+var options = {
+    key: fs.readFileSync('./artnstylesalon.com.key'),
+    cert: fs.readFileSync('./bundle.pem'),
+};
 
 
-    var server = https.createServer(options, app).listen(port, function () {
-        console.log("Express server listening on port " + port);
-    });
-}
-else {
-    app.listen(port, function () {
-        console.log('listening on ' + port);
-    });
-}
+
+var server = https.createServer(options, app).listen(port, function(){
+  console.log("Express server listening on port " + port);
+});
+
+// if (process.env.NODE_ENV !== 'development') {
+//     var fs = require('fs'),
+//         http = require('http'),
+//         https = require('https');
+
+//     var options = {
+//         key: fs.readFileSync('./artnstylesalon.com.key'),
+//         cert: fs.readFileSync('./bundle.pem'),
+//     };
+
+
+
+//     var server = https.createServer(options, app).listen(port, function () {
+//         console.log("Express server listening on port " + port);
+//     });
+// }
+// else {
+//     app.listen(port, function () {
+//         console.log('listening on ' + port);
+//     });
+// }
 
 module.exports = app;
