@@ -1,8 +1,8 @@
 import BaseWebController from "../commonControllers/baseWeb.controller"
 
 export default class eventsController extends BaseWebController {
-  constructor($location, eventsService, picsService, loggedUserService) {
-    super($location, eventsService, picsService, loggedUserService);
+  constructor($location, $q, eventsService, picsService, loggedUserService) {
+    super($location, $q, eventsService, picsService, loggedUserService);
     this.test = 'Hello from eventsController';
   }
 }
