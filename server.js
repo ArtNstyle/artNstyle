@@ -15,19 +15,26 @@ var db = mongoose(),
 
 //for https/ssl
 
-var fs = require('fs'),
-    http = require('http'),
-    https = require('https'),
+if (process.env.NODE_ENV === 'development') {
+    app.listen(port, function () {
+        console.log('listening on ' + port);
+    });
+}
+else if (process.env.NODE_ENV === 'production') {
+    var fs = require('fs'),
+        http = require('http'),
+        https = require('https');
 
-var options = {
-    key: fs.readFileSync('./artnstylesalon.com.key'),
-    cert: fs.readFileSync('./artnstylesalon.com.crt'),
-};
+    var options = {
+        key: fs.readFileSync('./artnstylesalon.com.key'),
+        cert: fs.readFileSync('./artnstylesalon.com.crt'),
+    };
 
-https.createServer(config,app).listen(443);
+    https.createServer(config,app).listen(443);
 
-var server = https.createServer(options, app).listen(port, function(){
-  console.log("Express server listening on port " + port);
-});
+    var server = https.createServer(options, app).listen(port, function(){
+        console.log("Express server listening on port " + port);
+    });
+}
 
 module.exports = app;
