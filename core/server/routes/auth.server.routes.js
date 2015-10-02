@@ -56,7 +56,11 @@ module.exports = function (app) {
     // CHECKING IF LOGIN
     app.route('/checklogin')
         .get(function (req, res) {
-            if (req.user) res.send(true);
+            //added && to restrict everyone but these users
+            if (req.user && 
+            (req.user.facebook.id === '1057834704229519' || req.user.facebook.id === '1191707710856264' )) {
+             res.send(true);   
+            }
             else res.send(false);
         });
 
