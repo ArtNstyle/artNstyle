@@ -1,8 +1,8 @@
 import BaseWebController from "../commonControllers/baseWeb.controller"
 
 export default class artistsController extends BaseWebController {
-  constructor($location, $q, artistsService, picsService, loggedUserService, $state, artsService) {
-    super($location, $q, artistsService, picsService, loggedUserService);
+  constructor($location, artistsService, picsService, loggedUserService, $state, artsService) {
+    super($location, artistsService, picsService, loggedUserService);
     this.test = 'Hello from artistsController';
     this.$state = $state;
     this.artsService = artsService;

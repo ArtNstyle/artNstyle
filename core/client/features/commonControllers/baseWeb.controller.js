@@ -1,9 +1,6 @@
 export default class BaseWebController {
-    constructor($location, $q, myWebService, picsService, loggedUserService, doNotGetItems) {
-
-        this.$q = $q;
-        //this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
-        this.url = "/api";
+    constructor($location, myWebService, picsService, loggedUserService, doNotGetItems) {
+        this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
         this.picsUri = "/pics";
         this.thumbnailUri = "/thumbnail?id=";
         this.thumbnailUrl = this.url + this.picsUri + this.thumbnailUri;
@@ -84,7 +81,6 @@ export default class BaseWebController {
             //console.log("deletePic w picId", deletePicId);
             return this.picsService.removePicWithId(deletePicId);
         }
-        return this.$q.when("no Pic");
     }
 
     addPic(item, pic) {
