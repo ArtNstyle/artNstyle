@@ -10,7 +10,7 @@ module.exports = function (app) {
         function userAuthenticated() {
             return $http({
                 method: 'GET',
-                url: 'checklogin'
+                url: '/checklogin'
             })
                 .then(function (response) {
                     return response.data;

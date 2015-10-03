@@ -1,9 +1,8 @@
 export default class BaseWebController {
     constructor($location, $q, myWebService, picsService, loggedUserService, doNotGetItems) {
-
         this.$q = $q;
-        //this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
         this.url = "/api";
+        //this.url = "http://" + $location.host() + ":" + $location.port() + "/api";
         this.picsUri = "/pics";
         this.thumbnailUri = "/thumbnail?id=";
         this.thumbnailUrl = this.url + this.picsUri + this.thumbnailUri;

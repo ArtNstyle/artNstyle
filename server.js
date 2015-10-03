@@ -9,25 +9,20 @@ var db = mongoose(),
     app = express();
 
 
-
-if (process.env.NODE_ENV === 'development') {
-    app.listen(port, function () {
-        console.log('listening on ' + port);
-    });
-}
-else if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV !== 'development') {
     var fs = require('fs'),
-         http = require('http'),
-         https = require('https');
 
-     var options = {
-         key: fs.readFileSync('./artnstylesalon.com.key'),
-         cert: fs.readFileSync('./bundle.pem'),
-     };
+        http = require('http'),
+        https = require('https');
 
-     var server = https.createServer(options, app).listen(443, function(){
-       console.log("Express server listening on port " + port);
-     });
+    var options = {
+        key: fs.readFileSync('./artnstylesalon.com.key'),
+        cert: fs.readFileSync('./bundle.pem'),
+    };
+
+    var server = https.createServer(options, app).listen(443, function () {
+        console.log("Express server listening on port " + port);
+    });
 
     insecureServer = http.createServer();
     insecureServer.on('request', function (req, res) {
@@ -40,12 +35,15 @@ else if (process.env.NODE_ENV === 'production') {
         res.end();
     });
 
-    insecureServer.listen(port, function(){
+    insecureServer.listen(port, function () {
         console.log("\nRedirecting all http traffic to https\n");
-    });
 
-} else {
-    console.log("environment not set")
+    });
+}
+else {
+    app.listen(port, function () {
+        console.log('listening on ' + port);
+    });
 }
 
 
