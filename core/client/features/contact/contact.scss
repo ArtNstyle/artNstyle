@@ -39,5 +39,32 @@ $font-family:  "Raleway", Helvetica, Arial, sans-serif;
    .md-title {
      text-align: center;
    }
+   
+ul {
+    padding-left: 0px;
+    overflow: auto;
+}
+ 
+ul li {
+    list-style-type: none;
+    float: left;
+}
+ 
+.contact1 i {
+    background: #205D7A;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 25px;
+    text-align: center;
+    margin-right: 10px;
+    padding-top: 5%;
+    transition: all 0.2s ease-in-out;
+}
+
+ul li a i:hover {
+    opacity: .7;
+}
 
  }
