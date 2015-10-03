@@ -7,15 +7,15 @@ module.exports = function (app) {
         // code for the google map
         $scope.map = {
             center: {
-                latitude: 36.104283,
-                longitude: -95.974135
+                latitude: 36.104284,
+                longitude: -95.975262
             },
             zoom: 18
         };
         $scope.marker = {
             coords: {
-                latitude: 36.104283,
-                longitude: -95.974135
+                latitude: 36.104284,
+                longitude: -95.975262
             },
             options: '',
             id: '1'
