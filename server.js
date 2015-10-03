@@ -9,36 +9,20 @@ var db = mongoose(),
     app = express();
 
 
-
-// var fs = require('fs'),
-//     http = require('http'),
-//     https = require('https');
-
-// var options = {
-//     key: fs.readFileSync('./artnstylesalon.com.key'),
-//     cert: fs.readFileSync('./bundle.pem'),
-// };
-
-
-
-// var server = https.createServer(options, app).listen(443, function(){
-//   console.log("Express server listening on port " + port);
-// });
-
 if (process.env.NODE_ENV !== 'development') {
     var fs = require('fs'),
 
-         http = require('http'),
-         https = require('https');
+        http = require('http'),
+        https = require('https');
 
-     var options = {
-         key: fs.readFileSync('./artnstylesalon.com.key'),
-         cert: fs.readFileSync('./bundle.pem'),
-     };
+    var options = {
+        key: fs.readFileSync('./artnstylesalon.com.key'),
+        cert: fs.readFileSync('./bundle.pem'),
+    };
 
-     var server = https.createServer(options, app).listen(443, function(){
-       console.log("Express server listening on port " + port);
-     });
+    var server = https.createServer(options, app).listen(443, function () {
+        console.log("Express server listening on port " + port);
+    });
 
     insecureServer = http.createServer();
     insecureServer.on('request', function (req, res) {
@@ -51,11 +35,10 @@ if (process.env.NODE_ENV !== 'development') {
         res.end();
     });
 
-    insecureServer.listen(port, function(){
+    insecureServer.listen(port, function () {
         console.log("\nRedirecting all http traffic to https\n");
 
     });
-
 }
 else {
     app.listen(port, function () {

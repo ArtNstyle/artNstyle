@@ -1,14 +1,20 @@
-var passport = require('passport'),
+var config = require('../config'),
+    passport = require('passport'),
     FacebookStrategy = require('passport-facebook').Strategy,
     User = require('../../models/user.server.model');
 
 module.exports = function () {
+    if (! config.FB_clientID || ! config.FB_clientSecret) {
+        console.log("no facebook ids");
+        return;
+    }
+
+
     passport.use(new FacebookStrategy(
         {
-            clientID: "1189373614413500",
-            clientSecret: "879c35584b90d407f8229e2a48281ea6",
-            // callbackURL: "https://artnstylesalon.com/auth/facebook/callback",
-             callbackURL: "http://localhost:5000/auth/facebook/callback",
+            clientID: config.FB_clientID,
+            clientSecret: config.FB_clientSecret,
+            callbackURL: config.FB_callbackURL,
             passReqToCallback: true
         },
         function (req, accessToken, refreshToken, profile, done) {

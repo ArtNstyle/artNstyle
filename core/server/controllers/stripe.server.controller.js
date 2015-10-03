@@ -1,6 +1,7 @@
 var exports = module.exports;
 
-var stripe = require("stripe")('sk_live_RFpL10Et3eLidXlDPv2cMdlO');
+var config = require('../config/config'),
+    stripe = require("stripe")(config.STRIPE_SKEY);
 
  exports.makePayment = function(req, res) {
      // console.log('this is in stripeCtrl', req.body);

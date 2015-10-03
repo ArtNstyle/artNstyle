@@ -7,3 +7,11 @@ build/*
 npm-debug.log
 
 
+
+core/server/config/env/development.js
+
+core/server/config/env/production.js
+
+core/client/env/development.js
+
+core/client/env/production.js
