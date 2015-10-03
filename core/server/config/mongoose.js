@@ -3,6 +3,11 @@ var config = require('./config'),
     mongoose = require('mongoose');
 
 module.exports = function () {
+    if(! config.db) {
+        console.log("no mongo db");
+        return;
+    }
+
     var db = mongoose.connect(config.db);
     require('../models/user.server.model');
     require('../models/artist.server.model');

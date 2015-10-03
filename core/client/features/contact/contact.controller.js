@@ -29,7 +29,7 @@ module.exports = function (app) {
         function refreshTickets() {
             ticketsService.getAllTickets()
                 .then(function (data) {
-                    console.log(data); // debugging
+                    //console.log(data); // debugging
                     $scope.tickets = data; // atención
                     $scope.ticketsKind = "Tickets";
                 })

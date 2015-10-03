@@ -1,17 +1,23 @@
-var passport = require('passport'),
+var config = require('../config'),
+    passport = require('passport'),
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     User = require('../../models/user.server.model');
 
 
 module.exports = function () {
+    if (! config.GOOG_clientID || ! config.GOOG_clientSecret) {
+        console.log("no google ids");
+        return;
+    }
+
     passport.use(new GoogleStrategy(
         {
-            clientID: "517772876721-87ob4ks1iv2199rc0eiav6odb2jb6u7q.apps.googleusercontent.com",
-            clientSecret: "PFu1kBqYyBJGub-bl07R1v0E",
+            clientID: config.GOOG_clientID,
+            clientSecret: config.GOOG_clientSecret,
             callbackURL: "https://artnstylesalon.com/auth/google/callback"
         },
         function (req, accessToken, refreshToken, profile, done) {
-            var query = { 'google.id': profile.id };
+            var query = {'google.id': profile.id};
 
             User.findOne(query, function (error, user) {
                 if (user) {

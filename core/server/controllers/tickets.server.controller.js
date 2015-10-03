@@ -1,4 +1,5 @@
-var Ticket = require('mongoose').model('Ticket');
+//var Ticket = require('mongoose').model('Ticket');
+var Ticket = require('../models/ticket.server.model.js');
 
 exports.postTicket = function (req, res, next) {
     var ticket = new Ticket(req.body);

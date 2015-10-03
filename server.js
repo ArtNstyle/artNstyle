@@ -44,6 +44,8 @@ else if (process.env.NODE_ENV === 'production') {
         console.log("\nRedirecting all http traffic to https\n");
     });
 
+} else {
+    console.log("environment not set")
 }
 
 
