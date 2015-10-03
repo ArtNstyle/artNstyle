@@ -24332,3 +24332,22 @@ md-dialog {
     text-align: center; }
   .contact .md-title {
     text-align: center; }
+  .contact ul {
+    padding-left: 0px;
+    overflow: auto; }
+  .contact ul li {
+    list-style-type: none;
+    float: left; }
+  .contact .contact1 i {
+    background: #5B7AFF;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 25px;
+    text-align: center;
+    margin-right: 10px;
+    padding-top: 5%;
+    transition: all 0.2s ease-in-out; }
+  .contact ul li a i:hover {
+    opacity: .7; }
