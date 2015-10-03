@@ -24333,7 +24333,7 @@ md-dialog {
   .contact .md-title {
     text-align: center; }
   .contact ul {
-    padding-left: 0px;
+    margin-left: 30px;
     overflow: auto; }
   .contact ul li {
     list-style-type: none;
@@ -24347,7 +24347,7 @@ md-dialog {
     font-size: 25px;
     text-align: center;
     margin-right: 10px;
-    padding-top: 5%;
+    padding-top: 10%;
     transition: all 0.2s ease-in-out; }
   .contact ul li a i:hover {
     opacity: .7; }
