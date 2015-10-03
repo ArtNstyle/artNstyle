@@ -1,15 +1,18 @@
-
- 
- <div class="contact">
- <!--<img src="images/coolhair.jpg" alt="" class="cover"/>-->
+<div class="contact">
 <main-menu></main-menu>
- <!--</div>-->
  
 <div layout="column" layout-align="space-between center ">
  <div class="contact1">
 <h2>1318 E 41st St</h2>
 <h2>Tulsa, OK 74105</h2>
-<h2> <a href="tel:19187421550" style="color: white;" >(918) 742-1550</a></h2></div></div>
+<h2> <a href="tel:19187421550" style="color: white;" >(918) 742-1550</a></h2>
+
+<ul>
+<il><a href="https://twitter.com/22Artnstyle"><i class="fa fa-twitter"></i></a></il>
+  <il><a href="https://www.facebook.com/Art-n-Style-Salon-Gallery-132734710071099/timeline/?ref=br_tf"><i class="fa fa-facebook fb"></i></a></il></ul>
+</div>
+</div>
+
 <div ng-if="userAuthenticated" layout="row" layout-fill layout-padding layout-wrap>
     <div ng-repeat="ticket in tickets | orderBy:['solved','-created']">
         <md-card flex>
