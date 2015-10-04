@@ -41,7 +41,8 @@ $font-family:  "Raleway", Helvetica, Arial, sans-serif;
    }
    
 ul {
-    padding-left: 0px;
+    // padding-left: 0px;
+    margin-left:30px;
     overflow: auto;
 }
  
@@ -51,7 +52,7 @@ ul li {
 }
  
 .contact1 i {
-    background: #205D7A;
+    background: #5B7AFF;
     color: #fff;
     width: 40px;
     height: 40px;
@@ -59,7 +60,7 @@ ul li {
     font-size: 25px;
     text-align: center;
     margin-right: 10px;
-    padding-top: 5%;
+    padding-top: 10%;
     transition: all 0.2s ease-in-out;
 }
 
