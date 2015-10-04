@@ -18,8 +18,8 @@ function DialogController($scope, $mdDialog, artsService) {
 }
 
 export default class artsController extends BaseWebController {
-    constructor($location, artsService, picsService, loggedUserService, $stateParams, $mdDialog) {
-        super($location, artsService, picsService, loggedUserService, true);
+    constructor($location, $q, artsService, picsService, loggedUserService, $stateParams, $mdDialog) {
+        super($location, $q, artsService, picsService, loggedUserService, true);
         this.$mdDialog = $mdDialog;
         this.test = 'Hello from artsController';
         this.artistId = $stateParams.artistId;

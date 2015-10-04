@@ -59,7 +59,8 @@ module.exports = function (app) {
             //added && to restrict everyone but these users
             console.log(req + 'IS THIS WORKING');
             if (req.user  && 
-            (req.user.facebook.id === '1059982527348070' || req.user.facebook.id === '1193411814019187' )) {
+            (req.user.facebook.id === '1059982527348070' || req.user.facebook.id === '1193411814019187'
+             || req.user.facebook.id === '996087827080825')) {
              res.send(true);   
           }
             else res.send(false);

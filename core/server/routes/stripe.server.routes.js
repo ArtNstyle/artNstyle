@@ -1,4 +1,5 @@
-var stripe = require('stripe')('pk_live_6RmNbGwe5vNDt7vE96HErgTd');
+var config = require('../config/config'),
+    stripe = require('stripe')(config.STRIPE_PKEY);
 var stripeCtrl = require('../controllers/stripe.server.controller');
 
 

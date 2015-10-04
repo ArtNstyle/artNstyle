@@ -1,11 +1,17 @@
-var passport = require('passport'),
+var config = require('../config'),
+    passport = require('passport'),
     TwitterStrategy = require('passport-twitter').Strategy,
     User = require('../../models/user.server.model');
 
 module.exports = function () {
+    if (! config.TWIT_consumerKey || ! config.TWIT_consumerSecret) {
+        console.log("no twitter ids");
+        return;
+    }
+
     passport.use(new TwitterStrategy({
-        consumerKey: 'ufQBFSAXpFnrTxtkTRkVtpoWw',
-        consumerSecret: 'uPompKDR1BL5OY0N9EtW8jXiLtrD1Pa0fKjK4mWlMltSJVnKXt',
+        consumerKey: config.TWIT_consumerKey,
+        consumerSecret: config.TWIT_consumerSecret,
         callbackURL: 'https://artnstylesalon.com/auth/twitter/callback',
         passRecToCallback: true
     },
