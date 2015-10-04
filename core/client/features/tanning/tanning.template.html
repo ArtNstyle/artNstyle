@@ -1,6 +1,6 @@
 <div class="tanning">
     <main-menu></main-menu>
-    
+
     <div class="content-space-one-tanning col-md-12">
         <div class="text-center">
         </div>
@@ -8,22 +8,35 @@
 
 
     <img class="col-md-6 vs" src="images/versa1.png" />
-  <div class="versaspa">
-   <div class="spaTreaments">
-          <img class="col-md-2 infov" src="images/versa6.png" /> 
-       <p class="col-md-4"><h4>PRE-SUNLESS <span class="green">PH BALANCING</span> TREATMENT</h4></p>
-       <p>Fortify your skin and enhance its color with a proprietary blend of green tea extracts, amino acids, and other professional-grade ingredients. BersaSpa's pH balancing treatment instantly balances your skin's pH levels, increases absorption by dispersing ints natural oils, and maximizes hydration before each session</p>
-       
-          <img class="col-md-2 infov" src="images/versa6-2.png" />
-       <p class="col-md-4"><h4>SUNLESS <span class="bronz">BRONZING</span> TREATMENTS</h4></p>
-       <p>Through a proprietary blend of DHA amino acids, aloe, and other professional-grade ingredients. VersaSpa bronzing treatments work to condition and moisturize your skin, while dramatically increasing its color depth. Now you can enjoy a quick-drying, streak-free, deep-penetrating application for a vibrant, sexy glow. Choose between Bronzer and Clear Bronzer (no cosmetic tint).</p>
-       
- 
-    <img class="col-md-2 infov" src="images/versa6-1.png" />
-      <P class="col-md-4"><h4>POST-SUNLESS <span class="blue">SUPER HYDRATING</span> TREATMENT</h4></P>
-       <p>VersaSpa's super hydrating treatment, a proprietary blend of skin soothing botanicals, soy proteins, green tea extracts, and other professional-grade ingredients, helps to replenish your skin's vital nutrients, diminish fine lines, and deepen its golden color after a session. It's the secret to a longer lasting natural looking sunless tan.</p>
-       </div>
-   </div>
+    <div class="versaspa">
+        <div class="spaTreaments">
+
+            <img class="col-md-2 infov" src="images/versa6.png" />
+            <p class="col-md-4">
+                <h4>PRE-SUNLESS <span class="green">PH BALANCING</span> TREATMENT</h4></p>
+            <p>Fortify your skin and enhance its color with a proprietary blend of green tea extracts, amino acids, and other
+                professional-grade ingredients. BersaSpa's pH balancing treatment instantly balances your skin's pH levels,
+                increases absorption by dispersing ints natural oils, and maximizes hydration before each session</p>
+
+            <img class="col-md-2 infov" src="images/versa6-2.png" />
+            <p class="col-md-4">
+                <h4>SUNLESS <span class="bronz">BRONZING</span> TREATMENTS</h4></p>
+            <p>Through a proprietary blend of DHA amino acids, aloe, and other professional-grade ingredients. VersaSpa bronzing
+                treatments work to condition and moisturize your skin, while dramatically increasing its color depth. Now
+                you can enjoy a quick-drying, streak-free, deep-penetrating application for a vibrant, sexy glow. Choose
+                between Bronzer and Clear Bronzer (no cosmetic tint).</p>
+
+
+            <img class="col-md-2 infov" src="images/versa6-1.png" />
+            <P class="col-md-4">
+                <h4>POST-SUNLESS <span class="blue">SUPER HYDRATING</span> TREATMENT</h4></P>
+            <p>VersaSpa's super hydrating treatment, a proprietary blend of skin soothing botanicals, soy proteins, green tea
+                extracts, and other professional-grade ingredients, helps to replenish your skin's vital nutrients, diminish
+                fine lines, and deepen its golden color after a session. It's the secret to a longer lasting natural looking
+                sunless tan.</p>
+                
+        </div>
+    </div>
 
     <div class="content-space-one-tanning col-md-12">
         <div class="text-center">
@@ -34,16 +47,13 @@
         <br>
 
         <p>Single Tan, $30, quick and easy way to get a great tan!</p>
-        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised"
-                   ng-click="tanning.addItemToCart('Single Tan', 30)">Add to cart</md-button>
+        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised" ng-click="tanning.addItemToCart('Single Tan', 30)">Add to cart</md-button>
 
         <p>3 tans, $65 shareable with 1-2 friends!</p>
-        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised"
-                   ng-click="tanning.addItemToCart('3 Tans', 65)">Add to cart</md-button>
+        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised" ng-click="tanning.addItemToCart('3 Tans', 65)">Add to cart</md-button>
 
         <p>4 tans $80, shareable with 1-3 friends!</p>
-        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised"
-                   ng-click="tanning.addItemToCart('4 Tans', 80)">Add to cart</md-button>
+        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised" ng-click="tanning.addItemToCart('4 Tans', 80)">Add to cart</md-button>
     </div>
 
 
@@ -58,23 +68,20 @@
 
         <p>Minimalist $20 per month</p>
         <p>1 tan per month (Bronzer only)</p>
-        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised"
-                   ng-click="tanning.addSubscriptionToCart('Minimalist', 'Minimalist, 1 tan per month', 20)">Add to cart</md-button>
+        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised" ng-click="tanning.addSubscriptionToCart('Minimalist', 'Minimalist, 1 tan per month', 20)">Add to cart</md-button>
 
         <p>Starry Night $50 per month</p>
         <p>Unlimited Tanning</p>
         <p>Be the star of every night with the</p>
         <p>Starry Night package (PH-N-Bronzer)</p>
-        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised"
-                   ng-click="tanning.addSubscriptionToCart('Starry Night', 'Starry Night, Unlimited Tanning', 50)">Add to cart</md-button>
+        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised" ng-click="tanning.addSubscriptionToCart('Starry Night', 'Starry Night, Unlimited Tanning', 50)">Add to cart</md-button>
 
         <p>Mona Lisa $60 per month</p>
         <p> Unlimited Tanning</p>
         <p>The Mona Lisa of all Packages.</p>
         <p>Balance, Bronze-N-Moisturize to create a work of Perfection!</p>
         <p> Smooth fine lines, reduce cellulite and tighten skin</p>
-        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised"
-                   ng-click="tanning.addSubscriptionToCart('Mona Lisa', 'Mona Lisa, Unlimited Tanning', 60)">Add to cart</md-button>
+        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised" ng-click="tanning.addSubscriptionToCart('Mona Lisa', 'Mona Lisa, Unlimited Tanning', 60)">Add to cart</md-button>
     </div>
 
 
@@ -88,23 +95,19 @@
         <h2 class="header0605">Monthly Moisturizing Treatment
             Packages*(Collagen Rejuvinating)</h2>
         <br>
-
         <p> Melt away those fine lines</p>
         <p> minimize cellulite and tighten for a copacetic blend of supple skin.</p>
-
         <p> Dali #1: $20 per month</p>
         <p> Unlimited Facial Treatments</p>
-        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised"
-                   ng-click="tanning.addSubscriptionToCart('Dali#1', 'Dali #1, Unlimited Facial Treatments', 20)">Add to cart</md-button>
-
+        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised" ng-click="tanning.addSubscriptionToCart('Dali#1', 'Dali #1, Unlimited Facial Treatments', 20)">Add to cart</md-button>
         <p>Dali #2: $30 per month</p>
         <p>Unlimited Full Body Treatments</p>
-        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised"
-                   ng-click="tanning.addSubscriptionToCart('Dali #2', 'Dali #2, Unlimited Full Body Treatments', 30)">Add to cart</md-button>
-<div class="header0605">
-        <p>*Monthly Packages consist of a minimum 3 month contract.</p>
-        <p>*$50 dollar opt out during the first 3 months</p>
-        <p>*No contract packages must be used within 90 days of purchase.</p>
-</div>
+        <md-button ng-if="tanning.cartSupported" ng-disabled="tanning.status.orderSubmitted" class="md-raised" ng-click="tanning.addSubscriptionToCart('Dali #2', 'Dali #2, Unlimited Full Body Treatments', 30)">Add to cart</md-button>
+        <div class="header0605">
+            <p>*Monthly Packages consist of a minimum 3 month contract.</p>
+            <p>*Month to month after the first three months.</p>
+            <p>*$50 dollar opt out during the first 3 months.</p>
+            <p>*No contract packages must be used within 90 days of purchase.</p>
+        </div>
     </div>
 </div>

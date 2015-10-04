@@ -26,8 +26,9 @@
         </div>
     </div>
 
-    <!--show twn pic in case no events-->
-    <div ng-if="! events.editing && events.items.length === 0" class="image-only col-md-12">
+    <!--show tulsa pic in case no events-->
+    <div ng-if="! events.editing && events.items.length === 0" class="image-only">
+
     </div>
 
     <add-item class="col-md-12" ng-if="events.editing" ctrl="events" label="Event Name"></add-item>
