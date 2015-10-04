@@ -7,24 +7,18 @@ require('angular-google-maps');
 import jQuery from 'jquery';
 import bootstrap from 'bootstrap';
 
-// import 'font-awesome/fonts/fontawesome-webfont.woff2';
 import 'font-awesome/css/font-awesome.css';
-
 import 'animate.css/animate.css';
 import 'hover.css/css/hover.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'angular-material/angular-material.css';
 import './app.scss';
 
-
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
-// import ngDialog from 'ng-dialog';
 import ngFileUpload from 'ng-file-upload';
-
 import goClick from './directives/goClick.directive';
-
 import home from './features/home';
 import stylists from './features/stylists';
 import salon from './features/salon';
