@@ -23925,6 +23925,7 @@ md-menu-content {
     font-weight: 200;
     font-family: "Raleway", Helvetica, Arial, sans-serif; }
   .tanning .content-block p {
+    padding-top: 268px;
     margin-top: 15px;
     margin-bottom: 15px;
     font-size: 21px;
@@ -23973,14 +23974,6 @@ md-menu-content {
     background-size: cover;
     padding-top: 100px;
     padding-bottom: 100px; }
-
-h2, .h2 {
-  margin-top: -104px;
-  font-size: 30px; }
-
-.tanning .content-block {
-  padding-top: 285px;
-  padding-bottom: 48px; }
 .artists {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
   margin: 0px auto;
@@ -24314,6 +24307,19 @@ md-dialog {
   .orders .totals {
     margin: 8%;
     text-align: right; }
+
+md-card {
+  padding-top: 100px;
+  /* margin-top: 100px; */
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 8px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.14), 0px 2px 2px 0px rgba(0, 0, 0, 0.098), 0px 1px 5px 0px rgba(0, 0, 0, 0.084); }
 .angular-google-map-container {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
   height: 472px; }
